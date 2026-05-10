@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent: #cc0033;
+    --accent-dark: #8e0038;
+    --accent-bright: #ed0039;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-900 bg-white antialiased;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif font-bold leading-tight;
+  }
+
+  /* Global accessible focus ring */
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Skip-to-content link */
+  .skip-link {
+    @apply absolute -top-full left-4 z-50 px-4 py-2 text-white text-sm font-semibold rounded-b-lg;
+    background: var(--accent);
+  }
+
+  .skip-link:focus {
+    @apply top-0;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+  }
+
+  .container-content {
+    @apply mx-auto w-full;
+    max-width: 1200px;
+  }
+}
