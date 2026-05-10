@@ -1,0 +1,627 @@
+/* ==========================================================
+   BFSG-Check — Design System basiert auf ERGO (ergo.de)
+   Alle Tokens, Farben und Komponenten aus dem originalen
+   ERGO CSS (newNavigation.min.css, tile.min.css, pages.min.css)
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  /* Farben — direkt aus ERGO CSS */
+  --maroon:        #8e0038;   /* ERGO --theme-primary: Headlines, Buttons */
+  --maroon-dark:   #71022e;   /* ERGO --theme-brand-color-dark: Hover */
+  --maroon-mid:    #bf1528;   /* ERGO --theme-secondary */
+  --red:           #ed0039;   /* ERGO Akzentrot: Logo, Links */
+  --dark:          #333333;   /* ERGO Text & Footer */
+  --muted:         #6a625a;   /* ERGO --text-muted */
+  --border-nav:    #d9d9d9;   /* ERGO --header-border-color */
+  --border:        #d3d3d3;
+  --border-tile:   #c9c5c7;   /* ERGO tile border */
+
+  /* Hintergründe — alle aus ERGO --background-color Variablen */
+  --bg-white:      #ffffff;
+  --bg-light:      #f5f5f5;   /* Footer, helle Sections */
+  --bg-cream:      #fef6d2;   /* ERGO Crème */
+  --bg-teal:       #ccecef;   /* ERGO Teal */
+  --bg-green:      #d3ebe5;   /* ERGO Grün */
+  --bg-rose:       #f5e1eb;   /* ERGO Rosa */
+  --bg-peach:      #ffe0cb;   /* ERGO Pfirsich */
+  --bg-sand:       #ebe6d8;   /* ERGO Sand */
+  --bg-dark:       #333333;
+
+  /* Typografie */
+  --font: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Navigation — aus newNavigation.min.css */
+  --nav-height-mobile:  73px;
+  --nav-height-desktop: 97px;
+  --nav-btn-radius:     8px;
+  --nav-hover-bg:       #fbf4f4;
+  --nav-hover-color:    #8e0038;
+
+  /* Abstände */
+  --space-section: clamp(3rem, 7vw, 5rem);
+  --max-w: 1200px;
+
+  /* Schatten */
+  --shadow-tile: 0 -2px 4px 0 rgba(51,51,51,.08),
+                 0  4px 8px 0 rgba(51,51,51,.12),
+                 0  8px 16px 0 rgba(51,51,51,.16);
+  --shadow-card: 0 2px 11px 0 rgba(0,0,0,.08);
+  --shadow-form: 0 4px 24px rgba(0,0,0,.12);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--dark);
+  background: var(--bg-white);
+  -webkit-font-smoothing: antialiased;
+  padding-top: var(--nav-height-mobile);
+}
+@media (min-width: 1152px) { body { padding-top: var(--nav-height-desktop); } }
+
+img  { max-width: 100%; display: block; }
+a    { color: inherit; }
+ul, ol { list-style: none; }
+
+/* ── Accessibility ── */
+.skip-link {
+  position: absolute; top: -100%; left: 1rem; z-index: 9999;
+  background: var(--maroon); color: #fff;
+  padding: .5rem 1rem; border-radius: 0 0 4px 4px;
+  font-size: .875rem; font-weight: 700; text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Layout ── */
+.container {
+  width: 100%; max-width: var(--max-w);
+  margin: 0 auto; padding: 0 1.25rem;
+}
+@media (min-width: 640px)  { .container { padding: 0 1.5rem; } }
+@media (min-width: 1024px) { .container { padding: 0 2rem; } }
+
+.section-pad { padding: var(--space-section) 0; }
+
+/* ── Typografie ── */
+h1, h2, h3, h4 {
+  font-family: var(--font);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  color: var(--maroon);
+}
+h1 { font-size: clamp(1.875rem, 4.5vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+h3 { font-size: 1.125rem; font-weight: 700; letter-spacing: -.01em; }
+h4 { font-size: 1rem; font-weight: 700; }
+
+/* Section-Label — wie ERGO "BESTSELLER", "SERVICES" */
+.label {
+  display: block;
+  font-size: .6875rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: var(--red); margin-bottom: .625rem;
+}
+
+/* ── Navigation — exakt nach newNavigation.min.css ── */
+.site-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 500;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-nav);
+  height: var(--nav-height-mobile);
+}
+@media (min-width: 1152px) { .site-nav { height: var(--nav-height-desktop); } }
+
+.site-nav .container {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  column-gap: 12px;
+  padding-block: 12px;
+}
+@media (min-width: 1152px) {
+  .site-nav .container { column-gap: 36px; padding-block: 16px; }
+}
+
+.nav-logo {
+  display: flex; flex-direction: column;
+  text-decoration: none; flex-shrink: 0;
+}
+.nav-logo-name {
+  font-size: 1.25rem; font-weight: 800;
+  letter-spacing: -.03em; line-height: 1;
+  color: var(--maroon);
+}
+.nav-logo-name span { color: var(--red); }
+.nav-logo-claim {
+  font-size: .625rem; color: var(--muted);
+  letter-spacing: .02em; margin-top: 2px;
+}
+
+/* Desktop nav links (center) */
+.nav-links {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex; align-items: center; gap: 0;
+    flex: 1; justify-content: center;
+  }
+}
+.nav-links a {
+  display: inline-flex; align-items: center;
+  padding: .75rem 1rem;
+  font-size: .9375rem; font-weight: 500;
+  color: var(--dark); text-decoration: none;
+  border-radius: var(--nav-btn-radius);
+  transition: background .15s, color .15s;
+}
+.nav-links a:hover { background: var(--nav-hover-bg); color: var(--nav-hover-color); }
+
+/* Right action buttons */
+.nav-actions {
+  display: flex; align-items: center; gap: 2px; flex-shrink: 0;
+}
+
+/* Icon + label button — wie ERGO headerNavigation__button-with-icon */
+.nav-icon-btn {
+  display: none;
+  flex-direction: column; align-items: center; gap: 2px;
+  background: transparent; border: 0;
+  border-radius: var(--nav-btn-radius);
+  padding: .5rem .75rem;
+  font-family: var(--font); font-size: .6875rem; font-weight: 500;
+  color: var(--dark); text-decoration: none; cursor: pointer;
+  transition: background .15s, color .15s;
+  white-space: nowrap;
+}
+.nav-icon-btn svg { width: 22px; height: 22px; }
+.nav-icon-btn:hover { background: var(--nav-hover-bg); color: var(--nav-hover-color); }
+@media (min-width: 768px) { .nav-icon-btn { display: flex; } }
+
+/* Phone button — wie ERGO headerNavigation__button--phone */
+.nav-phone {
+  display: none;
+  align-items: center; gap: .5rem;
+  background: transparent; border: 0;
+  border-radius: var(--nav-btn-radius);
+  padding: .5rem .75rem;
+  text-decoration: none; cursor: pointer;
+  transition: background .15s;
+}
+.nav-phone:hover { background: var(--nav-hover-bg); }
+.nav-phone svg { width: 22px; height: 22px; color: var(--maroon); flex-shrink: 0; }
+.nav-phone-text { display: flex; flex-direction: column; }
+.nav-phone-number { font-size: .875rem; font-weight: 700; color: var(--maroon); line-height: 1.2; }
+.nav-phone-hours  { font-size: .6875rem; color: var(--muted); }
+@media (min-width: 1024px) { .nav-phone { display: flex; } }
+
+/* Mobile CTA in nav */
+.nav-cta-mobile {
+  display: inline-flex; align-items: center;
+  background: var(--maroon); color: #fff;
+  border: 0; border-radius: 2px;
+  padding: .5rem 1rem;
+  font-family: var(--font); font-size: .8125rem; font-weight: 700;
+  text-decoration: none; cursor: pointer;
+  transition: background .15s;
+}
+.nav-cta-mobile:hover { background: var(--maroon-dark); }
+@media (min-width: 1024px) { .nav-cta-mobile { display: none; } }
+
+/* ── Buttons — aus ERGO ee_button--primary ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .75rem 1.75rem;
+  border-radius: 4px;                  /* ERGO: leicht abgerundet, kein Pill */
+  font-family: var(--font); font-size: .9375rem; font-weight: 700;
+  text-decoration: none; cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background .15s, color .15s, border-color .15s, transform .1s;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--maroon); color: #fff;
+  border-color: var(--maroon);
+}
+.btn-primary:hover { background: var(--maroon-dark); border-color: var(--maroon-dark); }
+
+.btn-outline {
+  background: transparent; color: var(--maroon);
+  border-color: var(--maroon);
+}
+.btn-outline:hover { background: var(--maroon); color: #fff; }
+
+.btn-outline-white {
+  background: transparent; color: #fff;
+  border-color: #fff;
+}
+.btn-outline-white:hover { background: rgba(255,255,255,.1); }
+
+.btn-white {
+  background: #fff; color: var(--maroon);
+  border-color: #fff;
+}
+.btn-white:hover { background: #f5f5f5; }
+
+.btn-sm { padding: .5rem 1.25rem; font-size: .875rem; }
+.btn-lg { padding: .875rem 2.25rem; font-size: 1.0625rem; }
+.btn-full { width: 100%; }
+
+/* ── Tile Komponente — exakt aus tile.min.css ── */
+.tile {
+  --tile-bg: var(--bg-white);
+  --tile-border: 1px solid var(--border-tile);
+  display: flex; flex-direction: column; align-items: stretch;
+  background: var(--tile-bg);
+  border: var(--tile-border);
+  border-radius: 8px;
+  padding: 32px 24px;
+  position: relative; text-align: center;
+  transition: box-shadow .35s;
+  height: 100%;
+}
+@media (min-width: 768px) { .tile { padding: 48px 32px; } }
+.tile:hover { box-shadow: var(--shadow-tile); }
+
+/* Farb-Varianten — aus tile.min.css data-color */
+.tile[data-color="#ccecef"] { --tile-bg: #ccecef; --tile-border: none; }
+.tile[data-color="#fef6d2"] { --tile-bg: #fef6d2; --tile-border: none; }
+.tile[data-color="#d3ebe5"] { --tile-bg: #d3ebe5; --tile-border: none; }
+.tile[data-color="#f5e1eb"] { --tile-bg: #f5e1eb; --tile-border: none; }
+.tile[data-color="#ffe0cb"] { --tile-bg: #ffe0cb; --tile-border: none; }
+.tile[data-color="#ebe6d8"] { --tile-bg: #ebe6d8; --tile-border: none; }
+
+.tile__icon {
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.tile__icon svg { width: 40px; height: 40px; }
+@media (min-width: 768px) { .tile__icon svg { width: 48px; height: 48px; } }
+.tile__title {
+  font-size: 1rem; font-weight: 700; line-height: 1.4;
+  color: var(--maroon); margin: 0;
+}
+@media (min-width: 768px) { .tile__title { font-size: 1.125rem; } }
+.tile__text {
+  font-size: .9375rem; line-height: 1.6;
+  color: #555; margin-top: 12px;
+}
+@media (min-width: 768px) { .tile__text { margin-top: 16px; } }
+.tile__cta { margin-top: auto; padding-top: 24px; }
+
+/* ── Hero — split layout wie ERGO Produktseiten ── */
+.hero {
+  background: var(--bg-cream);
+  padding: var(--space-section) 0;
+}
+.hero-inner {
+  display: grid; gap: 2.5rem;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr 1fr; }
+}
+
+.hero-content {}
+.hero-label { margin-bottom: .5rem; }
+.hero h1 { color: var(--maroon); }
+.hero-sub {
+  margin-top: 1rem;
+  font-size: 1.0625rem; color: #555;
+  max-width: 44ch; line-height: 1.7;
+}
+.hero-checks {
+  margin-top: 1.5rem;
+  display: flex; flex-direction: column; gap: .625rem;
+}
+.hero-checks li {
+  display: flex; align-items: center; gap: .625rem;
+  font-size: .9375rem; color: var(--dark);
+}
+.hero-checks svg { color: var(--maroon); flex-shrink: 0; }
+.hero-btns {
+  margin-top: 2rem;
+  display: flex; flex-wrap: wrap; gap: .75rem;
+}
+
+/* Form card */
+.form-card {
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--shadow-form);
+  border: 1px solid var(--border);
+}
+.form-card-title {
+  font-size: 1.25rem; font-weight: 700;
+  color: var(--maroon); margin-bottom: .25rem;
+}
+.form-card-sub { font-size: .875rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+/* Form fields */
+.field { margin-bottom: 1rem; }
+.field label {
+  display: block; font-size: .875rem; font-weight: 600;
+  color: var(--dark); margin-bottom: .375rem;
+}
+.field input[type="url"],
+.field input[type="email"],
+.field input[type="text"] {
+  width: 100%; padding: .75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--font); font-size: 1rem; color: var(--dark);
+  background: var(--bg-white);
+  transition: border-color .15s, box-shadow .15s;
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--maroon);         /* ERGO: focus = maroon */
+  border-width: 2px;
+  box-shadow: 0 0 0 3px rgba(142,0,56,.1);
+}
+.field input[aria-invalid="true"] { border-color: #c00; }
+.field-error { display: block; margin-top: .25rem; font-size: .8125rem; color: #c00; }
+
+.checkbox-row {
+  display: flex; align-items: flex-start; gap: .625rem; margin-bottom: 1rem;
+}
+.checkbox-row input[type="checkbox"] {
+  margin-top: .2rem; width: 1rem; height: 1rem;
+  flex-shrink: 0; accent-color: var(--maroon);
+}
+.checkbox-row label { font-size: .875rem; color: #555; line-height: 1.5; }
+.checkbox-row a { color: var(--maroon); text-decoration: underline; }
+
+.form-success {
+  display: none; background: #f0fdf4;
+  border: 1px solid #bbf7d0; border-radius: 4px;
+  padding: 1.25rem; text-align: center;
+}
+.form-success.visible { display: block; }
+.form-success strong { color: #15803d; }
+.form-error { display: none; font-size: .875rem; color: #c00; margin-bottom: .75rem; }
+.form-error.visible { display: block; }
+
+/* ── Section: Weiß / Hell ── */
+.section-white { background: var(--bg-white); }
+.section-light  { background: var(--bg-light); }
+.section-dark   { background: var(--bg-dark); }
+.section-teal   { background: var(--bg-teal); }
+.section-rose   { background: var(--bg-rose); }
+.section-cream  { background: var(--bg-cream); }
+
+.section-dark h2 { color: #fff; }
+.section-dark p  { color: #ccc; }
+
+/* ── Tile Grids ── */
+.tile-grid-3 {
+  display: grid; gap: 1rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 640px) { .tile-grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+.tile-grid-4 {
+  display: grid; gap: 1rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 640px) { .tile-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .tile-grid-4 { grid-template-columns: repeat(4, 1fr); } }
+
+.tile-grid-2 {
+  display: grid; gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 768px) { .tile-grid-2 { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── Section: Urgency (dunkel) ── */
+.urgency-grid {
+  display: grid; gap: 1rem;
+  margin-top: 2rem;
+}
+@media (min-width: 640px) { .urgency-grid { grid-template-columns: repeat(3, 1fr); } }
+.urgency-tile {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px; padding: 1.5rem;
+}
+.urgency-tile svg  { color: #fff; margin-bottom: .75rem; }
+.urgency-tile h3   { color: #fff; font-size: 1rem; margin-bottom: .5rem; }
+.urgency-tile p    { font-size: .9375rem; color: #bbb; line-height: 1.65; }
+.urgency-note { margin-top: 1.75rem; font-size: .9375rem; color: #bbb; max-width: 52ch; line-height: 1.7; }
+
+/* ── Kundenstimmen (Teal bg, wie ERGO Kundenzufriedenheit) ── */
+.review-box {
+  max-width: 640px; margin: 0 auto; text-align: center;
+}
+.review-stars {
+  display: flex; align-items: center; justify-content: center; gap: .375rem;
+  margin-bottom: 1rem;
+}
+.star { color: #f59e0b; font-size: 1.25rem; }
+.review-score { font-size: 1.125rem; font-weight: 700; color: var(--maroon); }
+.review-quote {
+  font-size: 1.125rem; font-style: italic;
+  color: var(--dark); line-height: 1.7; margin-bottom: 1.5rem;
+  max-width: 50ch; margin-left: auto; margin-right: auto;
+}
+.review-quote::before { content: '\201E'; color: var(--red); }
+.review-quote::after  { content: '\201C'; color: var(--red); }
+.review-author { font-size: .875rem; color: var(--muted); }
+
+/* ── Affected table ── */
+.affected-wrap {
+  margin-top: 2rem; border-radius: 8px;
+  border: 1px solid var(--border); overflow: hidden;
+}
+.affected-table {
+  width: 100%; border-collapse: collapse; font-size: .9375rem;
+}
+.affected-table thead { background: var(--dark); color: #fff; }
+.affected-table th { padding: .875rem 1.5rem; font-weight: 600; text-align: left; }
+.affected-table td { padding: .75rem 1.5rem; border-top: 1px solid var(--border); background: #fff; }
+.affected-table tbody tr:hover td { background: #fafafa; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: .5rem; vertical-align: middle; }
+.dot-red  { background: var(--red); }
+.dot-grey { background: #aaa; }
+
+/* ── Report deliverable (split) ── */
+.deliver-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .875rem; }
+.deliver-item { display: flex; align-items: flex-start; gap: .875rem; }
+.deliver-num {
+  display: flex; align-items: center; justify-content: center;
+  min-width: 1.75rem; height: 1.75rem;
+  background: var(--maroon); color: #fff;
+  border-radius: 50%; font-size: .75rem; font-weight: 700;
+  flex-shrink: 0; margin-top: .1rem;
+}
+.deliver-text { font-size: .9375rem; color: #555; line-height: 1.6; }
+
+/* ── Split layout (2-column) ── */
+.split {
+  display: grid; gap: 3rem; align-items: center;
+}
+@media (min-width: 1024px) {
+  .split { grid-template-columns: 1fr 1fr; }
+  .split-reverse > :first-child { order: 2; }
+  .split-reverse > :last-child  { order: 1; }
+}
+
+/* ── FAQ — native details/summary ── */
+.faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: .375rem; }
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 8px; background: var(--bg-white);
+  overflow: hidden; transition: border-color .2s;
+}
+.faq-item[open] { border-color: rgba(142,0,56,.35); }
+.faq-item summary {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.5rem; font-weight: 600; font-size: .9375rem;
+  cursor: pointer; list-style: none; gap: 1rem;
+  color: var(--dark);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item[open] summary { color: var(--maroon); }
+.faq-chevron { flex-shrink: 0; width: 18px; height: 18px; transition: transform .2s; }
+.faq-item[open] .faq-chevron { transform: rotate(180deg); }
+.faq-answer { padding: 0 1.5rem 1rem; font-size: .9375rem; color: #555; line-height: 1.7; }
+
+/* ── CTA Section ── */
+.cta-section { text-align: center; }
+.cta-section h2 { color: #fff; max-width: 26ch; margin: 0 auto; }
+.cta-section .sub { margin-top: .875rem; color: rgba(255,255,255,.75); font-size: 1.0625rem; max-width: 44ch; margin-left: auto; margin-right: auto; }
+.cta-form-wrap {
+  background: var(--bg-white); border-radius: 8px;
+  padding: 2rem; margin: 2.5rem auto 0;
+  max-width: 30rem;
+  border: 1px solid var(--border);
+}
+
+/* ── Über uns ── */
+.about-photo {
+  width: 15rem; height: 15rem; border-radius: 8px;
+  background: var(--bg-light); border: 2px dashed var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: .5rem;
+  color: var(--muted); text-align: center; margin: 0 auto;
+}
+@media (min-width: 1024px) { .about-photo { margin: 0; } }
+.about-photo svg { width: 3rem; height: 3rem; stroke: var(--border); }
+.about-photo p { font-size: .75rem; }
+.check-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .75rem; }
+.check-list li { display: flex; align-items: flex-start; gap: .625rem; font-size: .9375rem; color: #555; }
+.check-list svg { color: var(--maroon); flex-shrink: 0; margin-top: .2rem; }
+
+/* ── Footer — ERGO 4-Spalten-Stil ── */
+.site-footer { background: var(--bg-light); border-top: 1px solid var(--border); }
+.footer-inner {
+  padding: 3rem 0 2rem;
+}
+.footer-grid {
+  display: grid; gap: 2rem;
+}
+@media (min-width: 640px)  { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.footer-col-title {
+  font-size: .9375rem; font-weight: 700;
+  color: var(--dark); margin-bottom: 1rem;
+}
+.footer-col-links { display: flex; flex-direction: column; gap: .5rem; }
+.footer-col-links a {
+  font-size: .875rem; color: #555;
+  text-decoration: none;
+  transition: color .15s;
+}
+.footer-col-links a:hover { color: var(--maroon); }
+
+.footer-sub {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: .75rem; align-items: center;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .footer-sub { flex-direction: row; justify-content: space-between; }
+}
+.footer-legal { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; justify-content: center; }
+.footer-legal a { font-size: .8125rem; color: #777; text-decoration: none; }
+.footer-legal a:hover { color: var(--maroon); }
+.footer-brand {
+  font-size: 1rem; font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--dark);
+}
+.footer-brand span { color: var(--red); }
+
+/* ── Sticky Mobile CTA ── */
+.sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+  background: rgba(255,255,255,.97); backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border);
+  padding: .75rem 1rem;
+  box-shadow: 0 -4px 16px rgba(0,0,0,.08);
+  display: none;
+}
+.sticky-cta.visible { display: block; }
+@media (min-width: 640px) { .sticky-cta { display: none !important; } }
+
+/* ── Placeholder (Bilder noch nicht vorhanden) ── */
+.img-placeholder {
+  background: var(--bg-light); border: 2px dashed var(--border);
+  border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; flex-direction: column; gap: .5rem;
+  color: var(--muted); text-align: center; padding: 2rem;
+  min-height: 200px;
+}
+.img-placeholder svg { width: 3rem; height: 3rem; stroke: var(--border); }
+.img-placeholder p { font-size: .75rem; }
+
+/* ── Spinner ── */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner {
+  display: inline-block; width: 1.125rem; height: 1.125rem;
+  border: 2px solid rgba(255,255,255,.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
