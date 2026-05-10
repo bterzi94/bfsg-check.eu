@@ -407,6 +407,8 @@ h4 { font-size: 1rem; font-weight: 700; }
 .section-teal   { background: var(--bg-teal); }
 .section-rose   { background: var(--bg-rose); }
 .section-cream  { background: var(--bg-cream); }
+.section-sand   { background: var(--bg-sand); }
+.section-peach  { background: var(--bg-peach); }
 
 .section-dark h2 { color: #fff; }
 .section-dark p  { color: #ccc; }
