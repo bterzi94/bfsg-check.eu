@@ -228,6 +228,10 @@ body { padding-top: var(--header-height); }
 }
 .nav-logo span { color: var(--red); }
 
+.nav-actions {
+  display: flex; align-items: center; gap: .25rem;
+}
+
 /* ERGO-style nav icon+label buttons */
 .nav-btn {
   display: inline-flex; align-items: center; gap: .375rem;
