@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>BFSG Check: Website kostenlos prüfen lassen | Bericht in 24h</title>
+  <meta name="description" content="Trag deine Website ein und erhalte innerhalb von 24 Stunden einen Experten-Bericht zur BFSG-Konformität — inklusive Checkliste, was noch zu tun ist. Kostenlos.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bfsg-check.eu/">
+  <link rel="alternate" hreflang="de" href="https://bfsg-check.eu/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bfsg-check.eu/">
+  <meta property="og:title" content="BFSG Check: Website kostenlos prüfen lassen | Bericht in 24h">
+  <meta property="og:description" content="Trag deine Website ein und erhalte innerhalb von 24 Stunden einen Experten-Bericht zur BFSG-Konformität — inklusive Checkliste.">
+  <meta property="og:locale" content="de_DE">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BFSG Check: Website kostenlos prüfen lassen | Bericht in 24h">
+  <meta name="twitter:description" content="Trag deine Website ein und erhalte in 24 Stunden einen Experten-Bericht zur BFSG-Konformität. Kostenlos.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BFSG-Check",
+      "url": "https://bfsg-check.eu",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@bfsg-check.eu",
+        "contactType": "customer service",
+        "availableLanguage": "German"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "BFSG-Check",
+      "url": "https://bfsg-check.eu"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "BFSG Check",
+      "description": "Kostenlose Experten-Prüfung deiner Website auf Konformität mit dem Barrierefreiheitsstärkungsgesetz (BFSG) nach WCAG 2.1 AA.",
+      "url": "https://bfsg-check.eu",
+      "serviceType": "Accessibility Audit",
+      "areaServed": { "@type": "Country", "name": "Germany" },
+      "provider": { "@type": "Organization", "name": "BFSG-Check", "url": "https://bfsg-check.eu" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ist der Check wirklich kostenlos?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja, der BFSG Check ist vollständig kostenlos. Du trägst deine Domain und E-Mail-Adresse ein — wir prüfen deine Website manuell und schicken dir den Bericht ohne Kosten." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie schnell bekomme ich den Bericht?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In der Regel innerhalb von 24 Stunden. Bei größeren Websites kann es ausnahmsweise bis zu 48 Stunden dauern." }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet die anschließende Umsetzung?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Das hängt vom Umfang der Anpassungen ab. Nach dem Bericht kannst du ein unverbindliches Angebot für die BFSG-konforme Überarbeitung anfragen. Festpreis und klare Timeline sind Standard." }
+        },
+        {
+          "@type": "Question",
+          "name": "Was, wenn meine Website mehrere Domains hat?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Trag für jede Domain eine separate Anfrage ein. Jede Domain wird einzeln geprüft und bekommt ihren eigenen Bericht." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist die Prüfung rechtsverbindlich?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nein. Unser Bericht ist eine fachkundige Experteneinschätzung, ersetzt aber keine Rechtsberatung. Er zeigt dir genau, wo Handlungsbedarf besteht." }
+        },
+        {
+          "@type": "Question",
+          "name": "Was, wenn ich Kleinstunternehmer bin?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Kleinstunternehmen mit weniger als 10 Mitarbeitenden und weniger als 2 Mio. € Jahresumsatz sind vom BFSG ausgenommen. Wenn du unsicher bist, lohnt sich trotzdem ein Check zur eigenen Sicherheit." }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Daten speichert ihr von mir?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Wir speichern deine E-Mail-Adresse und die geprüfte Domain, um dir den Bericht zu schicken. Keine Datenweitergabe an Dritte." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie unterscheidet sich euer Check von Tools wie WAVE oder Lighthouse?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Automatisierte Tools erkennen nur etwa 30–40 % der WCAG-Anforderungen. Wir prüfen manuell und decken auch kontextuelle Probleme auf, die kein Tool findet." }
+        },
+        {
+          "@type": "Question",
+          "name": "Gilt das BFSG auch für bestehende Websites?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Das BFSG gilt unabhängig davon, wann deine Website erstellt wurde. Stichtag war der 28. Juni 2025." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo platziere ich die Barrierefreiheitserklärung auf der Website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Die Barrierefreiheitserklärung muss gut auffindbar sein — typischerweise im Footer. Sie dokumentiert, welche WCAG-Kriterien erfüllt sind und wo noch Lücken bestehen." }
+        },
+        {
+          "@type": "Question",
+          "name": "Wer überprüft die Einhaltung des BFSG?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Die Marktüberwachungsbehörden der einzelnen Bundesländer sind zuständig. Zusätzlich haben Wettbewerber und Verbraucherverbände Abmahnrechte nach dem UWG." }
+        },
+        {
+          "@type": "Question",
+          "name": "Brauche ich einen externen Bevollmächtigten für Barrierefreiheit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Bei bestimmten Produktkategorien und ab einer bestimmten Unternehmensgröße sieht das BFSG die Benennung eines Bevollmächtigten vor. Ob das für dich gilt, klärt ein Anwalt." }
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<!-- ═══════════════════════════════ NAVIGATION ═══════════════════════════════ -->
+<nav class="site-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="container">
+    <a href="/" class="nav-logo" aria-label="BFSG-Check Startseite">
+      <span class="nav-logo-name">BFSG<span>-</span>Check</span>
+      <span class="nav-logo-claim">Website kostenlos prüfen lassen</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#ablauf">So funktioniert's</a></li>
+      <li><a href="#betroffen">Betroffen?</a></li>
+      <li><a href="#bericht">Dein Bericht</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="mailto:info@bfsg-check.eu" class="nav-icon-btn" aria-label="Per E-Mail kontaktieren">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+        </svg>
+        Kontakt
+      </a>
+      <a href="#hero-form" class="nav-cta-mobile">Kostenlos prüfen</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ═══════════════════════ S1: HERO ═══════════════════════ -->
+  <section class="hero" id="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="hero-inner">
+
+        <!-- Left: Content -->
+        <div class="hero-content">
+          <span class="label">Kostenloser BFSG-Check</span>
+          <h1 id="hero-heading">BFSG Check: Ist deine Website rechtskonform?</h1>
+          <p class="hero-sub">Trag deine URL ein und erhalte in 24 Stunden einen Experten-Bericht — inklusive Checkliste, was noch zu tun ist.</p>
+          <ul class="hero-checks" role="list">
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Kostenlos · Keine Anmeldung
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Manuelle Experten-Prüfung
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              DSGVO-konform · Bericht in 24h
+            </li>
+          </ul>
+          <p style="margin-top:1.75rem;font-size:.875rem;color:var(--muted)">
+            Du brauchst keinen Check, sondern direkte Umsetzung?<br>
+            <a href="#service-cta" style="color:var(--maroon);font-weight:600;text-decoration:underline;text-underline-offset:2px">→ BFSG-Service buchen</a>
+          </p>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="form-card" id="hero-form" role="form" aria-label="BFSG-Check anfordern">
+          <p class="form-card-title">Kostenlosen Bericht anfordern</p>
+          <p class="form-card-sub">Nur URL + E-Mail — wir kümmern uns um den Rest.</p>
+
+          <div class="form-success" id="hero-success" role="alert">
+            <strong>Anfrage eingegangen!</strong><br>
+            Wir melden uns innerhalb von 24 Stunden mit deinem Bericht.
+          </div>
+          <div class="form-error" id="hero-error" role="alert">Bitte prüfe deine Angaben und versuche es erneut.</div>
+
+          <!-- PLACEHOLDER: Backend-Endpunkt /api/check-request oder Formspree -->
+          <form id="form-hero" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Neue BFSG-Check-Anfrage">
+            <div class="field">
+              <label for="hero-url">Deine Website-URL <span aria-hidden="true">*</span></label>
+              <input type="url" id="hero-url" name="url" placeholder="https://www.deine-website.de" required autocomplete="url">
+              <span class="field-error" id="hero-url-err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="hero-email">Deine E-Mail-Adresse <span aria-hidden="true">*</span></label>
+              <input type="email" id="hero-email" name="email" placeholder="du@beispiel.de" required autocomplete="email">
+              <span class="field-error" id="hero-email-err" role="alert"></span>
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="hero-privacy" name="privacy" required>
+              <label for="hero-privacy">Ich habe die <a href="pages/datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung zu.</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="hero-submit">
+              <span class="btn-text">Kostenlosen Bericht anfordern</span>
+              <span class="spinner" aria-hidden="true" hidden></span>
+            </button>
+            <p style="font-size:.75rem;color:var(--muted);margin-top:.75rem;text-align:center;">Kostenlos · Keine Anmeldung · DSGVO-konform</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S2: ABLAUF ═══════════════════════ -->
+  <section class="section-white section-pad" id="ablauf" aria-labelledby="ablauf-heading">
+    <div class="container">
+      <span class="label">In 3 Schritten</span>
+      <h2 id="ablauf-heading">So läuft dein BFSG Check ab</h2>
+      <div class="tile-grid-3" role="list">
+
+        <article class="tile" role="listitem">
+          <div class="tile__icon" aria-hidden="true">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--maroon)">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/>
+            </svg>
+          </div>
+          <h3 class="tile__title">1. Domain eintragen</h3>
+          <p class="tile__text">Du gibst deine Website-Adresse und E-Mail an. Mehr nicht. Kein Passwort, kein Zugang zu deiner Website nötig.</p>
+        </article>
+
+        <article class="tile" data-color="#fef6d2" role="listitem">
+          <div class="tile__icon" aria-hidden="true">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--maroon)">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+            </svg>
+          </div>
+          <h3 class="tile__title">2. Experten prüfen</h3>
+          <p class="tile__text">Unser Team prüft deine Seite manuell auf BFSG-Konformität nach WCAG 2.1 AA — kein automatisierter Scan-Report.</p>
+        </article>
+
+        <article class="tile" role="listitem">
+          <div class="tile__icon" aria-hidden="true">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--maroon)">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+            </svg>
+          </div>
+          <h3 class="tile__title">3. Bericht in 24h</h3>
+          <p class="tile__text">Du erhältst einen detaillierten Bericht plus Checkliste der offenen Punkte — direkt per E-Mail, als PDF.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S3: URGENCY ═══════════════════════ -->
+  <section class="section-dark section-pad" id="dringlichkeit" aria-labelledby="urgency-heading">
+    <div class="container">
+      <span class="label" style="color:rgba(255,255,255,.45)">Handlungsbedarf</span>
+      <h2 id="urgency-heading">Seit dem 28. Juni 2025 gilt das BFSG — und die Risiken sind real</h2>
+      <div class="urgency-grid" role="list">
+
+        <article class="urgency-tile" role="listitem">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
+          </svg>
+          <h3>Bußgelder bis 100.000 €</h3>
+          <p>§ 36 BFSG ermöglicht Marktüberwachungsbehörden, bei nachgewiesenen Verstößen empfindliche Geldbußen zu verhängen.</p>
+        </article>
+
+        <article class="urgency-tile" role="listitem">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <h3>Abmahn-Risiko (UWG)</h3>
+          <p>Wettbewerber und Verbände können fehlende Barrierefreiheit als Wettbewerbsverstoß werten und kostenpflichtig abmahnen.</p>
+        </article>
+
+        <article class="urgency-tile" role="listitem">
+          <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <h3>Behörden prüfen aktiv</h3>
+          <p>Marktüberwachungsbehörden führen eigenständige Prüfungen durch — nicht nur auf Beschwerde. Das Risiko steigt monatlich.</p>
+        </article>
+
+      </div>
+      <p class="urgency-note">Viele Websites sind noch nicht BFSG-konform. Der Druck wächst: Verbände sensibilisieren Verbraucher, Behörden richten Prüf-Stellen ein, erste Abmahnungen wurden bereits ausgesprochen. Wer jetzt handelt, ist auf der sicheren Seite.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S4: BETROFFEN ═══════════════════════ -->
+  <section class="section-light section-pad" id="betroffen" aria-labelledby="betroffen-heading">
+    <div class="container">
+      <span class="label">Betroffenheit prüfen</span>
+      <h2 id="betroffen-heading">Wer ist vom BFSG betroffen?</h2>
+      <p style="margin-top:.625rem;max-width:56ch;color:#555;font-size:1.0625rem;line-height:1.7">Das BFSG gilt für Unternehmen, die digitale Produkte oder Dienstleistungen an Verbraucher anbieten (B2C) — und dabei bestimmte Schwellenwerte überschreiten.</p>
+
+      <div class="affected-wrap table-scroll" style="margin-top:2rem" role="region" aria-label="Betroffenheitstabelle BFSG">
+        <table class="affected-table">
+          <thead>
+            <tr>
+              <th scope="col">Betroffen</th>
+              <th scope="col">Nicht oder bedingt betroffen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="dot dot-red" aria-hidden="true"></span>Online-Shops (B2C)</td>
+              <td><span class="dot dot-grey" aria-hidden="true"></span>Reine B2B-Angebote</td>
+            </tr>
+            <tr>
+              <td><span class="dot dot-red" aria-hidden="true"></span>Banking &amp; Finanzdienstleistungen</td>
+              <td><span class="dot dot-grey" aria-hidden="true"></span>Kleinstunternehmen (&lt;10 MA, &lt;2 Mio. €)</td>
+            </tr>
+            <tr>
+              <td><span class="dot dot-red" aria-hidden="true"></span>E-Books &amp; digitale Medien</td>
+              <td><span class="dot dot-grey" aria-hidden="true"></span>Reine Info-Websites ohne Transaktion</td>
+            </tr>
+            <tr>
+              <td><span class="dot dot-red" aria-hidden="true"></span>Personenbeförderung</td>
+              <td><span class="dot dot-grey" aria-hidden="true"></span>Öffentliche Stellen (BITV 2.0 statt BFSG)</td>
+            </tr>
+            <tr>
+              <td><span class="dot dot-red" aria-hidden="true"></span>Telekommunikationsdienste</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:1.25rem;font-size:.9375rem;color:#555">
+        Unsicher? Genau dafür gibt es den Check.
+      </p>
+      <div style="margin-top:1.25rem">
+        <a href="#hero-form" class="btn btn-primary">Jetzt prüfen lassen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S5: WAS WIR PRÜFEN ═══════════════════════ -->
+  <section class="section-white section-pad" id="pruefbereiche" aria-labelledby="pruefen-heading">
+    <div class="container">
+      <span class="label">POUR-Prinzipien nach WCAG 2.1</span>
+      <h2 id="pruefen-heading">Das prüfen wir in deinem BFSG-Bericht</h2>
+      <div class="tile-grid-4" role="list">
+
+        <article class="tile" data-color="#ccecef" role="listitem">
+          <div class="tile__icon" aria-hidden="true">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--maroon)">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="tile__title">Wahrnehmbar</h3>
+          <p class="tile__text">Kontraste, Alt-Texte, Bildunterschriften, Untertitel für Videos und Audiodeskriptionen.</p>
+        </article>
+
+        <article class="tile" data-color="#fef6d2" role="listitem">
+          <div class="tile__icon" aria-hidden="true">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--maroon)">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"/>
+            </svg>
+          </div>
+          <h3 class="tile__title">Bedienbar</h3>
+          <p class="tile__text">Tastaturnavigation, sichtbare Fokus-Indikatoren, Zeitlimits, Skip-Links und ausreichend große Touch-Targets.</p>
+        </article>
+
+        <article class="tile" data-color="#f5e1eb" role="listitem">
+          <div class="tile__icon" aria-hidden="true">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--maroon)">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+            </svg>
+          </div>
+          <h3 class="tile__title">Verständlich</h3>
+          <p class="tile__text">Sprache, Lesbarkeit, konsistente Navigation, aussagekräftige Fehlermeldungen und Formular-Labels.</p>
+        </article>
+
+        <article class="tile" data-color="#d3ebe5" role="listitem">
+          <div class="tile__icon" aria-hidden="true">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--maroon)">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"/>
+            </svg>
+          </div>
+          <h3 class="tile__title">Robust</h3>
+          <p class="tile__text">Screenreader-Kompatibilität, ARIA-Labels, valides HTML und Kompatibilität mit assistiven Technologien.</p>
+        </article>
+
+      </div>
+      <p style="margin-top:1.75rem;font-size:.875rem;color:var(--muted)">Geprüft nach WCAG 2.1 Level AA — dem Standard, den das BFSG vorschreibt.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S6: DELIVERABLE ═══════════════════════ -->
+  <section class="section-light section-pad" id="bericht" aria-labelledby="bericht-heading">
+    <div class="container">
+      <div class="split">
+
+        <!-- PLACEHOLDER: Bericht-Mockup-Bild. Hier echtes PDF-Mockup als <img> einsetzen. -->
+        <div class="img-placeholder" role="img" aria-label="Vorschau des BFSG-Prüfberichts" style="min-height:380px;order:2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" aria-hidden="true" style="width:3.5rem;height:3.5rem;stroke:var(--border)">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+          </svg>
+          <p>Bericht-Mockup folgt</p>
+        </div>
+
+        <div style="order:1">
+          <span class="label">Was du bekommst</span>
+          <h2 id="bericht-heading">Dein Bericht — konkret und umsetzbar</h2>
+          <p style="margin-top:.875rem;color:#555;font-size:1.0625rem;max-width:48ch;line-height:1.7">Kein generischer Scan-Export. Wir prüfen manuell und liefern dir ein Dokument, mit dem du sofort weiterarbeiten kannst.</p>
+          <ul class="check-list" style="margin-top:1.75rem">
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Konformitäts-Status nach WCAG 2.1 AA
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Konkrete Liste aller gefundenen Probleme
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Priorisierung: kritisch / mittel / nice-to-have
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Checkliste mit konkreten Handlungsempfehlungen
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Einordnung deines rechtlichen Handlungsbedarfs
+            </li>
+          </ul>
+          <div style="margin-top:2rem">
+            <a href="#hero-form" class="btn btn-primary">Jetzt Bericht anfordern</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S7: ÜBER UNS ═══════════════════════ -->
+  <section class="section-white section-pad" id="team" aria-labelledby="team-heading">
+    <div class="container">
+      <div class="split split-reverse">
+
+        <div>
+          <span class="label">Wer prüft deine Website?</span>
+          <h2 id="team-heading">Manuelle Prüfung statt Scan-Report</h2>
+          <!-- PLACEHOLDER: Name des Freelancers einsetzen -->
+          <p style="margin-top:.875rem;color:#555;font-size:1.0625rem;max-width:48ch;line-height:1.7">Ich bin <strong>[Dein Name]</strong>, seit 12 Jahren Webdesigner. Mein Team und ich prüfen jede Seite manuell — keine automatisierten Tool-Reports, die dir nur die Hälfte des Problems zeigen.</p>
+          <ul class="check-list" style="margin-top:1.75rem">
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              Manuelle Experten-Prüfung statt automatisierter Scan
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              12 Jahre Erfahrung im Webdesign
+            </li>
+            <li>
+              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              DSGVO-konform, keine Datenweitergabe
+            </li>
+          </ul>
+        </div>
+
+        <!-- PLACEHOLDER: Hier ein echtes Foto als <img src="images/foto.jpg" alt="[Dein Name], Webdesigner"> einsetzen -->
+        <div class="about-photo" role="img" aria-label="Foto des Experten — folgt">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+          </svg>
+          <p>Foto folgt</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S8: SECONDARY CTA ═══════════════════════ -->
+  <section class="section-cream section-pad" id="service-cta" aria-labelledby="service-cta-heading">
+    <div class="container" style="text-align:center;max-width:680px">
+      <span class="label">Direkte Umsetzung</span>
+      <h2 id="service-cta-heading">Du weißt schon, dass deine Seite nicht konform ist?</h2>
+      <p style="margin-top:1rem;color:#555;font-size:1.0625rem;line-height:1.7">Wenn dir klar ist, dass du Handlungsbedarf hast und du direkt eine Lösung suchst — ich übernehme die komplette BFSG-konforme Überarbeitung deiner Website. Festpreis, klare Timeline.</p>
+      <div style="margin-top:2rem">
+        <!-- PLACEHOLDER: Calendly-Link einsetzen -->
+        <a href="https://calendly.com/YOUR_CALENDLY_LINK" class="btn btn-primary btn-lg" rel="noopener">BFSG-Umsetzung anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ WISSENS-BEREICH TRENNER ═══════════════════════ -->
+  <div class="container">
+    <div class="knowledge-sep" id="wissen" aria-hidden="true">
+      <div class="knowledge-sep-inner">
+        <span class="knowledge-sep-label">Hintergrundwissen</span>
+        <span class="knowledge-sep-title">Mehr zum BFSG</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Intro-Block Wissens-Bereich -->
+  <section class="section-light" style="padding:1.5rem 0 2.5rem">
+    <div class="container" style="max-width:720px">
+      <p style="font-size:1.0625rem;color:#555;line-height:1.75">Du willst tiefer einsteigen, bevor du den Check machst? Hier findest du die wichtigsten Hintergründe zum Barrierefreiheitsstärkungsgesetz — verständlich erklärt, ohne Juristendeutsch.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S9: BFSG ERKLÄRT ═══════════════════════ -->
+  <section class="section-white section-pad" id="bfsg-erklaert" aria-labelledby="bfsg-heading">
+    <div class="container" style="max-width:800px">
+      <span class="label">Das Gesetz</span>
+      <h2 id="bfsg-heading">Das Barrierefreiheitsstärkungsgesetz auf einen Blick</h2>
+
+      <p style="margin-top:1.5rem;color:#333;font-size:1.0625rem;line-height:1.8">Das BFSG ist die deutsche Umsetzung des <strong>European Accessibility Act (EAA)</strong> — einer EU-Richtlinie, die digitale Barrierefreiheit europaweit verbindlich macht. Ziel: Produkte und Dienstleistungen sollen für alle Menschen zugänglich sein, unabhängig von Einschränkungen.</p>
+
+      <p style="margin-top:1.25rem;color:#333;font-size:1.0625rem;line-height:1.8">Der Stichtag war der <strong>28. Juni 2025</strong>. Ab diesem Datum gilt das Gesetz für alle relevanten Unternehmen — ohne pauschale Übergangsfristen für bestehende Angebote. Wer seitdem nicht konform ist, riskiert Bußgelder und Abmahnungen.</p>
+
+      <p style="margin-top:1.25rem;color:#333;font-size:1.0625rem;line-height:1.8">Das BFSG betrifft Unternehmen, die Produkte oder Dienstleistungen an <strong>Verbraucher</strong> (§ 13 BGB) anbieten. Ausgenommen sind Kleinstunternehmen mit weniger als 10 Beschäftigten und weniger als 2 Mio. € Jahresumsatz. Reine B2B-Anbieter sind ebenfalls ausgenommen.</p>
+
+      <p style="margin-top:1.25rem;color:#333;font-size:1.0625rem;line-height:1.8">Das Gesetz zielt auf <strong>digitale Teilhabe</strong>: In Deutschland leben rund 13 Millionen Menschen mit einer Behinderung. Dazu kommt eine zunehmend ältere Bevölkerung, die von barrierefrei gestalteten Websites profitiert. Barrierefreiheit ist also nicht nur Pflicht — sie ist auch Marktchance.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S10: BFSG VS. BITV ═══════════════════════ -->
+  <section class="section-light section-pad" id="bfsg-vs-bitv" aria-labelledby="bitv-heading">
+    <div class="container" style="max-width:800px">
+      <span class="label">Vergleich</span>
+      <h2 id="bitv-heading">BFSG vs. BITV 2.0 — Was ist der Unterschied?</h2>
+
+      <div class="affected-wrap table-scroll" style="margin-top:2rem" role="region" aria-label="Vergleich BFSG und BITV 2.0">
+        <table class="affected-table">
+          <thead>
+            <tr>
+              <th scope="col" style="width:40%">Merkmal</th>
+              <th scope="col">BFSG</th>
+              <th scope="col">BITV 2.0</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" style="font-weight:600;background:#fff">Wer ist betroffen?</th>
+              <td>Private Wirtschaft (B2C)</td>
+              <td>Öffentliche Stellen</td>
+            </tr>
+            <tr>
+              <th scope="row" style="font-weight:600;background:#fff">Seit wann?</th>
+              <td>28. Juni 2025</td>
+              <td>Bereits in Kraft</td>
+            </tr>
+            <tr>
+              <th scope="row" style="font-weight:600;background:#fff">Gebärdensprache?</th>
+              <td>Nicht verpflichtend</td>
+              <td>Verpflichtend</td>
+            </tr>
+            <tr>
+              <th scope="row" style="font-weight:600;background:#fff">Leichte Sprache?</th>
+              <td>Nicht verpflichtend</td>
+              <td>Verpflichtend</td>
+            </tr>
+            <tr>
+              <th scope="row" style="font-weight:600;background:#fff">Technischer Standard</th>
+              <td>WCAG 2.1 AA</td>
+              <td>WCAG 2.1 AA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top:1.5rem;color:#555;font-size:1rem;line-height:1.75">Kurz gesagt: Die BITV 2.0 gilt für Behörden und öffentliche Stellen — und ist strenger. Das BFSG richtet sich an private Unternehmen mit B2C-Angeboten und setzt denselben technischen Standard (WCAG 2.1 AA) an, verzichtet aber auf zusätzliche Anforderungen wie Gebärdensprache oder Leichte Sprache.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S11: WAS BFSG NICHT REGELT ═══════════════════════ -->
+  <section class="section-white section-pad" id="bfsg-nicht-geregelt" aria-labelledby="nicht-geregelt-heading">
+    <div class="container" style="max-width:800px">
+      <span class="label">Wichtig zu wissen</span>
+      <h2 id="nicht-geregelt-heading">Was das BFSG nicht regelt — und was trotzdem wichtig sein kann</h2>
+
+      <div style="margin-top:2rem;display:flex;flex-direction:column;gap:2rem">
+
+        <div>
+          <h3 style="font-size:1.0625rem;font-weight:700;color:var(--maroon);margin-bottom:.5rem">Gebärdensprache (DGS)</h3>
+          <p style="color:#555;font-size:1rem;line-height:1.75">Im BFSG ist Gebärdensprache freiwillig — in der BITV Pflicht für öffentliche Stellen. Für dich bedeutet das: Es gibt keine gesetzliche Pflicht. Dennoch erreichst du mit DGS-Videos eine Zielgruppe, die schriftliche Sprache oft als Zweitsprache empfindet. Ein klarer Mehrwert, kein Muss.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size:1.0625rem;font-weight:700;color:var(--maroon);margin-bottom:.5rem">Leichte Sprache</h3>
+          <p style="color:#555;font-size:1rem;line-height:1.75">Auch Leichte Sprache ist im BFSG nicht verpflichtend. Sinnvoll ist sie trotzdem — für Menschen mit kognitiven Einschränkungen, aber auch für alle anderen. Kurze Sätze, klare Struktur und einfache Worte helfen jedem.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size:1.0625rem;font-weight:700;color:var(--maroon);margin-bottom:.5rem">KI-Tools für Barrierefreiheit</h3>
+          <p style="color:#555;font-size:1rem;line-height:1.75">ChatGPT, Gemini und ähnliche Tools können helfen, Alt-Texte zu generieren oder Texte in Leichte Sprache zu übersetzen. Sie ersetzen aber keine manuelle Prüfung. KI-generierte Alt-Texte sind oft zu generisch und verfehlen den inhaltlichen Kontext — was wiederum zu WCAG-Verstößen führt.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size:1.0625rem;font-weight:700;color:var(--maroon);margin-bottom:.5rem">Fördermittel und staatliche Unterstützung</h3>
+          <p style="color:#555;font-size:1rem;line-height:1.75">Für kleine und mittlere Unternehmen gibt es vereinzelt Förderprogramme für Digitalisierungsmaßnahmen, unter die auch Barrierefreiheit fallen kann. Das BFSG selbst regelt das nicht — aber ein Blick auf go-digital oder regionale Förderprogramme lohnt sich.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S12: FAQ ═══════════════════════ -->
+  <section class="section-light section-pad" id="faq" aria-labelledby="faq-heading">
+    <div class="container" style="max-width:780px">
+      <span class="label">Häufige Fragen</span>
+      <h2 id="faq-heading">Häufige Fragen zum BFSG Check</h2>
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>Ist der Check wirklich kostenlos?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Ja, vollständig. Du trägst deine Domain und E-Mail ein — wir prüfen manuell und schicken dir den Bericht ohne Kosten und ohne Hintergedanken. Kein Abo, keine versteckten Gebühren.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie schnell bekomme ich den Bericht?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>In der Regel innerhalb von 24 Stunden nach Eingang deiner Anfrage. Bei sehr großen Websites oder komplexen Webanwendungen kann es bis zu 48 Stunden dauern — du wirst vorab per E-Mail informiert.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was kostet die anschließende Umsetzung?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Das hängt vom Umfang der nötigen Anpassungen ab. Nach Erhalt des Berichts kannst du ein unverbindliches Angebot für die BFSG-konforme Überarbeitung anfragen. Festpreis und klare Timeline sind Standard — keine bösen Überraschungen.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was, wenn meine Website mehrere Domains hat?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Trag für jede Domain eine separate Anfrage ein. Jede wird einzeln geprüft und bekommt ihren eigenen Bericht. Wenn du mehrere Domains gleichzeitig prüfen lassen willst, schreib uns kurz an — wir finden eine Lösung.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Ist die Prüfung rechtsverbindlich?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Nein. Unser Bericht ist eine fachkundige Experteneinschätzung — er ersetzt keine Rechtsberatung. Er zeigt dir genau, wo Handlungsbedarf besteht. Für rechtliche Verbindlichkeit wende dich an einen spezialisierten Anwalt.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Was, wenn ich Kleinstunternehmer bin?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Kleinstunternehmen mit weniger als 10 Mitarbeitenden und weniger als 2 Mio. € Jahresumsatz sind vom BFSG ausgenommen. Wenn du unsicher bist, ob du darunter fällst, lohnt sich trotzdem ein Check — zur eigenen Sicherheit und als Qualitätsmerkmal.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Welche Daten speichert ihr von mir?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Wir speichern deine E-Mail-Adresse und die geprüfte Domain — ausschließlich um dir den Bericht zu schicken. Keine Datenweitergabe an Dritte. Alle Details findest du in unserer <a href="pages/datenschutz.html">Datenschutzerklärung</a>.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wie unterscheidet sich euer Check von Tools wie WAVE oder Lighthouse?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Automatisierte Tools wie WAVE oder Lighthouse erkennen nur etwa 30–40 % der WCAG-Anforderungen. Sie sehen kein fehlendes Fokus-Management, keine logisch falsche Lesereihenfolge und keine sinnlosen Alt-Texte. Wir prüfen manuell und finden auch das, was kein Tool findet.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Gilt das BFSG auch für bestehende Websites?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Ja. Das BFSG gilt unabhängig davon, wann deine Website erstellt wurde. Der Stichtag 28. Juni 2025 betrifft alle bestehenden und neuen Angebote. Es gibt keine „Bestandsschutz"-Regelung für ältere Websites.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wo platziere ich die Barrierefreiheitserklärung auf meiner Website?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Die Barrierefreiheitserklärung (auch „Accessibility Statement") muss gut auffindbar sein — typischerweise im Footer, neben Impressum und Datenschutz. Sie dokumentiert, welche WCAG-Kriterien erfüllt sind, wo noch Lücken bestehen und wie Nutzer Probleme melden können.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Wer überprüft die Einhaltung des BFSG?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Die Marktüberwachungsbehörden der einzelnen Bundesländer sind zuständig. Sie können auf Beschwerde hin aktiv werden — oder auch anlasslos Prüfungen durchführen. Zusätzlich haben Wettbewerber und Verbraucherverbände Abmahnrechte nach dem UWG.</p></div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Brauche ich einen externen Bevollmächtigten für Barrierefreiheit?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="faq-answer"><p>Bei bestimmten Produktkategorien und ab einer bestimmten Unternehmensgröße sieht das BFSG vor, dass ein Bevollmächtigter benannt werden muss. Ob das für dich zutrifft, klärt ein spezialisierter Anwalt. Im Zweifel: erst den Check machen, dann weiterplanen.</p></div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ S13: FINAL CTA ═══════════════════════ -->
+  <section class="section-dark section-pad cta-section" id="final-cta" aria-labelledby="final-cta-heading">
+    <div class="container">
+      <span class="label" style="color:rgba(255,255,255,.45)">Jetzt handeln</span>
+      <h2 id="final-cta-heading">Bereit, Klarheit zu bekommen?</h2>
+      <p class="sub">24 Stunden später weißt du genau, wo du stehst.</p>
+      <div class="cta-form-wrap">
+        <div class="form-success" id="final-success" role="alert">
+          <strong>Danke!</strong> Dein Bericht ist in 24 Stunden bei dir.
+        </div>
+        <div class="form-error" id="final-error" role="alert">Bitte prüfe deine Angaben.</div>
+        <!-- PLACEHOLDER: Backend-Endpunkt /api/check-request oder Formspree -->
+        <form id="form-final" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="BFSG-Check Anfrage (Footer CTA)">
+          <div class="field">
+            <label for="final-url">Website-URL</label>
+            <input type="url" id="final-url" name="url" placeholder="https://www.deine-website.de" required autocomplete="url">
+          </div>
+          <div class="field">
+            <label for="final-email">E-Mail-Adresse</label>
+            <input type="email" id="final-email" name="email" placeholder="du@beispiel.de" required autocomplete="email">
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="final-privacy" name="privacy" required>
+            <label for="final-privacy" style="color:#555">Ich stimme der <a href="pages/datenschutz.html" style="color:var(--maroon)">Datenschutzerklärung</a> zu.</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="final-submit">
+            <span class="btn-text">Kostenlosen Bericht anfordern</span>
+            <span class="spinner" aria-hidden="true" hidden></span>
+          </button>
+          <p style="font-size:.75rem;color:var(--muted);margin-top:.75rem;text-align:center;">Kostenlos · Keine Anmeldung · DSGVO-konform</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ SEO-FOOTER-BLOCK ═══════════════════════ -->
+  <section class="section-light section-pad" id="seo-footer" aria-labelledby="seo-footer-heading">
+    <div class="container" style="max-width:960px">
+      <h2 id="seo-footer-heading" style="font-size:1.25rem;margin-bottom:2.5rem">Weitere Informationen zum Barrierefreiheitsstärkungsgesetz</h2>
+      <div class="tile-grid-2" style="margin-top:0">
+
+        <div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.75rem">Rechtlicher Rahmen und Zuständigkeiten</h3>
+          <p style="font-size:.9375rem;color:#555;line-height:1.75">Das BFSG stützt sich auf § 36 BFSG für Sanktionen und die BFSGV als begleitende Verordnung. Verstöße können unter das UWG fallen, was Wettbewerbern Abmahnrechte gibt. Zuständig für die Marktüberwachung sind die Behörden der Länder. Die Konformitätserklärung, die das Gesetz vorschreibt, ist ein zentrales Dokument — sie muss dauerhaft auf der Website erreichbar sein. Übergangsbestimmungen gibt es nur in eng begrenzten Ausnahmen.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.75rem">Technische Standards: EN 301 549 und WCAG</h3>
+          <p style="font-size:.9375rem;color:#555;line-height:1.75">Die technische Referenznorm des BFSG ist die <strong>EN 301 549</strong> — ein europäischer Standard, der WCAG 2.1 für Web-Inhalte referenziert. WCAG kennt drei Konformitätsstufen: A (Basis), AA (Pflicht nach BFSG) und AAA (darüber hinaus). WCAG 2.2 ist inzwischen veröffentlicht, das BFSG referenziert aktuell noch 2.1. ARIA-Spezifikationen (Accessible Rich Internet Applications) ergänzen WCAG bei interaktiven Anwendungen.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.75rem">Welche Branchen besonders betroffen sind</h3>
+          <p style="font-size:.9375rem;color:#555;line-height:1.75">Der <strong>elektronische Geschäftsverkehr</strong> (E-Commerce) ist eine der Kernbranchen des BFSG. Ebenso betroffen: Bankdienstleistungen und Versicherungen mit Online-Portalen, Anbieter von Personenbeförderung mit digitalen Buchungssystemen, Telekommunikationsanbieter und Verlage, die E-Books vertreiben. Alle diese Branchen müssen nicht nur ihre Websites, sondern auch ihre mobilen Apps BFSG-konform gestalten.</p>
+        </div>
+
+        <div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:.75rem">Akteure und Institutionen</h3>
+          <p style="font-size:.9375rem;color:#555;line-height:1.75">Die <strong>Bundesfachstelle für Barrierefreiheit</strong> gibt Orientierung und Umsetzungshilfen. Das <strong>W3C</strong> mit seiner Web Accessibility Initiative (WAI) entwickelt WCAG und ARIA weiter. Organisationen wie die <strong>Aktion Mensch</strong> und das <strong>Bundesministerium des Innern (BMI)</strong> treiben das Thema gesellschaftlich und politisch voran. Barrierefreiheit ist Teil eines größeren Wandels: mehr digitale Teilhabe, mehr Chancengleichheit und Inklusion für alle.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <div>
+          <a href="/" class="footer-brand" aria-label="BFSG-Check Startseite">BFSG<span>-</span>Check</a>
+          <p style="margin-top:.75rem;font-size:.875rem;color:#555;line-height:1.65;max-width:24ch">Kostenlose Experten-Prüfung auf BFSG-Konformität. Bericht in 24h.</p>
+        </div>
+
+        <nav aria-label="Leistungen">
+          <p class="footer-col-title">Leistungen</p>
+          <ul class="footer-col-links" role="list">
+            <li><a href="#ablauf">Wie es funktioniert</a></li>
+            <li><a href="#bericht">Dein Bericht</a></li>
+            <li><a href="#hero-form">Check anfordern</a></li>
+            <li><a href="#service-cta">BFSG-Umsetzung</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Wissen">
+          <p class="footer-col-title">BFSG-Wissen</p>
+          <ul class="footer-col-links" role="list">
+            <li><a href="#bfsg-erklaert">BFSG erklärt</a></li>
+            <li><a href="#bfsg-vs-bitv">BFSG vs. BITV 2.0</a></li>
+            <li><a href="#betroffen">Wer ist betroffen?</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <p class="footer-col-title">Kontakt</p>
+          <ul class="footer-col-links" role="list">
+            <li><a href="mailto:info@bfsg-check.eu">info@bfsg-check.eu</a></li>
+            <!-- PLACEHOLDER: Telefonnummer einsetzen -->
+            <li><a href="tel:+4900000000000">+49 800 000 0000</a></li>
+            <li><span style="font-size:.875rem;color:#777">Mo–Fr 9–18 Uhr</span></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-sub">
+        <span style="font-size:.8125rem;color:#777">© 2025 BFSG-Check. Alle Rechte vorbehalten.</span>
+        <nav class="footer-legal" aria-label="Rechtliche Seiten">
+          <a href="pages/impressum.html">Impressum</a>
+          <a href="pages/datenschutz.html">Datenschutz</a>
+          <a href="pages/agb.html">AGB</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Zum Check-Formular">
+  <a href="#hero-form" class="btn btn-primary btn-full">Kostenlosen Bericht anfordern</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

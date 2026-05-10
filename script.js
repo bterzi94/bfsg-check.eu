@@ -55,8 +55,8 @@ function handleForm(formId, successId, errorId, submitId) {
   });
 }
 
-handleForm('hero-form', 'hero-success', 'hero-error', 'hero-submit');
-handleForm('cta-form',  'cta-success',  'cta-error',  'cta-submit');
+handleForm('form-hero',  'hero-success',  'hero-error',  'hero-submit');
+handleForm('form-final', 'final-success', 'final-error', 'final-submit');
 
 /* ── Sticky mobile CTA — appears after hero leaves viewport ── */
 (function () {

@@ -616,6 +616,30 @@ h4 { font-size: 1rem; font-weight: 700; }
 .img-placeholder svg { width: 3rem; height: 3rem; stroke: var(--border); }
 .img-placeholder p { font-size: .75rem; }
 
+/* ── Tabellen-Scroll (Mobile) ── */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* ── Wissens-Bereich Trenner ── */
+.knowledge-sep {
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: 3rem 0 2.5rem;
+}
+.knowledge-sep::before,
+.knowledge-sep::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.knowledge-sep-inner {
+  display: flex; flex-direction: column; align-items: center; gap: .375rem;
+  text-align: center; flex-shrink: 0;
+}
+.knowledge-sep-label {
+  font-size: .5625rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .16em; color: var(--muted);
+}
+.knowledge-sep-title {
+  font-size: 1rem; font-weight: 700; color: var(--dark);
+}
+
 /* ── Spinner ── */
 @keyframes spin { to { transform: rotate(360deg); } }
 .spinner {
