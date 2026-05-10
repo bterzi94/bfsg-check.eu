@@ -17,7 +17,18 @@ function handleForm(formId, successId, errorId, submitId) {
     /* basic client validation */
     let valid = true;
     form.querySelectorAll('[required]').forEach(field => {
-      if (field.type === 'checkbox' && !field.checked) { valid = false; return; }
+      if (field.type === 'checkbox') {
+        const label = form.querySelector(`label[for="${field.id}"]`);
+        if (!field.checked) {
+          valid = false;
+          field.setAttribute('aria-invalid', 'true');
+          if (label) label.classList.add('label-invalid');
+        } else {
+          field.removeAttribute('aria-invalid');
+          if (label) label.classList.remove('label-invalid');
+        }
+        return;
+      }
       if (field.value.trim() === '') { valid = false; field.setAttribute('aria-invalid', 'true'); }
       else field.removeAttribute('aria-invalid');
     });
