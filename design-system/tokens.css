@@ -7,28 +7,27 @@
 */
 
 :root {
-  /* ── Farben ── */
-  --color-accent:        #cc0033;   /* Primäre Akzentfarbe — CTAs, Links, Fokus-Ring */
-  --color-accent-dark:   #8e0038;   /* Hover-Zustand von Buttons */
-  --color-accent-bright: #ed0039;   /* ERGO Original-Rot — sparsam einsetzen */
+  /* ── Farben (ERGO Design System — korrekte Farbwerte) ── */
+  --color-accent:        #ed0039;   /* ERGO Akzentrot — Links, Fokus-Ring, kleine Elemente */
+  --color-accent-dark:   #8e0038;   /* ERGO theme-primary Dunkelmaroon — Headlines, primäre Buttons */
+  --color-accent-hover:  #bf1528;   /* Hover-Zustand von Buttons */
 
-  --color-dark:          #1e1e1e;   /* Hero-Hintergrund, Footer, dunkle Sections */
-  --color-dark-2:        #2c2c2c;   /* Sekundärer dunkler Hintergrund */
-  --color-surface:       #3c3c3c;   /* Karten auf dunklem Hintergrund */
+  --color-dark:          #333333;   /* Footer, dunkle Sections (ERGO-typisch) */
+  --color-hero-bg:       #fef6d2;   /* ERGO Crème-Hero — warmer Cremeton */
+  --color-warm-1:        #ccecef;   /* ERGO warm teal tint */
+  --color-warm-2:        #d3ebe5;   /* ERGO warm green tint */
 
   --color-bg:            #ffffff;   /* Primärer Seitenhintergrund */
   --color-light:         #f5f5f5;   /* Heller Abschnittshintergrund */
   --color-slate:         #f1f5f9;   /* Wissensbereich-Hintergrund */
-  --color-seo-bg:        #eef2f7;   /* SEO-Footer-Hintergrund */
 
-  --color-text:          #1a1a1a;   /* Primärer Text */
-  --color-text-2:        #4a4a4a;   /* Sekundärer Text, Fließtext */
+  --color-text:          #333333;   /* Primärer Text (ERGO-Dunkelgrau) */
   --color-muted:         #6a625a;   /* Gedämpfte Info-Texte (aus ERGO) */
   --color-border:        #d3d3d3;   /* Rahmen, Trennlinien (aus ERGO) */
 
   /* ── Typografie ── */
-  --font-serif:          'Fraunces', Georgia, serif;     /* Überschriften */
-  --font-sans:           'Nunito Sans', system-ui, sans-serif; /* Fließtext */
+  --font-serif:          'Playfair Display', 'Fedra Serif', Georgia, serif;     /* Überschriften (Fedra Serif Substitut) */
+  --font-sans:           'Source Sans 3', 'FS Me', system-ui, sans-serif;       /* Fließtext (FS Me Substitut) */
 
   --size-xs:    0.75rem;   /* 12px — Labels, Kleingedrucktes */
   --size-sm:    0.875rem;  /* 14px — Body Klein, Badges */

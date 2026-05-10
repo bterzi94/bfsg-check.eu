@@ -18,25 +18,25 @@ Füge am Anfang deines `<head>` ein:
 <link rel="stylesheet" href="../design-system/components.css" />
 ```
 
-## Farbpalette
+## Farbpalette (ERGO Design System)
 
 | Name | Hex | Verwendung |
 |---|---|---|
-| Akzent Rot | `#cc0033` | Buttons, Links, Fokus-Ring |
-| Akzent Dunkel | `#8e0038` | Hover-Zustand |
-| ERGO Original | `#ed0039` | Sparsam, für Brand-Highlights |
-| Dunkel | `#1e1e1e` | Hero, Footer, dunkle Bereiche |
+| Akzent Rot | `#ed0039` | Links, Fokus-Ring, kleine Elemente |
+| Dunkelmaroon | `#8e0038` | Headlines, primäre Buttons (ERGO theme-primary) |
+| Hover | `#bf1528` | Button-Hover-Zustand |
+| Crème Hero | `#fef6d2` | Hero-Bereich Hintergrund (ERGO-typisch) |
+| Dunkel | `#333333` | Footer, dunkle Sections, Primärtext |
 | Hintergrund | `#ffffff` | Standard-Seite |
 | Hell | `#f5f5f5` | Abwechselnde Sections |
 | Slate | `#f1f5f9` | Wissens-Bereich |
-| Text | `#1a1a1a` | Primärer Text |
 | Gedämpft | `#6a625a` | Sekundärer Text, Infos |
 | Rahmen | `#d3d3d3` | Karten, Trennlinien |
 
 ## Typografie
 
-- **Überschriften:** Fraunces (Google Fonts, Serif)
-- **Fließtext:** Nunito Sans (Google Fonts, Sans-Serif)
+- **Überschriften:** Playfair Display (Google Fonts, Serif) — Substitut für ERGO's Fedra Serif
+- **Fließtext:** Source Sans 3 (Google Fonts, Sans-Serif) — Substitut für ERGO's FS Me
 - **Zeilenlänge:** max. 65 Zeichen (65ch) für optimale Lesbarkeit
 
 ## Wichtig: WCAG 2.1 AA
