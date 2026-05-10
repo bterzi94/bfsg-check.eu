@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System — BFSG-Check (basiert auf ERGO)</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── Design System Page Styles ── */
+    .ds-hero {
+      background: var(--hero-bg);
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .ds-hero h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); }
+    .ds-hero p  { margin-top: .75rem; color: var(--muted); max-width: 56ch; }
+
+    .ds-section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .ds-section h2 {
+      font-size: 1.5rem; margin-bottom: 1.75rem;
+      padding-bottom: .75rem; border-bottom: 3px solid var(--red-dark);
+      display: inline-block;
+    }
+    .ds-section h3 { font-size: 1rem; font-weight: 700; color: var(--muted); margin-bottom: .75rem; }
+
+    /* Color swatches */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+    .swatch {
+      border-radius: 8px; overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .swatch-color { height: 72px; }
+    .swatch-info { padding: .75rem; background: #fff; }
+    .swatch-name { font-weight: 700; font-size: .875rem; color: var(--text); }
+    .swatch-hex  { font-family: monospace; font-size: .8125rem; color: var(--muted); }
+    .swatch-role { font-size: .75rem; color: var(--muted); margin-top: .125rem; }
+
+    /* Typography scale */
+    .type-row {
+      display: flex; align-items: baseline; gap: 1.5rem;
+      padding: .875rem 0; border-bottom: 1px solid #f0f0f0;
+    }
+    .type-label { font-family: monospace; font-size: .8125rem; color: var(--muted); min-width: 8rem; }
+
+    /* Component examples */
+    .ds-example {
+      background: #fafafa; border: 1px solid var(--border);
+      border-radius: 8px; padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .ds-example-label {
+      font-size: .75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--muted); margin-bottom: 1.25rem;
+    }
+    .ds-code {
+      background: #1e1e1e; color: #d4d4d4;
+      font-family: 'Courier New', monospace; font-size: .8125rem;
+      border-radius: 8px; padding: 1.25rem 1.5rem;
+      overflow-x: auto; line-height: 1.6;
+      margin-top: 1rem;
+    }
+    .ds-code .kw  { color: #569cd6; }
+    .ds-code .str { color: #ce9178; }
+    .ds-code .cls { color: #4ec9b0; }
+    .ds-code .val { color: #b5cea8; }
+    .ds-code .cmt { color: #6a9955; }
+
+    /* Tile grid */
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    /* Button row */
+    .btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+
+    /* Token table */
+    .token-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+    .token-table th { text-align: left; padding: .5rem 1rem; background: var(--light); font-weight: 600; }
+    .token-table td { padding: .5rem 1rem; border-top: 1px solid var(--border); }
+    .token-table code { font-family: monospace; font-size: .8125rem; color: var(--red-dark); }
+
+    /* Screenshot grid */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .screenshot-card {
+      border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .screenshot-card img { width: 100%; display: block; }
+    .screenshot-card p {
+      padding: .625rem 1rem; font-size: .8125rem;
+      color: var(--muted); background: #fff;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Nav preview */
+    .nav-preview {
+      background: #fff; border: 1px solid #d9d9d9;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 73px; padding: 0 24px;
+      border-radius: 8px;
+    }
+    .nav-preview-logo {
+      font-family: var(--serif); font-size: 1.125rem;
+      font-weight: 700; color: var(--red-dark);
+    }
+    .nav-preview-actions { display: flex; align-items: center; gap: 4px; }
+    .nav-preview-btn {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 2px; background: transparent; border: 0;
+      border-radius: 8px; padding: 8px 12px; cursor: pointer;
+      font-size: .6875rem; color: #333; transition: background .15s, color .15s;
+    }
+    .nav-preview-btn:hover { background: #fbf4f4; color: #8e0038; }
+    .nav-preview-btn svg { width: 20px; height: 20px; }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="container">
+      <a href="/" aria-label="BFSG-Check – zur Startseite" class="nav-logo">
+        BFSG<span>-Check</span>
+      </a>
+      <nav aria-label="Hauptnavigation">
+        <a href="/" class="nav-btn">← Startseite</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ══ Hero ══ -->
+    <div class="ds-hero">
+      <div class="container">
+        <p class="eyebrow">Intern</p>
+        <h1>Design System</h1>
+        <p>Alle Farben, Schriften und Komponenten von bfsg-check.eu — extrahiert aus dem ERGO Design System (<code>ergo.de</code>) via skillui + manuelle CSS-Analyse.</p>
+      </div>
+    </div>
+
+    <!-- ══ 1. ERGO Screenshots ══ -->
+    <section class="ds-section">
+      <div class="container">
+        <h2>1. ergo.de — Screenshots (via skillui)</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">7 Scroll-Frames der ERGO Homepage, automatisch von skillui aufgenommen. Basis für die Designentscheidungen.</p>
+        <div class="screenshot-grid">
+          <div class="screenshot-card">
+            <img src="../images/ergo-screenshots/homepage.png" alt="ERGO Homepage — Übersicht" />
+            <p>Vollständige Homepage (skillui)</p>
+          </div>
+          <div class="screenshot-card">
+            <img src="../images/ergo-screenshots/scroll-000.png" alt="ERGO Homepage — Scroll 0%" />
+            <p>Scroll 0% — Hero / Navigation</p>
+          </div>
+          <div class="screenshot-card">
+            <img src="../images/ergo-screenshots/scroll-017.png" alt="ERGO Homepage — Scroll 17%" />
+            <p>Scroll 17% — Produkt-Tiles</p>
+          </div>
+          <div class="screenshot-card">
+            <img src="../images/ergo-screenshots/scroll-033.png" alt="ERGO Homepage — Scroll 33%" />
+            <p>Scroll 33% — Service-Bereich</p>
+          </div>
+          <div class="screenshot-card">
+            <img src="../images/ergo-screenshots/scroll-050.png" alt="ERGO Homepage — Scroll 50%" />
+            <p>Scroll 50% — Mitte der Seite</p>
+          </div>
+          <div class="screenshot-card">
+            <img src="../images/ergo-screenshots/scroll-067.png" alt="ERGO Homepage — Scroll 67%" />
+            <p>Scroll 67% — Weiterer Inhalt</p>
+          </div>
+          <div class="screenshot-card">
+            <img src="../images/ergo-screenshots/scroll-083.png" alt="ERGO Homepage — Scroll 83%" />
+            <p>Scroll 83% — Footer-Bereich</p>
+          </div>
+          <div class="screenshot-card">
+            <img src="../images/ergo-screenshots/scroll-100.png" alt="ERGO Homepage — Scroll 100%" />
+            <p>Scroll 100% — Footer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 2. Farbpalette ══ -->
+    <section class="ds-section">
+      <div class="container">
+        <h2>2. Farbpalette</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Direkt aus dem ERGO CSS extrahiert. Alle Werte sind CSS Custom Properties in <code>style.css</code> und <code>design-system/tokens.css</code>.</p>
+
+        <h3>Primärfarben</h3>
+        <div class="color-grid" style="margin-bottom:2rem;">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#8e0038;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Dunkelmaroon</div>
+              <div class="swatch-hex">#8e0038</div>
+              <div class="swatch-role">--red-dark · Headlines, primäre Buttons</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ed0039;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">ERGO Rot</div>
+              <div class="swatch-hex">#ed0039</div>
+              <div class="swatch-role">--red · Links, Fokus-Ring, Tags</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#bf1528;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Sekundär Rot</div>
+              <div class="swatch-hex">#bf1528</div>
+              <div class="swatch-role">--red-secondary · Hover-Zustand</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#71022e;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Dunkel Rot</div>
+              <div class="swatch-hex">#71022e</div>
+              <div class="swatch-role">--theme-brand-color-dark · Tiefstes Maroon</div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Hintergründe & Oberflächen</h3>
+        <div class="color-grid" style="margin-bottom:2rem;">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#fef6d2; border-bottom:1px solid #e8e0c2;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Crème Hero</div>
+              <div class="swatch-hex">#fef6d2</div>
+              <div class="swatch-role">--hero-bg · Hero-Hintergrund</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ccecef;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Teal Tint</div>
+              <div class="swatch-hex">#ccecef</div>
+              <div class="swatch-role">--warm-1 · Tile Farbvariante</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#d3eba5;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Grün Tint</div>
+              <div class="swatch-hex">#d3ebe5</div>
+              <div class="swatch-role">--warm-2 · Tile Farbvariante</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#f5e1eb;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Rosa Tint</div>
+              <div class="swatch-hex">#f5e1eb</div>
+              <div class="swatch-role">Tile Farbvariante</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ffe0cb;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Pfirsich</div>
+              <div class="swatch-hex">#ffe0cb</div>
+              <div class="swatch-role">Tile Farbvariante</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ebe6d8;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Sand</div>
+              <div class="swatch-hex">#ebe6d8</div>
+              <div class="swatch-role">Tile Farbvariante</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#f5f5f5; border-bottom:1px solid #e0e0e0;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Hell Grau</div>
+              <div class="swatch-hex">#f5f5f5</div>
+              <div class="swatch-role">--light · Abwechselnde Sections</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ffffff; border-bottom:1px solid #eee;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Weiß</div>
+              <div class="swatch-hex">#ffffff</div>
+              <div class="swatch-role">--white · Standard-Hintergrund</div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Text & Rahmen</h3>
+        <div class="color-grid">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#333333;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Dunkel</div>
+              <div class="swatch-hex">#333333</div>
+              <div class="swatch-role">--dark / --text · Haupttext, Footer</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#6a625a;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Gedämpft</div>
+              <div class="swatch-hex">#6a625a</div>
+              <div class="swatch-role">--muted · Sekundärtext (aus ERGO)</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#d3d3d3;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Rahmen</div>
+              <div class="swatch-hex">#d3d3d3</div>
+              <div class="swatch-role">--border · Karten, Trennlinien</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#d9d9d9;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Header-Rahmen</div>
+              <div class="swatch-hex">#d9d9d9</div>
+              <div class="swatch-role">--border-dark · Nav border (ERGO --header-border-color)</div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#c9c5c7;"></div>
+            <div class="swatch-info">
+              <div class="swatch-name">Tile-Rahmen</div>
+              <div class="swatch-hex">#c9c5c7</div>
+              <div class="swatch-role">ERGO Tile border (--tile-border aus tile.min.css)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 3. Typografie ══ -->
+    <section class="ds-section">
+      <div class="container">
+        <h2>3. Typografie</h2>
+
+        <div style="margin-bottom:2rem;">
+          <div class="type-row">
+            <span class="type-label">h1 / clamp</span>
+            <h1 style="margin:0;">BFSG Prüfung</h1>
+          </div>
+          <div class="type-row">
+            <span class="type-label">h2 / clamp</span>
+            <h2 style="margin:0;">Website prüfen lassen</h2>
+          </div>
+          <div class="type-row">
+            <span class="type-label">h3 / 1.125rem</span>
+            <h3 style="margin:0;">Experten-Bericht in 24h</h3>
+          </div>
+          <div class="type-row">
+            <span class="type-label">body / 1rem</span>
+            <p style="margin:0;">Standard-Fließtext. Serifenlose Schrift aus dem ERGO Design System.</p>
+          </div>
+          <div class="type-row">
+            <span class="type-label">small / .875rem</span>
+            <p style="margin:0;font-size:.875rem;color:var(--muted);">Gedämpfter Hilfstext, Labels, Fußnoten.</p>
+          </div>
+          <div class="type-row">
+            <span class="type-label">eyebrow / .6875rem</span>
+            <span class="eyebrow" style="margin:0;">Kategorie-Label</span>
+          </div>
+        </div>
+
+        <div class="token-table-wrap" style="overflow-x:auto;">
+          <table class="token-table">
+            <thead>
+              <tr>
+                <th>Schrift</th><th>Google Fonts</th><th>ERGO Original</th><th>Verwendung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Playfair Display</td>
+                <td><code>family=Playfair+Display:wght@400;700</code></td>
+                <td>Fedra Serif (proprietär)</td>
+                <td>Alle Überschriften (h1–h4)</td>
+              </tr>
+              <tr>
+                <td>Source Sans 3</td>
+                <td><code>family=Source+Sans+3:wght@400;600;700</code></td>
+                <td>FS Me (proprietär)</td>
+                <td>Fließtext, Labels, Buttons</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 4. Navigation ══ -->
+    <section class="ds-section">
+      <div class="container">
+        <h2>4. Navigation</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Direkt aus <code>newNavigation.min.css</code> extrahiert.</p>
+
+        <div class="ds-example">
+          <div class="ds-example-label">Navigation Preview</div>
+          <div class="nav-preview">
+            <div class="nav-preview-logo">BFSG<span style="color:var(--red);">-Check</span></div>
+            <div class="nav-preview-actions">
+              <button class="nav-preview-btn" title="Suche">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Suche
+              </button>
+              <button class="nav-preview-btn" title="Berater">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Berater
+              </button>
+              <button class="nav-preview-btn" title="Login">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="token-table-wrap" style="overflow-x:auto;">
+          <table class="token-table">
+            <thead>
+              <tr><th>Token</th><th>Wert</th><th>Quelle</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--header-height</code></td><td>73px (mobile) / 97px (≥1152px)</td><td>newNavigation.min.css</td></tr>
+              <tr><td><code>--header-border-color</code></td><td>#d9d9d9</td><td>newNavigation.min.css</td></tr>
+              <tr><td><code>--header-button-border-radius</code></td><td>8px</td><td>newNavigation.min.css</td></tr>
+              <tr><td><code>--header-button-bg-hover</code></td><td>#fbf4f4</td><td>newNavigation.min.css</td></tr>
+              <tr><td><code>--header-button-color-hover</code></td><td>#8e0038</td><td>newNavigation.min.css</td></tr>
+              <tr><td>z-index</td><td>500</td><td>newNavigation.min.css</td></tr>
+              <tr><td>position</td><td>fixed</td><td>newNavigation.min.css</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 5. Buttons ══ -->
+    <section class="ds-section">
+      <div class="container">
+        <h2>5. Buttons</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">ERGO <code>ee_button--primary</code> aus <code>pages.min.css</code>: <code>background: #8e0038; color: #fff; border-radius: 2px; font-weight: 700</code></p>
+
+        <div class="ds-example">
+          <div class="ds-example-label">Primäre Buttons</div>
+          <div class="btn-row">
+            <a href="#" class="btn btn-primary">Primär Button</a>
+            <a href="#" class="btn btn-outline">Outline Button</a>
+            <a href="#" class="btn btn-red">Akzent Rot</a>
+          </div>
+        </div>
+
+        <div class="ds-example" style="background:var(--dark);">
+          <div class="ds-example-label" style="color:#888;">Auf dunklem Hintergrund</div>
+          <div class="btn-row">
+            <a href="#" class="btn btn-white">Weißer Button</a>
+            <a href="#" class="btn btn-outline" style="color:#fff;border-color:#fff;">Outline Weiß</a>
+          </div>
+        </div>
+
+        <div class="ds-example">
+          <div class="ds-example-label">Größen</div>
+          <div class="btn-row">
+            <a href="#" class="btn btn-primary btn-sm">Klein</a>
+            <a href="#" class="btn btn-primary">Normal</a>
+          </div>
+        </div>
+
+        <div class="ds-code">
+<span class="cmt">/* ERGO ee_button--primary — aus pages.min.css */</span>
+<span class="kw">.btn</span> {
+  border-radius: <span class="val">2px</span>;           <span class="cmt">/* ERGO: 2px, kein Pill */</span>
+  background: <span class="val">#8e0038</span>;          <span class="cmt">/* ERGO ergo-one theme */</span>
+  color: <span class="val">#fff</span>;
+  font-weight: <span class="val">700</span>;
+  padding: <span class="val">.8em 2.5em</span>;
+  border: <span class="val">1px solid</span>;
+}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 6. Tiles (cmp-tile) ══ -->
+    <section class="ds-section">
+      <div class="container">
+        <h2>6. Tiles — <code>cmp-tile</code></h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Direkt aus <code>tile.min.css</code> extrahiert. Die ERGO Kernkomponente für Content-Cards — 8px Radius, definierte Farbvarianten via <code>data-color</code>.</p>
+
+        <div class="ds-example">
+          <div class="ds-example-label">Standard Tile (weiß)</div>
+          <div class="tile-grid">
+            <div class="ergo-tile">
+              <div class="ergo-tile__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#8e0038" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <p class="ergo-tile__title">WCAG Prüfung</p>
+              <p class="ergo-tile__text">Alle WCAG 2.1 AA Kriterien werden automatisch getestet.</p>
+            </div>
+            <div class="ergo-tile">
+              <div class="ergo-tile__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#8e0038" stroke-width="2"><rect x="14" y="2" width="4" height="20"/><rect x="6" y="7" width="4" height="15"/><rect x="2" y="12" width="4" height="10"/></svg>
+              </div>
+              <p class="ergo-tile__title">Detaillierter Bericht</p>
+              <p class="ergo-tile__text">Klare Priorisierung: was muss sofort, was kann warten.</p>
+            </div>
+            <div class="ergo-tile">
+              <div class="ergo-tile__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#8e0038" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <p class="ergo-tile__title">24h Lieferzeit</p>
+              <p class="ergo-tile__text">Bericht innerhalb von 24 Stunden nach Eingang.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-example">
+          <div class="ds-example-label">Tile Farbvarianten (data-color — aus tile.min.css)</div>
+          <div class="tile-grid">
+            <div class="ergo-tile" data-color="#ccecef">
+              <p class="ergo-tile__title">Teal #ccecef</p>
+              <p class="ergo-tile__text">ERGO standard Farbvariante</p>
+            </div>
+            <div class="ergo-tile" data-color="#fef6d2">
+              <p class="ergo-tile__title">Crème #fef6d2</p>
+              <p class="ergo-tile__text">Hero-Hintergrundfarbe</p>
+            </div>
+            <div class="ergo-tile" data-color="#d3ebe5">
+              <p class="ergo-tile__title">Grün #d3eba5</p>
+              <p class="ergo-tile__text">Weiterer Warm-Ton</p>
+            </div>
+            <div class="ergo-tile" data-color="#f5e1eb">
+              <p class="ergo-tile__title">Rosa #f5e1eb</p>
+              <p class="ergo-tile__text">Weiterer Farbton</p>
+            </div>
+            <div class="ergo-tile" data-color="#ffe0cb">
+              <p class="ergo-tile__title">Pfirsich #ffe0cb</p>
+              <p class="ergo-tile__text">Weiterer Farbton</p>
+            </div>
+            <div class="ergo-tile" data-color="#ebe6d8">
+              <p class="ergo-tile__title">Sand #ebe6d8</p>
+              <p class="ergo-tile__text">Weiterer Farbton</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-code">
+<span class="cmt">/* Tile Farbvariante — aus tile.min.css */</span>
+<span class="kw">&lt;div</span> <span class="cls">class</span>=<span class="str">"ergo-tile"</span> <span class="cls">data-color</span>=<span class="str">"#ccecef"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;p</span> <span class="cls">class</span>=<span class="str">"ergo-tile__title"</span><span class="kw">&gt;</span>Titel<span class="kw">&lt;/p&gt;</span>
+  <span class="kw">&lt;p</span> <span class="cls">class</span>=<span class="str">"ergo-tile__text"</span><span class="kw">&gt;</span>Beschreibung<span class="kw">&lt;/p&gt;</span>
+<span class="kw">&lt;/div&gt;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 7. Cards (ee_card) ══ -->
+    <section class="ds-section">
+      <div class="container">
+        <h2>7. Cards — <code>ee_card</code></h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">ERGO ee_card aus <code>pages.min.css</code>: <code>border-radius: 9px; border: 1px solid #f2f2f2; box-shadow: 0 2px 11px 0 #f2f2f2</code></p>
+
+        <div class="ds-example">
+          <div class="ds-example-label">ee_card Komponente</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;">
+            <div class="ergo-card">
+              <h3 style="font-size:1.0625rem;margin-bottom:.75rem;">Basis-Prüfung</h3>
+              <p style="font-size:.9375rem;color:var(--text-2);">Automatische Prüfung der wichtigsten BFSG-Kriterien für Ihre Website.</p>
+            </div>
+            <div class="ergo-card">
+              <h3 style="font-size:1.0625rem;margin-bottom:.75rem;">Experten-Review</h3>
+              <p style="font-size:.9375rem;color:var(--text-2);">Manuelle Überprüfung durch WCAG-Experten mit schriftlichem Bericht.</p>
+            </div>
+            <div class="ergo-card">
+              <h3 style="font-size:1.0625rem;margin-bottom:.75rem;">Zertifizierung</h3>
+              <p style="font-size:.9375rem;color:var(--text-2);">Offizielle Bestätigung der BFSG-Konformität für Ihr Unternehmen.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-code">
+<span class="cmt">/* ERGO ee_card — aus pages.min.css */</span>
+<span class="kw">.ergo-card</span> {
+  border: <span class="val">1px solid #f2f2f2</span>;
+  border-radius: <span class="val">9px</span>;
+  box-shadow: <span class="val">0 2px 11px 0 #f2f2f2</span>;
+  padding: <span class="val">24px</span>;
+}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 8. Formularelemente ══ -->
+    <section class="ds-section">
+      <div class="container">
+        <h2>8. Formularelemente</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Input-Focus-Farbe: <code>#8e0038</code>, 2px Rand — aus ERGO cmp-search CSS.</p>
+
+        <div class="ds-example">
+          <div class="ds-example-label">Input-Felder</div>
+          <div style="max-width:480px;display:flex;flex-direction:column;gap:1rem;">
+            <div class="form-group">
+              <label for="ds-url">Website URL</label>
+              <input type="url" id="ds-url" placeholder="https://ihre-website.de" />
+            </div>
+            <div class="form-group">
+              <label for="ds-email">E-Mail Adresse</label>
+              <input type="email" id="ds-email" placeholder="ihr@email.de" />
+            </div>
+            <div class="form-group">
+              <label for="ds-err">Mit Fehler</label>
+              <input type="url" id="ds-err" aria-invalid="true" placeholder="https://..." />
+              <span class="field-error">Bitte gib eine gültige URL ein</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-example">
+          <div class="ds-example-label">Checkbox (ERGO ee_checkbox)</div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="ds-check" />
+            <label for="ds-check">Ich stimme der <a href="#">Datenschutzerklärung</a> zu</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 9. CSS Token Referenz ══ -->
+    <section class="ds-section">
+      <div class="container">
+        <h2>9. CSS Token Referenz</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Alle Token als CSS Custom Properties in <code>:root</code> — nutzbar auf allen Unterseiten via <code>var(--name)</code>.</p>
+
+        <div style="overflow-x:auto;">
+          <table class="token-table">
+            <thead>
+              <tr><th>Variable</th><th>Wert</th><th>Quelle (ERGO CSS)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--red</code></td><td>#ed0039</td><td>--theme-accent</td></tr>
+              <tr><td><code>--red-dark</code></td><td>#8e0038</td><td>--theme-primary</td></tr>
+              <tr><td><code>--red-secondary</code></td><td>#bf1528</td><td>--theme-secondary</td></tr>
+              <tr><td><code>--dark</code></td><td>#333333</td><td>--dialog-backdrop-background Basis</td></tr>
+              <tr><td><code>--hero-bg</code></td><td>#fef6d2</td><td>--background-color (Crème Sektion)</td></tr>
+              <tr><td><code>--warm-1</code></td><td>#ccecef</td><td>--background-color (Teal Sektion)</td></tr>
+              <tr><td><code>--warm-2</code></td><td>#d3ebe5</td><td>--background-color (Grün Sektion)</td></tr>
+              <tr><td><code>--muted</code></td><td>#6a625a</td><td>text-muted (aus ERGO CSS-Vars)</td></tr>
+              <tr><td><code>--border</code></td><td>#d3d3d3</td><td>--author-border</td></tr>
+              <tr><td><code>--border-dark</code></td><td>#d9d9d9</td><td>--header-border-color</td></tr>
+              <tr><td><code>--header-height</code></td><td>73px / 97px</td><td>newNavigation.min.css</td></tr>
+              <tr><td><code>--header-button-border-radius</code></td><td>8px</td><td>newNavigation.min.css</td></tr>
+              <tr><td><code>--serif</code></td><td>'Playfair Display' (Fedra Serif Substitut)</td><td>ERGO font stack</td></tr>
+              <tr><td><code>--sans</code></td><td>'Source Sans 3' (FS Me Substitut)</td><td>ERGO font stack</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">BFSG<span>-Check</span></div>
+      <nav aria-label="Footer-Navigation">
+        <ul class="footer-links">
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
+          <li><a href="/">Startseite</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
