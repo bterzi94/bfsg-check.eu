@@ -202,14 +202,14 @@
             <strong>Anfrage eingegangen!</strong><br>
             Wir melden uns innerhalb von 24 Stunden mit deinem Bericht.
           </div>
-          <div class="form-error" id="hero-error" role="alert">Bitte prüfe deine Angaben und versuche es erneut.</div>
+          <div class="form-error" id="hero-error" role="alert">Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt an <a href="mailto:info@bfsg-check.eu">info@bfsg-check.eu</a>.</div>
 
           <!-- PLACEHOLDER: Backend-Endpunkt /api/check-request oder Formspree -->
           <form id="form-hero" action="https://hook.eu2.make.com/cc1fht4pweimrn0orkf4q4kqy87haxgg" method="POST" novalidate>
             <input type="hidden" name="_subject" value="Neue BFSG-Check-Anfrage">
             <div class="field">
               <label for="hero-url">Deine Website-URL <span aria-hidden="true">*</span></label>
-              <input type="url" id="hero-url" name="url" placeholder="https://www.deine-website.de" required autocomplete="url">
+              <input type="text" id="hero-url" name="url" placeholder="z. B. meine-website.de" required autocomplete="url">
               <span class="field-error" id="hero-url-err" role="alert"></span>
             </div>
             <div class="field">
@@ -783,13 +783,13 @@
         <div class="form-success" id="final-success" role="alert">
           <strong>Danke!</strong> Dein Bericht ist in 24 Stunden bei dir.
         </div>
-        <div class="form-error" id="final-error" role="alert">Bitte prüfe deine Angaben.</div>
+        <div class="form-error" id="final-error" role="alert">Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt an <a href="mailto:info@bfsg-check.eu">info@bfsg-check.eu</a>.</div>
         <!-- PLACEHOLDER: Backend-Endpunkt /api/check-request oder Formspree -->
         <form id="form-final" action="https://hook.eu2.make.com/cc1fht4pweimrn0orkf4q4kqy87haxgg" method="POST" novalidate>
           <input type="hidden" name="_subject" value="BFSG-Check Anfrage (Footer CTA)">
           <div class="field">
             <label for="final-url">Website-URL</label>
-            <input type="url" id="final-url" name="url" placeholder="https://www.deine-website.de" required autocomplete="url">
+            <input type="text" id="final-url" name="url" placeholder="z. B. meine-website.de" required autocomplete="url">
           </div>
           <div class="field">
             <label for="final-email">E-Mail-Adresse</label>

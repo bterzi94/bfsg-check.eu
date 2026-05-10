@@ -1,4 +1,54 @@
-/* ── Form handling (Formspree AJAX) ── */
+/* ── Form handling ── */
+
+const FIELD_ERRORS = {
+  url:     { empty: 'Bitte gib deine Website ein.' },
+  email:   { empty: 'Bitte gib deine E-Mail-Adresse ein.', invalid: 'Bitte gib eine gültige E-Mail-Adresse ein.' },
+  privacy: { empty: 'Bitte stimme der Datenschutzerklärung zu.' }
+};
+
+function setFieldError(field, msg) {
+  field.setAttribute('aria-invalid', 'true');
+  const errEl = field.closest('.field')?.querySelector('.field-error')
+             || document.getElementById(field.id.replace(/(hero|final)-/, '$1-') + '-err');
+  if (errEl) errEl.textContent = msg;
+  if (field.type === 'checkbox') {
+    const label = field.closest('form').querySelector(`label[for="${field.id}"]`);
+    if (label) label.classList.add('label-invalid');
+  }
+}
+
+function clearFieldError(field) {
+  field.removeAttribute('aria-invalid');
+  const errEl = field.closest('.field')?.querySelector('.field-error')
+             || document.getElementById(field.id.replace(/(hero|final)-/, '$1-') + '-err');
+  if (errEl) errEl.textContent = '';
+  if (field.type === 'checkbox') {
+    const label = field.closest('form').querySelector(`label[for="${field.id}"]`);
+    if (label) label.classList.remove('label-invalid');
+  }
+}
+
+function validateForm(form) {
+  let valid = true;
+  form.querySelectorAll('[required]').forEach(field => {
+    const name = field.name;
+    if (field.type === 'checkbox') {
+      if (!field.checked) { setFieldError(field, FIELD_ERRORS.privacy.empty); valid = false; }
+      else clearFieldError(field);
+      return;
+    }
+    if (field.value.trim() === '') {
+      setFieldError(field, FIELD_ERRORS[name]?.empty || 'Pflichtfeld.');
+      valid = false;
+    } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
+      setFieldError(field, FIELD_ERRORS.email.invalid);
+      valid = false;
+    } else {
+      clearFieldError(field);
+    }
+  });
+  return valid;
+}
 
 function handleForm(formId, successId, errorId, submitId) {
   const form = document.getElementById(formId);
@@ -8,38 +58,19 @@ function handleForm(formId, successId, errorId, submitId) {
   const error   = document.getElementById(errorId);
   const submit  = document.getElementById(submitId);
 
+  /* clear errors on input */
+  form.querySelectorAll('[required]').forEach(field => {
+    field.addEventListener(field.type === 'checkbox' ? 'change' : 'input', () => clearFieldError(field));
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const btnText = submit.querySelector('.btn-text');
-    const spinner = submit.querySelector('.spinner');
-
-    /* basic client validation */
-    let valid = true;
-    form.querySelectorAll('[required]').forEach(field => {
-      if (field.type === 'checkbox') {
-        const label = form.querySelector(`label[for="${field.id}"]`);
-        if (!field.checked) {
-          valid = false;
-          field.setAttribute('aria-invalid', 'true');
-          if (label) label.classList.add('label-invalid');
-        } else {
-          field.removeAttribute('aria-invalid');
-          if (label) label.classList.remove('label-invalid');
-        }
-        return;
-      }
-      if (field.value.trim() === '') { valid = false; field.setAttribute('aria-invalid', 'true'); }
-      else field.removeAttribute('aria-invalid');
-    });
-
-    if (!valid) {
-      error.classList.add('visible');
-      return;
-    }
+    if (!validateForm(form)) return;
     error.classList.remove('visible');
 
-    /* loading state */
+    const btnText = submit.querySelector('.btn-text');
+    const spinner = submit.querySelector('.spinner');
     submit.disabled = true;
     if (btnText) btnText.textContent = 'Wird gesendet…';
     if (spinner) spinner.hidden = false;
