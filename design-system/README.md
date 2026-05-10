@@ -35,8 +35,9 @@ Füge am Anfang deines `<head>` ein:
 
 ## Typografie
 
-- **Überschriften:** Playfair Display (Google Fonts, Serif) — Substitut für ERGO's Fedra Serif
-- **Fließtext:** Source Sans 3 (Google Fonts, Sans-Serif) — Substitut für ERGO's FS Me
+- **Schrift:** Plus Jakarta Sans (Google Fonts) — modernes Geometric Sans
+- **Überschriften:** weight 800, letter-spacing −0.02em
+- **Fließtext:** weight 400/600
 - **Zeilenlänge:** max. 65 Zeichen (65ch) für optimale Lesbarkeit
 
 ## Wichtig: WCAG 2.1 AA

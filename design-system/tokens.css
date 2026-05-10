@@ -26,8 +26,8 @@
   --color-border:        #d3d3d3;   /* Rahmen, Trennlinien (aus ERGO) */
 
   /* ── Typografie ── */
-  --font-serif:          'Playfair Display', 'Fedra Serif', Georgia, serif;     /* Überschriften (Fedra Serif Substitut) */
-  --font-sans:           'Source Sans 3', 'FS Me', system-ui, sans-serif;       /* Fließtext (FS Me Substitut) */
+  --font-serif:          'Plus Jakarta Sans', system-ui, sans-serif;  /* Überschriften: 800 weight, modern geometric */
+  --font-sans:           'Plus Jakarta Sans', system-ui, sans-serif;  /* Fließtext: 400–700 weight */
 
   --size-xs:    0.75rem;   /* 12px — Labels, Kleingedrucktes */
   --size-sm:    0.875rem;  /* 14px — Body Klein, Badges */

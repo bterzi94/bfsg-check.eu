@@ -3,7 +3,7 @@
    Basiert auf ergo.de (extrahiert via skillui)
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 /* ── Design Tokens (aus ergo.de DESIGN.md) ── */
 :root {
@@ -22,8 +22,8 @@
   --border:       #d3d3d3;   /* Rahmen (aus ERGO) */
   --border-dark:  #d9d9d9;   /* Header-Border (aus ERGO) */
 
-  --serif: 'Playfair Display', 'Fedra Serif', Georgia, serif;
-  --sans:  'Source Sans 3', 'FS Me', system-ui, sans-serif;
+  --serif: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --sans:  'Plus Jakarta Sans', system-ui, sans-serif;
 
   --radius:    0.5rem;    /* 8px  — ERGO button radius */
   --radius-lg: 0.625rem;  /* 10px — ERGO card radius */
@@ -82,14 +82,15 @@ section, .section-pad {
 
 /* ── Typografie ── */
 h1, h2, h3, h4 {
-  font-family: var(--serif);
-  font-weight: 700;
-  line-height: 1.2;
+  font-family: var(--sans);
+  font-weight: 800;          /* Plus Jakarta Sans 800 = sehr prägnant */
+  line-height: 1.15;
+  letter-spacing: -.02em;   /* modernes Tight-Tracking */
   color: var(--red-dark);
 }
 h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
 h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
-h3 { font-size: 1.125rem; }
+h3 { font-size: 1.125rem; font-weight: 700; letter-spacing: -.01em; }
 
 /* Section-Eyebrow (wie ERGO "SERVICES", "WISSENSWERTES") */
 .eyebrow {

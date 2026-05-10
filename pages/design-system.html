@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
   <style>
     /* ── Design System Page Styles ── */
@@ -156,52 +156,10 @@
       </div>
     </div>
 
-    <!-- ══ 1. ERGO Screenshots ══ -->
+    <!-- ══ 1. Farbpalette ══ -->
     <section class="ds-section">
       <div class="container">
-        <h2>1. ergo.de — Screenshots (via skillui)</h2>
-        <p style="color:var(--muted);margin-bottom:1.5rem;">7 Scroll-Frames der ERGO Homepage, automatisch von skillui aufgenommen. Basis für die Designentscheidungen.</p>
-        <div class="screenshot-grid">
-          <div class="screenshot-card">
-            <img src="../images/ergo-screenshots/homepage.png" alt="ERGO Homepage — Übersicht" />
-            <p>Vollständige Homepage (skillui)</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../images/ergo-screenshots/scroll-000.png" alt="ERGO Homepage — Scroll 0%" />
-            <p>Scroll 0% — Hero / Navigation</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../images/ergo-screenshots/scroll-017.png" alt="ERGO Homepage — Scroll 17%" />
-            <p>Scroll 17% — Produkt-Tiles</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../images/ergo-screenshots/scroll-033.png" alt="ERGO Homepage — Scroll 33%" />
-            <p>Scroll 33% — Service-Bereich</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../images/ergo-screenshots/scroll-050.png" alt="ERGO Homepage — Scroll 50%" />
-            <p>Scroll 50% — Mitte der Seite</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../images/ergo-screenshots/scroll-067.png" alt="ERGO Homepage — Scroll 67%" />
-            <p>Scroll 67% — Weiterer Inhalt</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../images/ergo-screenshots/scroll-083.png" alt="ERGO Homepage — Scroll 83%" />
-            <p>Scroll 83% — Footer-Bereich</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../images/ergo-screenshots/scroll-100.png" alt="ERGO Homepage — Scroll 100%" />
-            <p>Scroll 100% — Footer</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ 2. Farbpalette ══ -->
-    <section class="ds-section">
-      <div class="container">
-        <h2>2. Farbpalette</h2>
+        <h2>1. Farbpalette</h2>
         <p style="color:var(--muted);margin-bottom:1.5rem;">Direkt aus dem ERGO CSS extrahiert. Alle Werte sind CSS Custom Properties in <code>style.css</code> und <code>design-system/tokens.css</code>.</p>
 
         <h3>Primärfarben</h3>
@@ -357,7 +315,7 @@
     <!-- ══ 3. Typografie ══ -->
     <section class="ds-section">
       <div class="container">
-        <h2>3. Typografie</h2>
+        <h2>2. Typografie</h2>
 
         <div style="margin-bottom:2rem;">
           <div class="type-row">
@@ -395,16 +353,10 @@
             </thead>
             <tbody>
               <tr>
-                <td>Playfair Display</td>
-                <td><code>family=Playfair+Display:wght@400;700</code></td>
-                <td>Fedra Serif (proprietär)</td>
-                <td>Alle Überschriften (h1–h4)</td>
-              </tr>
-              <tr>
-                <td>Source Sans 3</td>
-                <td><code>family=Source+Sans+3:wght@400;600;700</code></td>
-                <td>FS Me (proprietär)</td>
-                <td>Fließtext, Labels, Buttons</td>
+                <td><strong>Plus Jakarta Sans</strong></td>
+                <td><code>family=Plus+Jakarta+Sans:wght@400;500;600;700;800</code></td>
+                <td>FS Me (proprietär, Sans-Serif)</td>
+                <td>Überschriften (800 weight) + Fließtext — moderne geometrische Grotesk</td>
               </tr>
             </tbody>
           </table>
@@ -415,7 +367,7 @@
     <!-- ══ 4. Navigation ══ -->
     <section class="ds-section">
       <div class="container">
-        <h2>4. Navigation</h2>
+        <h2>3. Navigation</h2>
         <p style="color:var(--muted);margin-bottom:1.5rem;">Direkt aus <code>newNavigation.min.css</code> extrahiert.</p>
 
         <div class="ds-example">
@@ -461,7 +413,7 @@
     <!-- ══ 5. Buttons ══ -->
     <section class="ds-section">
       <div class="container">
-        <h2>5. Buttons</h2>
+        <h2>4. Buttons</h2>
         <p style="color:var(--muted);margin-bottom:1.5rem;">ERGO <code>ee_button--primary</code> aus <code>pages.min.css</code>: <code>background: #8e0038; color: #fff; border-radius: 2px; font-weight: 700</code></p>
 
         <div class="ds-example">
@@ -506,7 +458,7 @@
     <!-- ══ 6. Tiles (cmp-tile) ══ -->
     <section class="ds-section">
       <div class="container">
-        <h2>6. Tiles — <code>cmp-tile</code></h2>
+        <h2>5. Tiles — <code>cmp-tile</code></h2>
         <p style="color:var(--muted);margin-bottom:1.5rem;">Direkt aus <code>tile.min.css</code> extrahiert. Die ERGO Kernkomponente für Content-Cards — 8px Radius, definierte Farbvarianten via <code>data-color</code>.</p>
 
         <div class="ds-example">
@@ -579,7 +531,7 @@
     <!-- ══ 7. Cards (ee_card) ══ -->
     <section class="ds-section">
       <div class="container">
-        <h2>7. Cards — <code>ee_card</code></h2>
+        <h2>6. Cards — <code>ee_card</code></h2>
         <p style="color:var(--muted);margin-bottom:1.5rem;">ERGO ee_card aus <code>pages.min.css</code>: <code>border-radius: 9px; border: 1px solid #f2f2f2; box-shadow: 0 2px 11px 0 #f2f2f2</code></p>
 
         <div class="ds-example">
@@ -615,7 +567,7 @@
     <!-- ══ 8. Formularelemente ══ -->
     <section class="ds-section">
       <div class="container">
-        <h2>8. Formularelemente</h2>
+        <h2>7. Formularelemente</h2>
         <p style="color:var(--muted);margin-bottom:1.5rem;">Input-Focus-Farbe: <code>#8e0038</code>, 2px Rand — aus ERGO cmp-search CSS.</p>
 
         <div class="ds-example">
@@ -650,7 +602,7 @@
     <!-- ══ 9. CSS Token Referenz ══ -->
     <section class="ds-section">
       <div class="container">
-        <h2>9. CSS Token Referenz</h2>
+        <h2>8. CSS Token Referenz</h2>
         <p style="color:var(--muted);margin-bottom:1.5rem;">Alle Token als CSS Custom Properties in <code>:root</code> — nutzbar auf allen Unterseiten via <code>var(--name)</code>.</p>
 
         <div style="overflow-x:auto;">
@@ -671,8 +623,8 @@
               <tr><td><code>--border-dark</code></td><td>#d9d9d9</td><td>--header-border-color</td></tr>
               <tr><td><code>--header-height</code></td><td>73px / 97px</td><td>newNavigation.min.css</td></tr>
               <tr><td><code>--header-button-border-radius</code></td><td>8px</td><td>newNavigation.min.css</td></tr>
-              <tr><td><code>--serif</code></td><td>'Playfair Display' (Fedra Serif Substitut)</td><td>ERGO font stack</td></tr>
-              <tr><td><code>--sans</code></td><td>'Source Sans 3' (FS Me Substitut)</td><td>ERGO font stack</td></tr>
+              <tr><td><code>--serif</code></td><td>'Plus Jakarta Sans' — modernes Geometric Sans</td><td>Headings: 800 weight, letter-spacing -.02em</td></tr>
+              <tr><td><code>--sans</code></td><td>'Plus Jakarta Sans' — selbe Familie</td><td>Fließtext: 400/600, body copy</td></tr>
             </tbody>
           </table>
         </div>
