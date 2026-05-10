@@ -213,7 +213,7 @@ h4 { font-size: 1rem; font-weight: 700; }
 .nav-cta-mobile {
   display: inline-flex; align-items: center;
   background: var(--maroon); color: #fff;
-  border: 0; border-radius: 2px;
+  border: 0; border-radius: 999px;
   padding: .5rem 1rem;
   font-family: var(--font); font-size: .8125rem; font-weight: 700;
   text-decoration: none; cursor: pointer;
@@ -226,7 +226,7 @@ h4 { font-size: 1rem; font-weight: 700; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
   padding: .75rem 1.75rem;
-  border-radius: 4px;                  /* ERGO: leicht abgerundet, kein Pill */
+  border-radius: 999px;
   font-family: var(--font); font-size: .9375rem; font-weight: 700;
   text-decoration: none; cursor: pointer;
   border: 1.5px solid transparent;
