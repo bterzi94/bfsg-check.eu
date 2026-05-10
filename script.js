@@ -76,18 +76,14 @@ function handleForm(formId, successId, errorId, submitId) {
     if (spinner) spinner.hidden = false;
 
     try {
-      const res = await fetch(form.action, {
+      await fetch(form.action, {
         method: 'POST',
+        mode: 'no-cors',
         body: new URLSearchParams(new FormData(form)),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       });
-
-      if (res.ok) {
-        form.hidden = true;
-        success.classList.add('visible');
-      } else {
-        throw new Error('server');
-      }
+      form.hidden = true;
+      success.classList.add('visible');
     } catch {
       error.classList.add('visible');
       submit.disabled = false;
