@@ -58,6 +58,12 @@ function handleForm(formId, successId, errorId, submitId) {
 handleForm('form-hero',  'hero-success',  'hero-error',  'hero-submit');
 handleForm('form-final', 'final-success', 'final-error', 'final-submit');
 
+/* ── Dynamic copyright year ── */
+(function () {
+  const el = document.getElementById('footer-copy');
+  if (el) el.textContent = `© ${new Date().getFullYear()} BFSG-Check. Alle Rechte vorbehalten.`;
+})();
+
 /* ── Sticky mobile CTA — appears after hero leaves viewport ── */
 (function () {
   const hero   = document.getElementById('anfrage');
