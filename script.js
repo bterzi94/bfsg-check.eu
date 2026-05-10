@@ -34,10 +34,11 @@ function handleForm(formId, successId, errorId, submitId) {
     if (spinner) spinner.hidden = false;
 
     try {
+      const data = Object.fromEntries(new FormData(form).entries());
       const res = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
       });
 
       if (res.ok) {
