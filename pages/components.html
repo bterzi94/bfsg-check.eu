@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komponentensammlung — BFSG-Check Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="ds.css">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+
+<!-- DS Top Bar -->
+<header class="ds-bar">
+  <div class="container">
+    <a href="#" class="ds-bar-brand">BFSG-Check <span>Design System</span></a>
+    <nav class="ds-bar-nav" aria-label="Design System Navigation">
+      <a href="design-system.html">CSS-Klassen</a>
+      <a href="components.html" class="active">Komponenten</a>
+    </nav>
+    <a href="../index.html" class="ds-bar-home">← Startseite</a>
+  </div>
+</header>
+
+<div class="ds-layout">
+
+  <!-- Sidebar -->
+  <aside class="ds-sidebar" aria-label="Komponenten-Navigation">
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Navigation</p>
+      <a href="#nav-bar">Site Navigation</a>
+      <a href="#nav-logo">Logo</a>
+      <a href="#nav-links">Nav-Links</a>
+      <a href="#nav-icon-btn">Icon-Button</a>
+      <a href="#nav-phone">Telefon-Button</a>
+      <a href="#nav-cta-mobile">Mobile CTA</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Schaltflächen</p>
+      <a href="#btn-primary">Primary Button</a>
+      <a href="#btn-outline">Outline Button</a>
+      <a href="#btn-dark-bgs">Dark-BG Buttons</a>
+      <a href="#btn-sizes">Button-Größen</a>
+      <a href="#btn-full">Vollbreite Button</a>
+      <a href="#btn-loading">Loading State</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Tiles</p>
+      <a href="#tile-default">Tile Standard</a>
+      <a href="#tile-colors">Tile Farb-Varianten</a>
+      <a href="#tile-icon">Tile mit Icon</a>
+      <a href="#tile-cta">Tile mit CTA</a>
+      <a href="#tile-grids">Tile Grids</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Formulare</p>
+      <a href="#form-card">Form Card</a>
+      <a href="#form-inputs">Eingabefelder</a>
+      <a href="#form-checkbox">Checkbox</a>
+      <a href="#form-states">Form States</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Abschnitte</p>
+      <a href="#section-bgs">Hintergründe</a>
+      <a href="#section-label">Eyebrow-Label</a>
+      <a href="#section-hero">Hero</a>
+      <a href="#section-urgency">Urgency-Tiles</a>
+      <a href="#section-cta">CTA-Abschnitt</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Layout</p>
+      <a href="#layout-split">Split 2-Column</a>
+      <a href="#layout-split-rev">Split Reverse</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Listen</p>
+      <a href="#list-checks">Checkmark-Liste</a>
+      <a href="#list-deliver">Nummerierte Liste</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Tabellen</p>
+      <a href="#table-affected">Affected Table</a>
+      <a href="#table-dots">Status-Dots</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Reviews</p>
+      <a href="#review-box">Review Box</a>
+      <a href="#review-stars">Stern-Bewertung</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">FAQ</p>
+      <a href="#faq-list">FAQ Accordion</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Footer</p>
+      <a href="#footer-full">Footer Vollständig</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Utilities</p>
+      <a href="#util-skip">Skip Link</a>
+      <a href="#util-placeholders">Platzhalter</a>
+      <a href="#util-spinner">Spinner</a>
+      <a href="#util-sticky-cta">Sticky CTA</a>
+      <a href="#util-focus">Focus Ring</a>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="ds-content" id="main">
+
+    <!-- ════════════════════ NAVIGATION ════════════════════ -->
+
+    <div class="comp-group-title" id="nav-bar">Navigation</div>
+    <p class="comp-group-desc">Alle Teile der fixierten Hauptnavigation. Höhe: 73px (mobil) / 97px (≥1152px). Weiß, 1px Border unten, z-index 500. Exakt nach ERGO <code>newNavigation.min.css</code>.</p>
+
+    <div class="comp-block" id="nav-bar">
+      <span class="comp-label">Komponente</span>
+      <p class="comp-name">Site Navigation (vollständig)</p>
+      <p class="comp-desc">Vollständige Navigation mit Logo, Center-Links, Icon-Buttons und Telefon. Reagiert auf Viewport-Größe.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame no-pad" style="padding:0;min-height:73px;position:relative;">
+          <nav style="position:relative;background:#fff;border-bottom:1px solid #d9d9d9;height:73px;z-index:1">
+            <div style="display:flex;align-items:center;justify-content:space-between;height:100%;padding:0 1.25rem;gap:12px;max-width:1200px;margin:0 auto">
+              <a href="#" style="display:flex;flex-direction:column;text-decoration:none;flex-shrink:0">
+                <span style="font-size:1.25rem;font-weight:800;letter-spacing:-.03em;line-height:1;color:#8e0038">BFSG<span style="color:#ed0039">-</span>Check</span>
+                <span style="font-size:.625rem;color:#6a625a;margin-top:2px">Barrierefreiheit für Ihr Unternehmen</span>
+              </a>
+              <ul style="display:flex;align-items:center;gap:0;list-style:none;margin:0;padding:0">
+                <li><a href="#" style="display:inline-flex;align-items:center;padding:.75rem 1rem;font-size:.9375rem;font-weight:500;color:#333;text-decoration:none;border-radius:8px">Wie es funktioniert</a></li>
+                <li><a href="#" style="display:inline-flex;align-items:center;padding:.75rem 1rem;font-size:.9375rem;font-weight:500;color:#333;text-decoration:none;border-radius:8px">FAQ</a></li>
+              </ul>
+              <div style="display:flex;align-items:center;gap:2px;flex-shrink:0">
+                <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:2px;background:transparent;border:0;border-radius:8px;padding:.5rem .75rem;font-size:.6875rem;font-weight:500;color:#333;text-decoration:none">
+                  <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                  Kontakt
+                </a>
+                <a href="#" style="display:flex;align-items:center;gap:.5rem;background:transparent;border:0;border-radius:8px;padding:.5rem .75rem;text-decoration:none">
+                  <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#8e0038"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                  <span style="display:flex;flex-direction:column">
+                    <span style="font-size:.875rem;font-weight:700;color:#8e0038;line-height:1.2">+49 800 000 0000</span>
+                    <span style="font-size:.6875rem;color:#6a625a">Mo–Fr 9–18 Uhr</span>
+                  </span>
+                </a>
+                <a href="#" style="display:inline-flex;align-items:center;background:#8e0038;color:#fff;border:0;border-radius:2px;padding:.5rem 1rem;font-size:.8125rem;font-weight:700;text-decoration:none">Jetzt prüfen</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="preview-code"><code>&lt;nav class="site-nav"&gt;
+  &lt;div class="container"&gt;
+    &lt;a href="/" class="nav-logo"&gt;
+      &lt;span class="nav-logo-name"&gt;BFSG&lt;span&gt;-&lt;/span&gt;Check&lt;/span&gt;
+      &lt;span class="nav-logo-claim"&gt;Barrierefreiheit für Ihr Unternehmen&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;ul class="nav-links"&gt;
+      &lt;li&gt;&lt;a href="#so-funktioniert-es"&gt;Wie es funktioniert&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#faq"&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="nav-actions"&gt;
+      &lt;a href="#kontakt" class="nav-icon-btn"&gt;...Icon... Kontakt&lt;/a&gt;
+      &lt;a href="tel:+49..." class="nav-phone"&gt;...Icon...
+        &lt;span class="nav-phone-text"&gt;
+          &lt;span class="nav-phone-number"&gt;+49 800 ...&lt;/span&gt;
+          &lt;span class="nav-phone-hours"&gt;Mo–Fr 9–18 Uhr&lt;/span&gt;
+        &lt;/span&gt;
+      &lt;/a&gt;
+      &lt;a href="#anfrage" class="nav-cta-mobile"&gt;Jetzt prüfen&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="nav-icon-btn">
+      <span class="comp-label">Komponente</span>
+      <p class="comp-name">Nav Icon-Button</p>
+      <p class="comp-desc">Icon oben, Label unten — wie ERGO Suche, Berater, Login, Kontakt. Ab ≥768px sichtbar. Hover: <code>--nav-hover-bg</code> + <code>--nav-hover-color</code>.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame" style="gap:4px">
+          <a href="#" class="nav-icon-btn" style="display:flex">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35"/></svg>
+            Suche
+          </a>
+          <a href="#" class="nav-icon-btn" style="display:flex">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+            Berater
+          </a>
+          <a href="#" class="nav-icon-btn" style="display:flex">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Log-in
+          </a>
+          <a href="#" class="nav-icon-btn" style="display:flex">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            Kontakt
+          </a>
+        </div>
+        <div class="preview-code"><code>&lt;a href="#kontakt" class="nav-icon-btn"&gt;
+  &lt;svg ...&gt;...&lt;/svg&gt;
+  Kontakt
+&lt;/a&gt;</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ BUTTONS ════════════════════ -->
+
+    <div class="comp-group-title" id="btn-primary">Schaltflächen</div>
+    <p class="comp-group-desc">Alle Button-Varianten. Basis-Klasse <code>.btn</code> immer mit einer Variante kombinieren. Border-Radius 4px, Weight 700, Active: translateY(1px).</p>
+
+    <div class="comp-block">
+      <span class="comp-label">Variante</span>
+      <p class="comp-name">Primary Button</p>
+      <p class="comp-desc">Für primäre Aktionen. Maroon-Füllung, weiße Schrift. Hover: dunkler Maroon.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame"><a href="#" class="btn btn-primary">Kostenlos anfragen</a></div>
+        <div class="preview-code"><code>&lt;a href="#" class="btn btn-primary"&gt;Kostenlos anfragen&lt;/a&gt;
+&lt;!-- oder: &lt;button type="submit" class="btn btn-primary"&gt; --&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="btn-outline">
+      <span class="comp-label">Variante</span>
+      <p class="comp-name">Outline Button</p>
+      <p class="comp-desc">Sekundäre Aktion auf hellem Hintergrund. Transparenter Hintergrund, Maroon-Rand.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame"><a href="#" class="btn btn-outline">Mehr erfahren</a></div>
+        <div class="preview-code"><code>&lt;a href="#" class="btn btn-outline"&gt;Mehr erfahren&lt;/a&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="btn-dark-bgs">
+      <span class="comp-label">Variante</span>
+      <p class="comp-name">Buttons auf dunklem Hintergrund</p>
+      <p class="comp-desc"><code>.btn-outline-white</code> für Outline, <code>.btn-white</code> für gefüllte Schaltfläche.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame bg-dark">
+          <a href="#" class="btn btn-outline-white">Outline Weiß</a>
+          <a href="#" class="btn btn-white">Weiß Gefüllt</a>
+        </div>
+        <div class="preview-code"><code>&lt;!-- Auf section-dark verwenden: --&gt;
+&lt;a href="#" class="btn btn-outline-white"&gt;Outline Weiß&lt;/a&gt;
+&lt;a href="#" class="btn btn-white"&gt;Weiß Gefüllt&lt;/a&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="btn-sizes">
+      <span class="comp-label">Modifier</span>
+      <p class="comp-name">Button-Größen</p>
+      <p class="comp-desc"><code>.btn-sm</code> für kompakte Kontexte, Standard für alles andere, <code>.btn-lg</code> für Hero-CTAs.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame" style="align-items:center">
+          <a href="#" class="btn btn-primary btn-sm">Klein</a>
+          <a href="#" class="btn btn-primary">Standard</a>
+          <a href="#" class="btn btn-primary btn-lg">Groß</a>
+        </div>
+        <div class="preview-code"><code>&lt;a href="#" class="btn btn-primary btn-sm"&gt;Klein&lt;/a&gt;
+&lt;a href="#" class="btn btn-primary"&gt;Standard&lt;/a&gt;
+&lt;a href="#" class="btn btn-primary btn-lg"&gt;Groß&lt;/a&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="btn-full">
+      <span class="comp-label">Modifier</span>
+      <p class="comp-name">Vollbreite Button</p>
+      <p class="comp-desc"><code>.btn-full</code> für Formular-Submit-Buttons und mobile CTAs.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col" style="max-width:400px">
+          <button class="btn btn-primary btn-full">Jetzt kostenlos anfragen</button>
+        </div>
+        <div class="preview-code"><code>&lt;button type="submit" class="btn btn-primary btn-full"&gt;
+  Jetzt kostenlos anfragen
+&lt;/button&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="btn-loading">
+      <span class="comp-label">State</span>
+      <p class="comp-name">Button Loading State</p>
+      <p class="comp-desc">Spinner + deaktivierter Button während AJAX-Anfrage. <code>.spinner</code>-Element per JS sichtbar schalten.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame">
+          <button class="btn btn-primary" disabled style="display:inline-flex;align-items:center;gap:.5rem">
+            <span>Wird gesendet…</span>
+            <span class="spinner"></span>
+          </button>
+        </div>
+        <div class="preview-code"><code>&lt;button class="btn btn-primary" disabled&gt;
+  &lt;span class="btn-text"&gt;Wird gesendet…&lt;/span&gt;
+  &lt;span class="spinner" aria-hidden="true"&gt;&lt;/span&gt;
+&lt;/button&gt;</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ TILES ════════════════════ -->
+
+    <div class="comp-group-title" id="tile-default">Tiles</div>
+    <p class="comp-group-desc">Das zentrale Karten-Element des ERGO Design Systems. Aus <code>tile.min.css</code> extrahiert. 6 Farbvarianten via <code>data-color</code>-Attribut. Hover-Schatten über <code>--shadow-tile</code>.</p>
+
+    <div class="comp-block">
+      <span class="comp-label">Basis</span>
+      <p class="comp-name">Tile Standard</p>
+      <p class="comp-desc">Weißer Hintergrund, 1px Border (#c9c5c7), Border-Radius 8px. Hover: Erhöhter Schatten.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame">
+          <div class="tile" style="max-width:280px">
+            <div class="tile__icon" aria-hidden="true">
+              <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#8e0038"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            </div>
+            <h3 class="tile__title">Tile-Titel</h3>
+            <p class="tile__text">Beschreibungstext des Tiles — max. 2–3 kurze Sätze für optimale Lesbarkeit.</p>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;article class="tile"&gt;
+  &lt;div class="tile__icon" aria-hidden="true"&gt;
+    &lt;svg ...&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;h3 class="tile__title"&gt;Tile-Titel&lt;/h3&gt;
+  &lt;p class="tile__text"&gt;Beschreibungstext...&lt;/p&gt;
+&lt;/article&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="tile-colors">
+      <span class="comp-label">Farb-Varianten</span>
+      <p class="comp-name">Tile mit Hintergrundfarbe</p>
+      <p class="comp-desc">6 Farbvarianten via <code>data-color</code>-Attribut. Kein Border bei farbigen Tiles. Direkt aus ERGO <code>tile.min.css</code>.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem">
+          <div class="tile" data-color="#ccecef" style="padding:1.5rem">
+            <h3 class="tile__title" style="font-size:.875rem">Teal</h3>
+            <p class="tile__text" style="font-size:.8125rem;margin-top:6px">#ccecef</p>
+          </div>
+          <div class="tile" data-color="#fef6d2" style="padding:1.5rem">
+            <h3 class="tile__title" style="font-size:.875rem">Cream</h3>
+            <p class="tile__text" style="font-size:.8125rem;margin-top:6px">#fef6d2</p>
+          </div>
+          <div class="tile" data-color="#d3ebe5" style="padding:1.5rem">
+            <h3 class="tile__title" style="font-size:.875rem">Green</h3>
+            <p class="tile__text" style="font-size:.8125rem;margin-top:6px">#d3eba5</p>
+          </div>
+          <div class="tile" data-color="#f5e1eb" style="padding:1.5rem">
+            <h3 class="tile__title" style="font-size:.875rem">Rose</h3>
+            <p class="tile__text" style="font-size:.8125rem;margin-top:6px">#f5e1eb</p>
+          </div>
+          <div class="tile" data-color="#ffe0cb" style="padding:1.5rem">
+            <h3 class="tile__title" style="font-size:.875rem">Peach</h3>
+            <p class="tile__text" style="font-size:.8125rem;margin-top:6px">#ffe0cb</p>
+          </div>
+          <div class="tile" data-color="#ebe6d8" style="padding:1.5rem">
+            <h3 class="tile__title" style="font-size:.875rem">Sand</h3>
+            <p class="tile__text" style="font-size:.8125rem;margin-top:6px">#ebe6d8</p>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="tile" data-color="#ccecef"&gt;...&lt;/div&gt;  &lt;!-- Teal --&gt;
+&lt;div class="tile" data-color="#fef6d2"&gt;...&lt;/div&gt;  &lt;!-- Cream --&gt;
+&lt;div class="tile" data-color="#d3ebe5"&gt;...&lt;/div&gt;  &lt;!-- Green --&gt;
+&lt;div class="tile" data-color="#f5e1eb"&gt;...&lt;/div&gt;  &lt;!-- Rose --&gt;
+&lt;div class="tile" data-color="#ffe0cb"&gt;...&lt;/div&gt;  &lt;!-- Peach --&gt;
+&lt;div class="tile" data-color="#ebe6d8"&gt;...&lt;/div&gt;  &lt;!-- Sand --&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="tile-icon">
+      <span class="comp-label">Variante</span>
+      <p class="comp-name">Tile mit Icon + Farb-Hintergrund</p>
+      <p class="comp-desc">Icon-Container <code>.tile__icon</code> zentriert oben. SVG 40px (48px ≥768px). Farbe: <code>var(--maroon)</code>.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame">
+          <div class="tile" data-color="#ccecef" style="max-width:240px">
+            <div class="tile__icon" aria-hidden="true">
+              <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#8e0038"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+            </div>
+            <h3 class="tile__title">Struktur &amp; Navigation</h3>
+            <p class="tile__text">Überschriftenhierarchie, Tastaturnavigation, Fokus-Management.</p>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;article class="tile" data-color="#ccecef"&gt;
+  &lt;div class="tile__icon" aria-hidden="true"&gt;
+    &lt;svg stroke="var(--maroon)" ...&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;h3 class="tile__title"&gt;Struktur &amp; Navigation&lt;/h3&gt;
+  &lt;p class="tile__text"&gt;...&lt;/p&gt;
+&lt;/article&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="tile-cta">
+      <span class="comp-label">Variante</span>
+      <p class="comp-name">Tile mit CTA</p>
+      <p class="comp-desc"><code>.tile__cta</code> am Ende des Tiles. <code>margin-top:auto</code> drückt den Button immer ans untere Ende — unabhängig von der Textlänge.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame">
+          <div class="tile" style="max-width:280px">
+            <div class="tile__icon" aria-hidden="true">
+              <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#8e0038"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+            </div>
+            <h3 class="tile__title">Bericht erhalten</h3>
+            <p class="tile__text">Vollständiger PDF-Bericht in 48 Stunden.</p>
+            <div class="tile__cta">
+              <a href="#" class="btn btn-primary btn-sm">Mehr erfahren</a>
+            </div>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;article class="tile"&gt;
+  &lt;div class="tile__icon"&gt;...&lt;/div&gt;
+  &lt;h3 class="tile__title"&gt;Bericht erhalten&lt;/h3&gt;
+  &lt;p class="tile__text"&gt;...&lt;/p&gt;
+  &lt;div class="tile__cta"&gt;
+    &lt;a href="#" class="btn btn-primary btn-sm"&gt;Mehr erfahren&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="tile-grids">
+      <span class="comp-label">Grids</span>
+      <p class="comp-name">Tile-Grid 2 / 3 / 4 Spalten</p>
+      <p class="comp-desc">Responsive Grid-Wrapper. Immer mit <code>.tile-grid-*</code> umschließen — niemals 3 gleich breite Tiles nebeneinander als Flex-Container.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col">
+          <p style="font-size:.75rem;font-weight:700;color:var(--muted);margin-bottom:.5rem">.tile-grid-2 (2 Spalten ab 768px)</p>
+          <div class="tile-grid-2" style="margin-top:0">
+            <div class="tile" style="padding:1rem"><p class="tile__title" style="font-size:.875rem">Tile A</p></div>
+            <div class="tile" style="padding:1rem"><p class="tile__title" style="font-size:.875rem">Tile B</p></div>
+          </div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--muted);margin:.75rem 0 .5rem">.tile-grid-3 (3 Spalten ab 640px)</p>
+          <div class="tile-grid-3" style="margin-top:0">
+            <div class="tile" style="padding:1rem"><p class="tile__title" style="font-size:.875rem">Tile A</p></div>
+            <div class="tile" style="padding:1rem"><p class="tile__title" style="font-size:.875rem">Tile B</p></div>
+            <div class="tile" style="padding:1rem"><p class="tile__title" style="font-size:.875rem">Tile C</p></div>
+          </div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--muted);margin:.75rem 0 .5rem">.tile-grid-4 (2/4 Spalten)</p>
+          <div class="tile-grid-4" style="margin-top:0">
+            <div class="tile" data-color="#ccecef" style="padding:1rem"><p class="tile__title" style="font-size:.875rem">A</p></div>
+            <div class="tile" data-color="#fef6d2" style="padding:1rem"><p class="tile__title" style="font-size:.875rem">B</p></div>
+            <div class="tile" data-color="#f5e1eb" style="padding:1rem"><p class="tile__title" style="font-size:.875rem">C</p></div>
+            <div class="tile" data-color="#d3ebe5" style="padding:1rem"><p class="tile__title" style="font-size:.875rem">D</p></div>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="tile-grid-2"&gt; ... 2 x .tile ... &lt;/div&gt;
+&lt;div class="tile-grid-3"&gt; ... 3 x .tile ... &lt;/div&gt;
+&lt;div class="tile-grid-4"&gt; ... 4 x .tile ... &lt;/div&gt;</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ FORMULARE ════════════════════ -->
+
+    <div class="comp-group-title" id="form-card">Formulare</div>
+    <p class="comp-group-desc">Alle Formular-Elemente. Labels immer über dem Input — kein Float-Label-Pattern. Fehler immer unter dem Feld.</p>
+
+    <div class="comp-block">
+      <span class="comp-label">Container</span>
+      <p class="comp-name">Form Card</p>
+      <p class="comp-desc">Weißer Container mit Schatten für Formular-Abschnitte. Wird im Hero als rechte Spalte eingesetzt.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame bg-cream">
+          <div class="form-card" style="max-width:380px;width:100%">
+            <p class="form-card-title">Kostenlose Ersteinschätzung</p>
+            <p class="form-card-sub">URL eingeben und Schnellcheck anfordern</p>
+            <div class="field">
+              <label for="demo-url">Website-URL</label>
+              <input type="url" id="demo-url" placeholder="https://www.ihre-website.de">
+            </div>
+            <button class="btn btn-primary btn-full">Anfragen</button>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="form-card"&gt;
+  &lt;p class="form-card-title"&gt;Titel&lt;/p&gt;
+  &lt;p class="form-card-sub"&gt;Untertitel&lt;/p&gt;
+  &lt;!-- Fields... --&gt;
+&lt;/div&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="form-inputs">
+      <span class="comp-label">Elemente</span>
+      <p class="comp-name">Eingabefelder</p>
+      <p class="comp-desc">Standard-, Fokus- und Fehler-Zustand. Type: <code>text</code>, <code>url</code>, <code>email</code>. Focus-Ring: Maroon 2px.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col" style="max-width:400px">
+          <div class="field" style="margin-bottom:.75rem">
+            <label for="d1">Standard</label>
+            <input type="text" id="d1" placeholder="Platzhaltertext">
+          </div>
+          <div class="field" style="margin-bottom:.75rem">
+            <label for="d2">URL-Input</label>
+            <input type="url" id="d2" placeholder="https://www.beispiel.de">
+          </div>
+          <div class="field" style="margin-bottom:.75rem">
+            <label for="d3">Email-Input</label>
+            <input type="email" id="d3" placeholder="max@mustermann.de">
+          </div>
+          <div class="field" style="margin-bottom:0">
+            <label for="d4">Fehler-Zustand</label>
+            <input type="text" id="d4" value="ungültige Eingabe" aria-invalid="true">
+            <span class="field-error">Bitte geben Sie eine gültige URL ein.</span>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="field"&gt;
+  &lt;label for="url"&gt;Website-URL&lt;/label&gt;
+  &lt;input type="url" id="url" name="url"
+    placeholder="https://..." required&gt;
+  &lt;span class="field-error" role="alert"&gt;
+    Pflichtfeld
+  &lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Fehler-Zustand: --&gt;
+&lt;input type="text" aria-invalid="true"&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="form-checkbox">
+      <span class="comp-label">Element</span>
+      <p class="comp-name">Checkbox-Zeile</p>
+      <p class="comp-desc">Für Datenschutz-Zustimmung und Opt-ins. <code>align-items:flex-start</code> damit Label bei langen Texten nicht verrutscht.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col" style="max-width:420px">
+          <div class="checkbox-row">
+            <input type="checkbox" id="demo-cb">
+            <label for="demo-cb">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.</label>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="checkbox-row"&gt;
+  &lt;input type="checkbox" id="privacy" name="privacy" required&gt;
+  &lt;label for="privacy"&gt;
+    Ich stimme der &lt;a href="datenschutz.html"&gt;Datenschutzerklärung&lt;/a&gt; zu.
+  &lt;/label&gt;
+&lt;/div&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="form-states">
+      <span class="comp-label">States</span>
+      <p class="comp-name">Formular Erfolg &amp; Fehler</p>
+      <p class="comp-desc">Werden per JS über <code>.visible</code> ein-/ausgeblendet. <code>role="alert"</code> für Screen-Reader.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col" style="max-width:400px;gap:.75rem">
+          <div class="form-success visible" role="alert">
+            <strong>Anfrage eingegangen!</strong><br>Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+          </div>
+          <div class="form-error visible" role="alert">Bitte überprüfen Sie Ihre Angaben.</div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="form-success" id="success" role="alert"&gt;
+  &lt;strong&gt;Anfrage eingegangen!&lt;/strong&gt;&lt;br&gt;...
+&lt;/div&gt;
+&lt;div class="form-error" id="error" role="alert"&gt;...&lt;/div&gt;
+
+&lt;!-- JS: --&gt;
+document.getElementById('success').classList.add('visible');</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ ABSCHNITTE ════════════════════ -->
+
+    <div class="comp-group-title" id="section-bgs">Abschnitt-Hintergründe</div>
+    <p class="comp-group-desc">Alle Hintergrundvarianten für Sections. Immer mit <code>.section-pad</code> kombinieren für korrekte vertikale Abstände.</p>
+
+    <div class="comp-block">
+      <span class="comp-label">Varianten</span>
+      <p class="comp-name">Section Hintergründe</p>
+      <div class="preview-wrap">
+        <div style="display:flex;flex-direction:column">
+          <div style="padding:1.25rem 1.5rem;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem">
+            <code style="font-size:.75rem;color:var(--maroon)">.section-white</code>
+            <span style="font-size:.8125rem;color:#555">#ffffff — Standard-Abschnitt</span>
+          </div>
+          <div style="padding:1.25rem 1.5rem;background:#f5f5f5;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem">
+            <code style="font-size:.75rem;color:var(--maroon)">.section-light</code>
+            <span style="font-size:.8125rem;color:#555">#f5f5f5 — Alternierend, Footer</span>
+          </div>
+          <div style="padding:1.25rem 1.5rem;background:#fef6d2;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem">
+            <code style="font-size:.75rem;color:var(--maroon)">.section-cream</code>
+            <span style="font-size:.8125rem;color:#555">#fef6d2 — Hero-Standard</span>
+          </div>
+          <div style="padding:1.25rem 1.5rem;background:#ccecef;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem">
+            <code style="font-size:.75rem;color:var(--maroon)">.section-teal</code>
+            <span style="font-size:.8125rem;color:#555">#ccecef — Testimonials, Highlights</span>
+          </div>
+          <div style="padding:1.25rem 1.5rem;background:#f5e1eb;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem">
+            <code style="font-size:.75rem;color:var(--maroon)">.section-rose</code>
+            <span style="font-size:.8125rem;color:#555">#f5e1eb — Akzent-Abschnitt</span>
+          </div>
+          <div style="padding:1.25rem 1.5rem;background:#333;display:flex;align-items:center;gap:.75rem">
+            <code style="font-size:.75rem;color:#e0a0c0">.section-dark</code>
+            <span style="font-size:.8125rem;color:#bbb">#333333 — Urgency, CTA. h2→weiß, p→#ccc</span>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;section class="section-white section-pad"&gt;...&lt;/section&gt;
+&lt;section class="section-light section-pad"&gt;...&lt;/section&gt;
+&lt;section class="section-cream section-pad"&gt;...&lt;/section&gt;
+&lt;section class="section-teal section-pad"&gt;...&lt;/section&gt;
+&lt;section class="section-rose section-pad"&gt;...&lt;/section&gt;
+&lt;section class="section-dark section-pad"&gt;...&lt;/section&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="section-label">
+      <span class="comp-label">Element</span>
+      <p class="comp-name">Eyebrow-Label</p>
+      <p class="comp-desc">Kleines Uppercase-Label über der Hauptüberschrift. Farbe <code>--red</code>. Auf dunklem Hintergrund manuell auf hellere Farbe setzen.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col bg-cream" style="align-items:flex-start">
+          <span class="label">Barrierefreiheitsstärkungsgesetz</span>
+          <h2 style="margin-top:.25rem">Ist Ihre Website BFSG-konform?</h2>
+        </div>
+        <div class="preview-code"><code>&lt;span class="label"&gt;Barrierefreiheitsstärkungsgesetz&lt;/span&gt;
+&lt;h2&gt;Ist Ihre Website BFSG-konform?&lt;/h2&gt;
+
+&lt;!-- Auf dunklem Hintergrund: --&gt;
+&lt;span class="label" style="color:rgba(255,255,255,.5)"&gt;...&lt;/span&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="section-hero">
+      <span class="comp-label">Section</span>
+      <p class="comp-name">Hero-Abschnitt</p>
+      <p class="comp-desc">Split-Layout: Inhalt links, Form-Card rechts. Cream-Hintergrund. 2-spaltiges Grid ab ≥1024px.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col bg-cream" style="padding:1.5rem">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center">
+            <div>
+              <span class="label">Barrierefreiheitsstärkungsgesetz</span>
+              <h1 style="margin-top:.25rem;font-size:1.5rem">Ist Ihre Website BFSG-konform?</h1>
+              <p style="margin-top:.75rem;color:#555;font-size:.9375rem">Seit dem 28. Juni 2025 gilt das BFSG.</p>
+              <ul style="margin-top:1rem;list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem">
+                <li style="display:flex;align-items:center;gap:.5rem;font-size:.875rem">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#8e0038"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  WCAG 2.1 AA Prüfung
+                </li>
+                <li style="display:flex;align-items:center;gap:.5rem;font-size:.875rem">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#8e0038"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                  Bericht in 48 Stunden
+                </li>
+              </ul>
+            </div>
+            <div class="form-card" style="padding:1.25rem">
+              <p style="font-weight:700;color:var(--maroon);font-size:1rem;margin-bottom:.5rem">Kostenlose Ersteinschätzung</p>
+              <div class="field" style="margin-bottom:.75rem">
+                <label for="dh1" style="font-size:.8125rem">Website-URL</label>
+                <input type="url" id="dh1" placeholder="https://..." style="padding:.5rem .75rem;font-size:.875rem">
+              </div>
+              <button class="btn btn-primary btn-full" style="padding:.625rem 1rem;font-size:.875rem">Anfragen</button>
+            </div>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;section class="hero" id="anfrage"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="hero-inner"&gt;
+
+      &lt;div class="hero-content"&gt;
+        &lt;span class="label"&gt;...&lt;/span&gt;
+        &lt;h1&gt;...&lt;/h1&gt;
+        &lt;p class="hero-sub"&gt;...&lt;/p&gt;
+        &lt;ul class="hero-checks"&gt;
+          &lt;li&gt;&lt;svg .../&gt; Punkt 1&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+
+      &lt;div class="form-card"&gt;
+        &lt;!-- Form... --&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="section-urgency">
+      <span class="comp-label">Section</span>
+      <p class="comp-name">Urgency-Tiles (dunkler Abschnitt)</p>
+      <p class="comp-desc">3 Tiles auf dunklem Hintergrund für Risiko/Dringlichkeits-Messaging. Halbtransparenter Hintergrund, weiße Borders.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame bg-dark col">
+          <span class="label" style="color:rgba(255,255,255,.45)">Handlungsbedarf</span>
+          <h2 style="color:#fff;margin-top:.25rem;font-size:1.125rem">Die Frist ist abgelaufen.</h2>
+          <div class="urgency-grid" style="margin-top:1rem">
+            <div class="urgency-tile">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z"/></svg>
+              <h3>Bußgelder bis 100.000 €</h3>
+              <p>Behörden können Geldbußen bei Verstößen verhängen.</p>
+            </div>
+            <div class="urgency-tile">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <h3>Abmahnrisiko</h3>
+              <p>Wettbewerber können kostenpflichtig abmahnen.</p>
+            </div>
+            <div class="urgency-tile">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z"/></svg>
+              <h3>Zielgruppen-Ausschluss</h3>
+              <p>Millionen Nutzer können Ihr Angebot nicht nutzen.</p>
+            </div>
+          </div>
+          <p class="urgency-note">Das BFSG gilt seit dem 28. Juni 2025 — handeln Sie jetzt.</p>
+        </div>
+        <div class="preview-code"><code>&lt;section class="section-dark section-pad"&gt;
+  &lt;div class="container"&gt;
+    &lt;span class="label" style="color:rgba(255,255,255,.45)"&gt;...&lt;/span&gt;
+    &lt;h2&gt;...&lt;/h2&gt;
+    &lt;div class="urgency-grid"&gt;
+      &lt;article class="urgency-tile"&gt;
+        &lt;svg ...&gt;&lt;/svg&gt;
+        &lt;h3&gt;Titel&lt;/h3&gt;
+        &lt;p&gt;Text&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/div&gt;
+    &lt;p class="urgency-note"&gt;...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="section-cta">
+      <span class="comp-label">Section</span>
+      <p class="comp-name">CTA-Abschnitt</p>
+      <p class="comp-desc">Zentrierter Aufruf-zur-Aktion auf dunklem Hintergrund. <code>.cta-form-wrap</code> für eingebettetes Formular.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame bg-dark col" style="align-items:center;text-align:center">
+          <span class="label" style="color:rgba(255,255,255,.45)">Jetzt handeln</span>
+          <h2 style="color:#fff;font-size:1.25rem;max-width:26ch;margin:.25rem auto 0">Sichern Sie Ihr Unternehmen jetzt ab.</h2>
+          <p style="color:rgba(255,255,255,.7);margin-top:.5rem;font-size:.9375rem">Prüfung anfragen — Antwort in 24 h.</p>
+          <div style="margin-top:1.5rem"><a href="#" class="btn btn-white">Kostenlos anfragen</a></div>
+        </div>
+        <div class="preview-code"><code>&lt;section class="section-dark section-pad cta-section"&gt;
+  &lt;div class="container"&gt;
+    &lt;span class="label" style="color:rgba(255,255,255,.45)"&gt;...&lt;/span&gt;
+    &lt;h2&gt;Sichern Sie Ihr Unternehmen ab.&lt;/h2&gt;
+    &lt;p class="sub"&gt;...&lt;/p&gt;
+    &lt;div class="cta-form-wrap"&gt;
+      &lt;!-- Form... --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ LAYOUT ════════════════════ -->
+
+    <div class="comp-group-title" id="layout-split">Layout</div>
+
+    <div class="comp-block">
+      <span class="comp-label">Grid</span>
+      <p class="comp-name">Split 2-Column</p>
+      <p class="comp-desc">2-spaltiges Grid ab ≥1024px. <code>align-items:center</code>. Für Text + Bild oder Text + Liste.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col">
+          <div class="split" style="gap:1.5rem">
+            <div style="background:var(--bg-light);border-radius:8px;padding:1.5rem">
+              <p style="font-weight:700;margin-bottom:.5rem;color:var(--maroon)">Linke Spalte</p>
+              <p style="font-size:.875rem;color:#555">Inhalt, Text, Liste…</p>
+            </div>
+            <div style="background:var(--bg-light);border-radius:8px;padding:1.5rem">
+              <p style="font-weight:700;margin-bottom:.5rem;color:var(--maroon)">Rechte Spalte</p>
+              <p style="font-size:.875rem;color:#555">Bild, Illustration…</p>
+            </div>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="split"&gt;
+  &lt;div&gt; &lt;!-- Linker Inhalt --&gt; &lt;/div&gt;
+  &lt;div&gt; &lt;!-- Rechter Inhalt --&gt; &lt;/div&gt;
+&lt;/div&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="layout-split-rev">
+      <span class="comp-label">Modifier</span>
+      <p class="comp-name">Split Reverse</p>
+      <p class="comp-desc"><code>.split-reverse</code> kehrt die Spaltenreihenfolge im HTML um — erste Spalte erscheint rechts. Im Markup bleibt die logische Reihenfolge erhalten (Accessibility).</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col">
+          <div class="split split-reverse" style="gap:1.5rem">
+            <div style="background:#fef6d2;border-radius:8px;padding:1.5rem">
+              <p style="font-weight:700;margin-bottom:.5rem;color:var(--maroon)">Im HTML: 1. Element</p>
+              <p style="font-size:.875rem;color:#555">Erscheint visuell rechts</p>
+            </div>
+            <div style="background:var(--bg-light);border-radius:8px;padding:1.5rem">
+              <p style="font-weight:700;margin-bottom:.5rem;color:var(--maroon)">Im HTML: 2. Element</p>
+              <p style="font-size:.875rem;color:#555">Erscheint visuell links</p>
+            </div>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="split split-reverse"&gt;
+  &lt;div&gt; &lt;!-- HTML-1. → visuell rechts --&gt; &lt;/div&gt;
+  &lt;div&gt; &lt;!-- HTML-2. → visuell links --&gt; &lt;/div&gt;
+&lt;/div&gt;</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ LISTEN ════════════════════ -->
+
+    <div class="comp-group-title" id="list-checks">Listen</div>
+
+    <div class="comp-block">
+      <span class="comp-label">Komponente</span>
+      <p class="comp-name">Checkmark-Liste (Hero)</p>
+      <p class="comp-desc"><code>.hero-checks</code> für Bullet-Points im Hero. SVG-Checkmark in Maroon, 18px.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame bg-cream">
+          <ul class="hero-checks" style="margin:0">
+            <li><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> WCAG 2.1 AA Prüfung nach BFSG</li>
+            <li><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Detaillierter PDF-Bericht</li>
+            <li><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Lieferung in 48 Stunden</li>
+          </ul>
+        </div>
+        <div class="preview-code"><code>&lt;ul class="hero-checks"&gt;
+  &lt;li&gt;
+    &lt;svg ...&gt;&lt;path d="M4.5 12.75l6 6 9-13.5"/&gt;&lt;/svg&gt;
+    Prüfpunkt
+  &lt;/li&gt;
+&lt;/ul&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block">
+      <span class="comp-label">Komponente</span>
+      <p class="comp-name">Allgemeine Checkmark-Liste</p>
+      <p class="comp-desc"><code>.check-list</code> für Vorteils-Listen in Über-Uns-Abschnitten etc.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame">
+          <ul class="check-list" style="margin:0">
+            <li><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Zertifiziert nach IAAP CPWA</li>
+            <li><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Über 150 geprüfte Websites</li>
+            <li><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Sitz in Deutschland — DSGVO-konform</li>
+          </ul>
+        </div>
+        <div class="preview-code"><code>&lt;ul class="check-list"&gt;
+  &lt;li&gt;&lt;svg .../&gt; Listenpunkt&lt;/li&gt;
+&lt;/ul&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="list-deliver">
+      <span class="comp-label">Komponente</span>
+      <p class="comp-name">Nummerierte Lieferliste</p>
+      <p class="comp-desc">Für geordnete Schritte oder Report-Inhalte. Maroon-Kreis mit weißer Zahl, daneben Beschreibungstext.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame">
+          <ol class="deliver-list" style="margin:0">
+            <li class="deliver-item">
+              <span class="deliver-num" aria-hidden="true">1</span>
+              <span class="deliver-text"><strong>Executive Summary</strong> — Gesamtbewertung auf einer Seite.</span>
+            </li>
+            <li class="deliver-item">
+              <span class="deliver-num" aria-hidden="true">2</span>
+              <span class="deliver-text"><strong>Detaillierte Prüfliste</strong> — Alle 50+ WCAG-Kriterien mit Status.</span>
+            </li>
+            <li class="deliver-item">
+              <span class="deliver-num" aria-hidden="true">3</span>
+              <span class="deliver-text"><strong>Maßnahmenplan</strong> — Priorisiert mit Aufwandsschätzung.</span>
+            </li>
+          </ol>
+        </div>
+        <div class="preview-code"><code>&lt;ol class="deliver-list"&gt;
+  &lt;li class="deliver-item"&gt;
+    &lt;span class="deliver-num" aria-hidden="true"&gt;1&lt;/span&gt;
+    &lt;span class="deliver-text"&gt;
+      &lt;strong&gt;Titel&lt;/strong&gt; — Beschreibung...
+    &lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ TABELLEN ════════════════════ -->
+
+    <div class="comp-group-title" id="table-affected">Tabellen</div>
+
+    <div class="comp-block">
+      <span class="comp-label">Komponente</span>
+      <p class="comp-name">Affected Table</p>
+      <p class="comp-desc">Dunkler Header, weiße Zeilen mit Hover-State. <code>.affected-wrap</code> gibt Border-Radius und overflow:hidden.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col no-pad" style="padding:0">
+          <div class="affected-wrap" style="margin:0;border-radius:0;border:none">
+            <table class="affected-table">
+              <thead>
+                <tr>
+                  <th scope="col">Bereich</th>
+                  <th scope="col">Betroffen ab</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>E-Commerce</td>
+                  <td>10 MA oder 2 Mio. € Umsatz</td>
+                  <td><span class="dot dot-red" aria-hidden="true"></span>Hoch</td>
+                </tr>
+                <tr>
+                  <td>Bankwesen</td>
+                  <td>Ab erstem Kunden-Interface</td>
+                  <td><span class="dot dot-red" aria-hidden="true"></span>Hoch</td>
+                </tr>
+                <tr>
+                  <td>Kleinstunternehmen</td>
+                  <td>Ausgenommen</td>
+                  <td><span class="dot dot-grey" aria-hidden="true"></span>Gering</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="affected-wrap"&gt;
+  &lt;table class="affected-table"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;&lt;th scope="col"&gt;Bereich&lt;/th&gt;...&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;E-Commerce&lt;/td&gt;
+        &lt;td&gt;10 MA oder 2 Mio. €&lt;/td&gt;
+        &lt;td&gt;
+          &lt;span class="dot dot-red" aria-hidden="true"&gt;&lt;/span&gt;
+          Hoch
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="table-dots">
+      <span class="comp-label">Utility</span>
+      <p class="comp-name">Status-Dots</p>
+      <p class="comp-desc">8px Kreise als visuelle Status-Indikatoren. Immer mit <code>aria-hidden="true"</code> — Text daneben trägt die Bedeutung.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame" style="gap:1.5rem">
+          <span><span class="dot dot-red" aria-hidden="true"></span> Hoch (dot-red)</span>
+          <span><span class="dot dot-grey" aria-hidden="true"></span> Gering (dot-grey)</span>
+        </div>
+        <div class="preview-code"><code>&lt;span class="dot dot-red" aria-hidden="true"&gt;&lt;/span&gt; Hoch
+&lt;span class="dot dot-grey" aria-hidden="true"&gt;&lt;/span&gt; Gering</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ REVIEWS ════════════════════ -->
+
+    <div class="comp-group-title" id="review-box">Bewertungen &amp; Testimonials</div>
+
+    <div class="comp-block">
+      <span class="comp-label">Komponente</span>
+      <p class="comp-name">Review Box</p>
+      <p class="comp-desc">Zentrierter Testimonial-Block auf Teal-Hintergrund. Sterne → Score → Zitat → Autor.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame bg-teal col" style="align-items:center">
+          <div class="review-box">
+            <div class="review-stars" aria-label="5 von 5 Sternen">
+              <span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+              <span class="star" aria-hidden="true">★</span>
+              <span class="review-score">5,0</span>
+            </div>
+            <blockquote>
+              <p class="review-quote">Der Bericht war so konkret, dass unser Entwickler sofort wusste, was zu tun ist.</p>
+            </blockquote>
+            <p class="review-author">Markus R., Leiter Digitale Produkte</p>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="review-box"&gt;
+  &lt;div class="review-stars" aria-label="5 von 5 Sternen"&gt;
+    &lt;span class="star" aria-hidden="true"&gt;★&lt;/span&gt;
+    &lt;!-- × 5 --&gt;
+    &lt;span class="review-score"&gt;5,0&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;blockquote&gt;
+    &lt;p class="review-quote"&gt;Zitat-Text...&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;p class="review-author"&gt;Name, Position&lt;/p&gt;
+&lt;/div&gt;</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ FAQ ════════════════════ -->
+
+    <div class="comp-group-title" id="faq-list">FAQ / Accordion</div>
+    <p class="comp-group-desc">Native HTML <code>&lt;details&gt;</code>/<code>&lt;summary&gt;</code> — kein JS nötig. Chevron dreht sich via CSS-Transition. Maroon-Border im Open-State.</p>
+
+    <div class="comp-block">
+      <span class="comp-label">Komponente</span>
+      <p class="comp-name">FAQ Accordion</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col">
+          <div class="faq-list" style="margin-top:0">
+            <details class="faq-item">
+              <summary>Was ist das Barrierefreiheitsstärkungsgesetz (BFSG)?
+                <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Das BFSG ist die deutsche Umsetzung des European Accessibility Act. Es gilt seit dem 28. Juni 2025 und verpflichtet Unternehmen zur digitalen Barrierefreiheit nach WCAG 2.1 AA.</p>
+              </div>
+            </details>
+            <details class="faq-item" open>
+              <summary>Wie schnell erhalten wir unseren Bericht?
+                <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>In der Regel innerhalb von 48 Stunden nach Auftragseingang.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="faq-list"&gt;
+  &lt;details class="faq-item"&gt;
+    &lt;summary&gt;
+      Frage-Text
+      &lt;svg class="faq-chevron" ...&gt;
+        &lt;path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/&gt;
+      &lt;/svg&gt;
+    &lt;/summary&gt;
+    &lt;div class="faq-answer"&gt;
+      &lt;p&gt;Antwort-Text...&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ FOOTER ════════════════════ -->
+
+    <div class="comp-group-title" id="footer-full">Footer</div>
+    <p class="comp-group-desc">4-spaltiger Footer nach ERGO-Vorbild. Hellgrauer Hintergrund (#f5f5f5), 1px Border oben. Sub-Footer mit Copyright und Legal-Links.</p>
+
+    <div class="comp-block">
+      <span class="comp-label">Komponente</span>
+      <p class="comp-name">Footer vollständig</p>
+      <div class="preview-wrap">
+        <div class="preview-frame no-pad">
+          <footer class="site-footer" style="width:100%">
+            <div style="padding:2rem 1.5rem 1.25rem;max-width:100%">
+              <div class="footer-grid">
+                <div>
+                  <a href="#" class="footer-brand">BFSG<span>-</span>Check</a>
+                  <p style="margin-top:.625rem;font-size:.8125rem;color:#555;line-height:1.6">Professionelle Barrierefreiheitsprüfung für Websites.</p>
+                </div>
+                <nav aria-label="Leistungen">
+                  <p class="footer-col-title">Leistungen</p>
+                  <ul class="footer-col-links">
+                    <li><a href="#">Wie es funktioniert</a></li>
+                    <li><a href="#">Unser Bericht</a></li>
+                    <li><a href="#">Prüfung anfragen</a></li>
+                  </ul>
+                </nav>
+                <nav aria-label="Wissen">
+                  <p class="footer-col-title">Wissen</p>
+                  <ul class="footer-col-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">BFSG-Überblick</a></li>
+                  </ul>
+                </nav>
+                <div>
+                  <p class="footer-col-title">Kontakt</p>
+                  <ul class="footer-col-links">
+                    <li><a href="mailto:info@bfsg-check.eu">info@bfsg-check.eu</a></li>
+                    <li><a href="tel:+49...">+49 800 000 0000</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer-sub">
+                <span style="font-size:.75rem;color:#777">© 2025 BFSG-Check</span>
+                <nav class="footer-legal" aria-label="Rechtliches">
+                  <a href="#">Impressum</a>
+                  <a href="#">Datenschutz</a>
+                  <a href="#">AGB</a>
+                </nav>
+              </div>
+            </div>
+          </footer>
+        </div>
+        <div class="preview-code"><code>&lt;footer class="site-footer"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="footer-inner"&gt;
+      &lt;div class="footer-grid"&gt;
+        &lt;div&gt;
+          &lt;a href="/" class="footer-brand"&gt;BFSG&lt;span&gt;-&lt;/span&gt;Check&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;nav aria-label="Leistungen"&gt;
+          &lt;p class="footer-col-title"&gt;Leistungen&lt;/p&gt;
+          &lt;ul class="footer-col-links"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Wie es funktioniert&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;!-- weitere Spalten... --&gt;
+      &lt;/div&gt;
+      &lt;div class="footer-sub"&gt;
+        &lt;span&gt;© 2025 BFSG-Check&lt;/span&gt;
+        &lt;nav class="footer-legal"&gt;
+          &lt;a href="impressum.html"&gt;Impressum&lt;/a&gt;
+          &lt;a href="datenschutz.html"&gt;Datenschutz&lt;/a&gt;
+        &lt;/nav&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></div>
+      </div>
+    </div>
+
+    <hr class="comp-divider">
+
+    <!-- ════════════════════ UTILITIES ════════════════════ -->
+
+    <div class="comp-group-title" id="util-skip">Utilities &amp; Hilfselemente</div>
+
+    <div class="comp-block">
+      <span class="comp-label">Accessibility</span>
+      <p class="comp-name">Skip Link</p>
+      <p class="comp-desc">Erstes Element im <code>&lt;body&gt;</code>. Versteckt außerhalb Viewport, erscheint bei Fokus (Tastaturnutzer). Pflicht für BFSG-Konformität.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame">
+          <a href="#main" class="skip-link" style="position:static;top:auto">Zum Inhalt springen</a>
+        </div>
+        <div class="preview-code"><code>&lt;!-- Erstes Element im body --&gt;
+&lt;a class="skip-link" href="#main"&gt;Zum Inhalt springen&lt;/a&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="util-focus">
+      <span class="comp-label">Accessibility</span>
+      <p class="comp-name">Focus Ring</p>
+      <p class="comp-desc">Globale <code>:focus-visible</code>-Regel. 3px solid <code>--red</code>, offset 2px. Wird automatisch auf alle interaktiven Elemente angewendet.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame" style="gap:1.5rem">
+          <a href="#" style="outline:3px solid #ed0039;outline-offset:2px;border-radius:2px;padding:.375rem .75rem;text-decoration:none;color:var(--maroon);font-weight:600">Link mit Focus</a>
+          <button class="btn btn-primary" style="outline:3px solid #ed0039;outline-offset:2px">Button mit Focus</button>
+        </div>
+        <div class="preview-code"><code>/* In style.css — global: */
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+  border-radius: 2px;
+}</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="util-placeholders">
+      <span class="comp-label">Utility</span>
+      <p class="comp-name">Bild-Platzhalter</p>
+      <p class="comp-desc">Für noch nicht vorhandene Bilder. <code>.img-placeholder</code> für allgemeine Bereiche, <code>.about-photo</code> für quadratische Personenfotos.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame" style="gap:2rem;align-items:flex-start">
+          <div class="img-placeholder" style="min-height:140px;width:220px">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" style="width:2.5rem;height:2.5rem;stroke:var(--border)"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 18h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/></svg>
+            <p>.img-placeholder</p>
+          </div>
+          <div class="about-photo" style="width:8rem;height:8rem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" style="width:2rem;height:2rem;stroke:var(--border)"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+            <p style="font-size:.625rem">.about-photo</p>
+          </div>
+        </div>
+        <div class="preview-code"><code>&lt;div class="img-placeholder" role="img" aria-label="Bild folgt"&gt;
+  &lt;svg ...&gt;&lt;/svg&gt;
+  &lt;p&gt;Bild folgt&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="about-photo" role="img" aria-label="Foto Teammitglied"&gt;
+  &lt;svg ...&gt;&lt;/svg&gt;
+  &lt;p&gt;Foto folgt&lt;/p&gt;
+&lt;/div&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="util-spinner">
+      <span class="comp-label">Animation</span>
+      <p class="comp-name">Spinner</p>
+      <p class="comp-desc">Animierter Ladekreis für Button-Loading-States. 0.7s linear, nur <code>transform</code> animiert (GPU-beschleunigt). Immer <code>aria-hidden="true"</code>.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame" style="gap:1.5rem;align-items:center">
+          <span class="spinner" style="border-color:rgba(142,0,56,.25);border-top-color:var(--maroon)"></span>
+          <button class="btn btn-primary" disabled style="gap:.5rem">
+            Laden
+            <span class="spinner"></span>
+          </button>
+        </div>
+        <div class="preview-code"><code>&lt;span class="spinner" aria-hidden="true"&gt;&lt;/span&gt;
+
+&lt;!-- In Button: --&gt;
+&lt;button class="btn btn-primary" disabled&gt;
+  &lt;span class="btn-text"&gt;Wird gesendet…&lt;/span&gt;
+  &lt;span class="spinner" aria-hidden="true" hidden&gt;&lt;/span&gt;
+&lt;/button&gt;</code></div>
+      </div>
+    </div>
+
+    <div class="comp-block" id="util-sticky-cta">
+      <span class="comp-label">Fixed</span>
+      <p class="comp-name">Sticky Mobile CTA</p>
+      <p class="comp-desc">Fixierter CTA am unteren Rand. Nur auf Mobile (≤639px). Wird sichtbar, sobald der Hero-Abschnitt den Viewport verlässt — via IntersectionObserver in <code>script.js</code>.</p>
+      <div class="preview-wrap">
+        <div class="preview-frame col" style="background:var(--bg-light)">
+          <div style="background:rgba(255,255,255,.97);border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem;box-shadow:0 -4px 16px rgba(0,0,0,.08)">
+            <a href="#" class="btn btn-primary btn-full">Kostenlos anfragen</a>
+          </div>
+          <p style="font-size:.75rem;color:var(--muted);margin-top:.5rem">Erscheint nur auf Mobile, wenn Hero außerhalb Viewport.</p>
+        </div>
+        <div class="preview-code"><code>&lt;!-- Am Ende von body, vor script.js: --&gt;
+&lt;div class="sticky-cta" id="sticky-cta"&gt;
+  &lt;a href="#anfrage" class="btn btn-primary btn-full"&gt;
+    Kostenlos anfragen
+  &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- JS (in script.js): --&gt;
+const obs = new IntersectionObserver(([e]) =>
+  sticky.classList.toggle('visible', !e.isIntersecting)
+);
+obs.observe(document.getElementById('anfrage'));</code></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

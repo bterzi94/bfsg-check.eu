@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS-Klassen Referenz — BFSG-Check Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="ds.css">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+
+<!-- DS Top Bar -->
+<header class="ds-bar">
+  <div class="container">
+    <a href="#" class="ds-bar-brand">BFSG-Check <span>Design System</span></a>
+    <nav class="ds-bar-nav" aria-label="Design System Navigation">
+      <a href="design-system.html" class="active">CSS-Klassen</a>
+      <a href="components.html">Komponenten</a>
+    </nav>
+    <a href="../index.html" class="ds-bar-home">← Startseite</a>
+  </div>
+</header>
+
+<div class="ds-layout">
+
+  <!-- Sidebar -->
+  <aside class="ds-sidebar" aria-label="Abschnitts-Navigation">
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Tokens</p>
+      <a href="#farben">Farbpalette</a>
+      <a href="#typografie">Typografie</a>
+      <a href="#abstande">Abstände &amp; Layout</a>
+      <a href="#schatten">Schatten</a>
+      <a href="#radien">Border-Radius</a>
+    </div>
+    <div class="ds-sidebar-group">
+      <p class="ds-sidebar-group-title">Referenz</p>
+      <a href="#klassen-nav">Navigation</a>
+      <a href="#klassen-buttons">Schaltflächen</a>
+      <a href="#klassen-tiles">Tiles</a>
+      <a href="#klassen-forms">Formulare</a>
+      <a href="#klassen-sections">Abschnitte</a>
+      <a href="#klassen-layout">Layout</a>
+      <a href="#klassen-listen">Listen</a>
+      <a href="#klassen-tabellen">Tabellen</a>
+      <a href="#klassen-reviews">Bewertungen</a>
+      <a href="#klassen-faq">FAQ</a>
+      <a href="#klassen-footer">Footer</a>
+      <a href="#klassen-utilities">Utilities</a>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="ds-content" id="main">
+
+    <!-- ══════════ FARBEN ══════════ -->
+    <section class="ds-section" id="farben">
+      <h1 class="ds-section-title">Farbpalette</h1>
+      <p class="ds-section-desc">Alle Farben sind als CSS Custom Properties in <code>:root</code> definiert. Basis: ERGO Design System (<code>newNavigation.min.css</code>, <code>tile.min.css</code>, <code>pages.min.css</code>). Schrift: Plus Jakarta Sans.</p>
+
+      <div class="ds-subsection">
+        <h2 class="ds-subsection-title">Primärfarben</h2>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#8e0038"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Maroon</span>
+              <span class="swatch-var">--maroon</span>
+              <span class="swatch-hex">#8e0038</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#71022e"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Maroon Dark</span>
+              <span class="swatch-var">--maroon-dark</span>
+              <span class="swatch-hex">#71022e</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#bf1528"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Maroon Mid</span>
+              <span class="swatch-var">--maroon-mid</span>
+              <span class="swatch-hex">#bf1528</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ed0039"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Red (Akzent)</span>
+              <span class="swatch-var">--red</span>
+              <span class="swatch-hex">#ed0039</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h2 class="ds-subsection-title">Neutrale &amp; Text</h2>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#333333"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Dark</span>
+              <span class="swatch-var">--dark</span>
+              <span class="swatch-hex">#333333</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#6a625a"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Muted</span>
+              <span class="swatch-var">--muted</span>
+              <span class="swatch-hex">#6a625a</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#d9d9d9"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Border Nav</span>
+              <span class="swatch-var">--border-nav</span>
+              <span class="swatch-hex">#d9d9d9</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#d3d3d3"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Border</span>
+              <span class="swatch-var">--border</span>
+              <span class="swatch-hex">#d3d3d3</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#c9c5c7"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Border Tile</span>
+              <span class="swatch-var">--border-tile</span>
+              <span class="swatch-hex">#c9c5c7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h2 class="ds-subsection-title">Hintergründe (ERGO Farbpalette)</h2>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ffffff;border-bottom:1px solid #eee"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">White</span>
+              <span class="swatch-var">--bg-white</span>
+              <span class="swatch-hex">#ffffff</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#f5f5f5"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Light</span>
+              <span class="swatch-var">--bg-light</span>
+              <span class="swatch-hex">#f5f5f5</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#fef6d2"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Cream</span>
+              <span class="swatch-var">--bg-cream</span>
+              <span class="swatch-hex">#fef6d2</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ccecef"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Teal</span>
+              <span class="swatch-var">--bg-teal</span>
+              <span class="swatch-hex">#ccecef</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#d3ebe5"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Green</span>
+              <span class="swatch-var">--bg-green</span>
+              <span class="swatch-hex">#d3ebe5</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#f5e1eb"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Rose</span>
+              <span class="swatch-var">--bg-rose</span>
+              <span class="swatch-hex">#f5e1eb</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ffe0cb"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Peach</span>
+              <span class="swatch-var">--bg-peach</span>
+              <span class="swatch-hex">#ffe0cb</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#ebe6d8"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Sand</span>
+              <span class="swatch-var">--bg-sand</span>
+              <span class="swatch-hex">#ebe6d8</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#333333"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Dark BG</span>
+              <span class="swatch-var">--bg-dark</span>
+              <span class="swatch-hex">#333333</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h2 class="ds-subsection-title">Navigation Interaktionsfarben</h2>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#fbf4f4"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Nav Hover BG</span>
+              <span class="swatch-var">--nav-hover-bg</span>
+              <span class="swatch-hex">#fbf4f4</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#8e0038"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Nav Hover Text</span>
+              <span class="swatch-var">--nav-hover-color</span>
+              <span class="swatch-hex">#8e0038</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ TYPOGRAFIE ══════════ -->
+    <section class="ds-section" id="typografie">
+      <h2 class="ds-section-title">Typografie</h2>
+      <p class="ds-section-desc">Schriftfamilie: <strong>Plus Jakarta Sans</strong> — Gewichte 400–800. Ersatz für ERGOs proprietäre Fedra Serif / FS Me (CORS-geschützt). Gesetzt über <code>--font</code>.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Typografische Hierarchie</h3>
+        <div class="type-scale">
+          <div class="type-item">
+            <div class="type-meta">
+              <strong>h1 / .hero h1</strong>
+              clamp(1.875rem, 4.5vw, 3rem)<br>
+              weight: 800<br>
+              letter-spacing: -.02em<br>
+              color: --maroon
+            </div>
+            <h1 style="font-size:clamp(1.875rem,4.5vw,3rem)">BFSG-Check</h1>
+          </div>
+          <div class="type-item">
+            <div class="type-meta">
+              <strong>h2</strong>
+              clamp(1.5rem, 3.5vw, 2.25rem)<br>
+              weight: 800<br>
+              letter-spacing: -.02em<br>
+              color: --maroon
+            </div>
+            <h2>Barrierefreiheit</h2>
+          </div>
+          <div class="type-item">
+            <div class="type-meta">
+              <strong>h3</strong>
+              1.125rem (18px)<br>
+              weight: 700<br>
+              letter-spacing: -.01em
+            </div>
+            <h3>Tile-Überschrift</h3>
+          </div>
+          <div class="type-item">
+            <div class="type-meta">
+              <strong>h4</strong>
+              1rem (16px)<br>
+              weight: 700
+            </div>
+            <h4>Kleinüberschrift</h4>
+          </div>
+          <div class="type-item">
+            <div class="type-meta">
+              <strong>p (Body)</strong>
+              1rem (16px)<br>
+              weight: 400<br>
+              line-height: 1.65
+            </div>
+            <p>Fließtext — Barrierefreiheit beginnt mit klarer, gut lesbarer Typografie. Zeilenlänge max. 65 Zeichen.</p>
+          </div>
+          <div class="type-item">
+            <div class="type-meta">
+              <strong>.label</strong>
+              0.6875rem (11px)<br>
+              weight: 700<br>
+              uppercase + spacing<br>
+              color: --red
+            </div>
+            <span class="label" style="position:static;margin:0">Barrierefreiheitsstärkungsgesetz</span>
+          </div>
+          <div class="type-item">
+            <div class="type-meta">
+              <strong>Muted text</strong>
+              color: --muted<br>
+              #6a625a
+            </div>
+            <p style="color:var(--muted)">Sekundärtext, Bildunterschriften, Metadaten</p>
+          </div>
+          <div class="type-item">
+            <div class="type-meta">
+              <strong>.hero-sub</strong>
+              1.0625rem (17px)<br>
+              max-width: 44ch
+            </div>
+            <p class="hero-sub" style="margin:0">Einleitungstext im Hero — etwas größer, max. 44 Zeichen Breite, leichte Farbe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ ABSTÄNDE ══════════ -->
+    <section class="ds-section" id="abstande">
+      <h2 class="ds-section-title">Abstände &amp; Layout</h2>
+      <p class="ds-section-desc">Fluid-Spacing über <code>clamp()</code>. Alle Layout-Abstände werden über CSS Custom Properties gesteuert.</p>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">CSS Custom Properties</h3>
+        <table class="class-table">
+          <thead>
+            <tr><th>Variable</th><th>Wert</th><th>Verwendung</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="cn">--space-section</span></td><td>clamp(3rem, 7vw, 5rem)</td><td>Vertikaler Abstand oben/unten in Sektionen</td></tr>
+            <tr><td><span class="cn">--max-w</span></td><td>1200px</td><td>Max-Breite des <code>.container</code></td></tr>
+            <tr><td><span class="cn">--nav-height-mobile</span></td><td>73px</td><td>Nav-Höhe ≤ 1151px</td></tr>
+            <tr><td><span class="cn">--nav-height-desktop</span></td><td>97px</td><td>Nav-Höhe ≥ 1152px</td></tr>
+            <tr><td><span class="cn">--nav-btn-radius</span></td><td>8px</td><td>Border-Radius Nav-Buttons</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ds-subsection">
+        <h3 class="ds-subsection-title">Abstands-Skala (visuell)</h3>
+        <div class="space-scale">
+          <div class="space-item"><span class="space-label">4px — micro</span><div class="space-bar" style="width:4px"></div></div>
+          <div class="space-item"><span class="space-label">8px — xs</span><div class="space-bar" style="width:8px"></div></div>
+          <div class="space-item"><span class="space-label">12px — sm</span><div class="space-bar" style="width:12px"></div></div>
+          <div class="space-item"><span class="space-label">16px — base</span><div class="space-bar" style="width:16px"></div></div>
+          <div class="space-item"><span class="space-label">24px — md</span><div class="space-bar" style="width:24px"></div></div>
+          <div class="space-item"><span class="space-label">32px — lg</span><div class="space-bar" style="width:32px"></div></div>
+          <div class="space-item"><span class="space-label">48px — xl</span><div class="space-bar" style="width:48px"></div></div>
+          <div class="space-item"><span class="space-label">80px — section (min)</span><div class="space-bar" style="width:80px"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ SCHATTEN ══════════ -->
+    <section class="ds-section" id="schatten">
+      <h2 class="ds-section-title">Schatten</h2>
+      <p class="ds-section-desc">3 Schattentiefen für unterschiedliche Elevations-Ebenen.</p>
+      <div class="shadow-grid">
+        <div>
+          <div class="shadow-box" style="box-shadow:var(--shadow-tile)">
+            <p style="font-size:.875rem;font-weight:700;color:var(--dark)">Tile Hover</p>
+          </div>
+          <code class="swatch-var" style="display:block;margin-top:.5rem">--shadow-tile</code>
+          <p style="font-size:.6875rem;color:var(--muted);margin-top:.25rem">0 -2px 4px .08 · 0 4px 8px .12 · 0 8px 16px .16</p>
+        </div>
+        <div>
+          <div class="shadow-box" style="box-shadow:var(--shadow-card)">
+            <p style="font-size:.875rem;font-weight:700;color:var(--dark)">Card</p>
+          </div>
+          <code class="swatch-var" style="display:block;margin-top:.5rem">--shadow-card</code>
+          <p style="font-size:.6875rem;color:var(--muted);margin-top:.25rem">0 2px 11px rgba(0,0,0,.08)</p>
+        </div>
+        <div>
+          <div class="shadow-box" style="box-shadow:var(--shadow-form)">
+            <p style="font-size:.875rem;font-weight:700;color:var(--dark)">Form</p>
+          </div>
+          <code class="swatch-var" style="display:block;margin-top:.5rem">--shadow-form</code>
+          <p style="font-size:.6875rem;color:var(--muted);margin-top:.25rem">0 4px 24px rgba(0,0,0,.12)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ RADIEN ══════════ -->
+    <section class="ds-section" id="radien">
+      <h2 class="ds-section-title">Border-Radius</h2>
+      <div class="shadow-grid">
+        <div style="background:#fff;border:1px solid var(--border);border-radius:2px;padding:1rem;text-align:center">
+          <code class="swatch-var">2px</code><br>
+          <span style="font-size:.75rem;color:var(--muted)">.btn, .nav-cta-mobile</span>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border);border-radius:4px;padding:1rem;text-align:center">
+          <code class="swatch-var">4px</code><br>
+          <span style="font-size:.75rem;color:var(--muted)">.btn (Standard), inputs</span>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center">
+          <code class="swatch-var">8px</code><br>
+          <span style="font-size:.75rem;color:var(--muted)">.tile, .form-card, .faq-item</span>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem;text-align:center">
+          <code class="swatch-var">var(--nav-btn-radius) = 8px</code><br>
+          <span style="font-size:.75rem;color:var(--muted)">Nav-Buttons</span>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border);border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;margin:0 auto">
+          <span style="font-size:.6875rem;color:var(--muted)">50%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ KLASSEN REFERENZ ══════════ -->
+
+    <section class="ds-section" id="klassen-nav">
+      <h2 class="ds-section-title">CSS-Klassen: Navigation</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.site-nav</span></td><td><span class="tag tag-nav">Nav</span></td><td>Fixierte Hauptnavigation. <code>position:fixed; z-index:500; height:73px</code> (mobile), <code>97px</code> (≥1152px). Weißer Hintergrund, 1px Border unten.</td></tr>
+          <tr><td><span class="cn">.nav-logo</span></td><td><span class="tag tag-nav">Nav</span></td><td>Logo-Container links im Nav. Flex-Spalte. Als <code>&lt;a&gt;</code>-Element.</td></tr>
+          <tr><td><span class="cn">.nav-logo-name</span></td><td><span class="tag tag-nav">Nav</span></td><td>Logotext. Font-Weight 800, Letter-Spacing -.03em. Maroon-Farbe.</td></tr>
+          <tr><td><span class="cn">.nav-logo-name span</span></td><td><span class="tag tag-nav">Nav</span></td><td>Akzent im Logo (z.B. Trennzeichen). Farbe: <code>--red</code>.</td></tr>
+          <tr><td><span class="cn">.nav-logo-claim</span></td><td><span class="tag tag-nav">Nav</span></td><td>Claim-Text unter dem Logo. 0.625rem, muted. Nur als schmaler Zusatz.</td></tr>
+          <tr><td><span class="cn">.nav-links</span></td><td><span class="tag tag-nav">Nav</span></td><td>Mittige Navigationslinks. Nur ab ≥1024px sichtbar. Als <code>&lt;ul&gt;</code>.</td></tr>
+          <tr><td><span class="cn">.nav-links a</span></td><td><span class="tag tag-nav">Nav</span></td><td>Einzelner Nav-Link. Hover: <code>--nav-hover-bg / --nav-hover-color</code>, Border-Radius 8px.</td></tr>
+          <tr><td><span class="cn">.nav-actions</span></td><td><span class="tag tag-nav">Nav</span></td><td>Rechte Aktionsgruppe im Nav. Flex-Container mit Gap 2px.</td></tr>
+          <tr><td><span class="cn">.nav-icon-btn</span></td><td><span class="tag tag-nav">Nav</span></td><td>Icon-+Text-Button (wie ERGO: Suche, Berater, Login). Ab ≥768px. Icon oben, Label unten, 0.6875rem.</td></tr>
+          <tr><td><span class="cn">.nav-phone</span></td><td><span class="tag tag-nav">Nav</span></td><td>Telefonnummer-Block im Nav. Ab ≥1024px. Icon links, Nummer+Zeiten rechts.</td></tr>
+          <tr><td><span class="cn">.nav-phone-text</span></td><td><span class="tag tag-nav">Nav</span></td><td>Flex-Spalte für Telefonnummer und Öffnungszeiten.</td></tr>
+          <tr><td><span class="cn">.nav-phone-number</span></td><td><span class="tag tag-nav">Nav</span></td><td>Telefonnummer. 0.875rem, Bold, Maroon.</td></tr>
+          <tr><td><span class="cn">.nav-phone-hours</span></td><td><span class="tag tag-nav">Nav</span></td><td>Öffnungszeiten unter der Nummer. 0.6875rem, muted.</td></tr>
+          <tr><td><span class="cn">.nav-cta-mobile</span></td><td><span class="tag tag-nav">Nav</span></td><td>Kleiner CTA-Button im Nav für Mobile. Nur ≤1023px sichtbar. Maroon, Border-Radius 2px.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-buttons">
+      <h2 class="ds-section-title">CSS-Klassen: Schaltflächen</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.btn</span></td><td><span class="tag tag-comp">Basis</span></td><td>Basis-Button-Klasse. Inline-Flex, padding .75rem 1.75rem, Border-Radius 4px, weight 700. Immer zusammen mit Variante verwenden.</td></tr>
+          <tr><td><span class="cn">.btn-primary</span></td><td><span class="tag tag-comp">Variante</span></td><td>Gefüllter Button. Hintergrund + Border: <code>--maroon</code>. Hover: <code>--maroon-dark</code>. Für primäre Aktionen.</td></tr>
+          <tr><td><span class="cn">.btn-outline</span></td><td><span class="tag tag-comp">Variante</span></td><td>Randbutton. Transparenter Hintergrund, Maroon-Border + -Text. Hover: Maroon-Füllung.</td></tr>
+          <tr><td><span class="cn">.btn-outline-white</span></td><td><span class="tag tag-comp">Variante</span></td><td>Randbutton auf dunklem Hintergrund. Weiße Border + Text. Hover: leichte weiße Füllung.</td></tr>
+          <tr><td><span class="cn">.btn-white</span></td><td><span class="tag tag-comp">Variante</span></td><td>Weißer Button auf dunklem Hintergrund. Maroon-Text. Hover: #f5f5f5.</td></tr>
+          <tr><td><span class="cn">.btn-sm</span></td><td><span class="tag tag-util">Modifier</span></td><td>Kleiner Button. padding .5rem 1.25rem, font-size .875rem.</td></tr>
+          <tr><td><span class="cn">.btn-lg</span></td><td><span class="tag tag-util">Modifier</span></td><td>Großer Button. padding .875rem 2.25rem, font-size 1.0625rem.</td></tr>
+          <tr><td><span class="cn">.btn-full</span></td><td><span class="tag tag-util">Modifier</span></td><td>Vollbreite Button. <code>width:100%</code>. Für Formulare und mobile CTAs.</td></tr>
+          <tr><td><span class="cn">.spinner</span></td><td><span class="tag tag-comp">State</span></td><td>Lade-Spinner. 1.125rem, weißer Ring mit rotierendem Segment. In Button einbetten.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-tiles">
+      <h2 class="ds-section-title">CSS-Klassen: Tiles</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse / Attribut</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.tile</span></td><td><span class="tag tag-comp">Basis</span></td><td>Tile-Grundklasse. Flex-Spalte, Border 1px <code>--border-tile</code>, Border-Radius 8px, padding 32px 24px (48px 32px ≥768px). Hover: <code>--shadow-tile</code>.</td></tr>
+          <tr><td><span class="cn">data-color="#ccecef"</span></td><td><span class="tag tag-util">Farbe</span></td><td>Teal-Variante. Hintergrund: #ccecef, kein Border.</td></tr>
+          <tr><td><span class="cn">data-color="#fef6d2"</span></td><td><span class="tag tag-util">Farbe</span></td><td>Cream-Variante. Hintergrund: #fef6d2, kein Border.</td></tr>
+          <tr><td><span class="cn">data-color="#d3ebe5"</span></td><td><span class="tag tag-util">Farbe</span></td><td>Green-Variante. Hintergrund: #d3ebe5, kein Border.</td></tr>
+          <tr><td><span class="cn">data-color="#f5e1eb"</span></td><td><span class="tag tag-util">Farbe</span></td><td>Rose-Variante. Hintergrund: #f5e1eb, kein Border.</td></tr>
+          <tr><td><span class="cn">data-color="#ffe0cb"</span></td><td><span class="tag tag-util">Farbe</span></td><td>Peach-Variante. Hintergrund: #ffe0cb, kein Border.</td></tr>
+          <tr><td><span class="cn">data-color="#ebe6d8"</span></td><td><span class="tag tag-util">Farbe</span></td><td>Sand-Variante. Hintergrund: #ebe6d8, kein Border.</td></tr>
+          <tr><td><span class="cn">.tile__icon</span></td><td><span class="tag tag-comp">Kind</span></td><td>Icon-Container. Zentriert. SVG: 40px (48px ≥768px).</td></tr>
+          <tr><td><span class="cn">.tile__title</span></td><td><span class="tag tag-comp">Kind</span></td><td>Tile-Überschrift. 1rem (1.125rem ≥768px), weight 700, Maroon.</td></tr>
+          <tr><td><span class="cn">.tile__text</span></td><td><span class="tag tag-comp">Kind</span></td><td>Tile-Beschreibungstext. 0.9375rem, #555, margin-top 12px (16px ≥768px).</td></tr>
+          <tr><td><span class="cn">.tile__cta</span></td><td><span class="tag tag-comp">Kind</span></td><td>CTA-Bereich unten im Tile. <code>margin-top:auto; padding-top:24px</code>. Drückt Inhalt ans Ende.</td></tr>
+          <tr><td><span class="cn">.tile-grid-2</span></td><td><span class="tag tag-layout">Grid</span></td><td>2-spaltiges Tile-Raster (ab ≥768px). Gap 1.25rem, margin-top 2.5rem.</td></tr>
+          <tr><td><span class="cn">.tile-grid-3</span></td><td><span class="tag tag-layout">Grid</span></td><td>3-spaltiges Tile-Raster (ab ≥640px). Gap 1rem, margin-top 2.5rem.</td></tr>
+          <tr><td><span class="cn">.tile-grid-4</span></td><td><span class="tag tag-layout">Grid</span></td><td>4-spaltiges Raster: 2 Spalten (≥640px) → 4 Spalten (≥1024px). Gap 1rem.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-forms">
+      <h2 class="ds-section-title">CSS-Klassen: Formulare</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.form-card</span></td><td><span class="tag tag-form">Form</span></td><td>Formular-Container. Weiß, Border-Radius 8px, padding 2rem, <code>--shadow-form</code>.</td></tr>
+          <tr><td><span class="cn">.form-card-title</span></td><td><span class="tag tag-form">Form</span></td><td>Formular-Titel. 1.25rem, weight 700, Maroon.</td></tr>
+          <tr><td><span class="cn">.form-card-sub</span></td><td><span class="tag tag-form">Form</span></td><td>Untertitel unter dem Formular-Titel. 0.875rem, muted, margin-bottom 1.5rem.</td></tr>
+          <tr><td><span class="cn">.field</span></td><td><span class="tag tag-form">Form</span></td><td>Feld-Wrapper. margin-bottom 1rem. Enthält <code>label</code> + <code>input</code> + optional <code>.field-error</code>.</td></tr>
+          <tr><td><span class="cn">.field label</span></td><td><span class="tag tag-form">Form</span></td><td>Feld-Label. 0.875rem, weight 600, display:block, margin-bottom .375rem.</td></tr>
+          <tr><td><span class="cn">.field input</span></td><td><span class="tag tag-form">Form</span></td><td>Text/URL/Email-Input. 100% Breite, padding .75rem 1rem, Border 1.5px <code>--border</code>, Border-Radius 4px.</td></tr>
+          <tr><td><span class="cn">.field input:focus</span></td><td><span class="tag tag-form">State</span></td><td>Focus-Zustand. Border Maroon 2px, Box-Shadow rgba(142,0,56,.1).</td></tr>
+          <tr><td><span class="cn">.field input[aria-invalid="true"]</span></td><td><span class="tag tag-form">State</span></td><td>Fehler-Zustand. Border #c00. Per JS setzen: <code>field.setAttribute('aria-invalid','true')</code>.</td></tr>
+          <tr><td><span class="cn">.field-error</span></td><td><span class="tag tag-form">Form</span></td><td>Fehlermeldung unter dem Input. 0.8125rem, #c00. <code>role="alert"</code> nicht vergessen.</td></tr>
+          <tr><td><span class="cn">.checkbox-row</span></td><td><span class="tag tag-form">Form</span></td><td>Checkbox + Label in einer Zeile. Flex, Gap .625rem, align-items flex-start.</td></tr>
+          <tr><td><span class="cn">.form-success</span></td><td><span class="tag tag-form">State</span></td><td>Erfolgs-Meldung. Standardmäßig <code>display:none</code>. Mit <code>.visible</code> aktivieren.</td></tr>
+          <tr><td><span class="cn">.form-success.visible</span></td><td><span class="tag tag-form">State</span></td><td>Erfolgs-Meldung sichtbar. Grüner Hintergrund (#f0fdf4), Border #bbf7d0.</td></tr>
+          <tr><td><span class="cn">.form-error</span></td><td><span class="tag tag-form">State</span></td><td>Fehler-Meldung (Formular-Ebene). Standardmäßig versteckt. Mit <code>.visible</code> aktivieren.</td></tr>
+          <tr><td><span class="cn">.form-error.visible</span></td><td><span class="tag tag-form">State</span></td><td>Fehler-Meldung sichtbar. 0.875rem, #c00.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-sections">
+      <h2 class="ds-section-title">CSS-Klassen: Abschnitte</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.section-pad</span></td><td><span class="tag tag-section">Spacing</span></td><td>Vertikaler Innenabstand: <code>padding: var(--space-section) 0</code> = clamp(3rem, 7vw, 5rem).</td></tr>
+          <tr><td><span class="cn">.section-white</span></td><td><span class="tag tag-section">BG</span></td><td>Weißer Hintergrund. Standard-Abschnitt.</td></tr>
+          <tr><td><span class="cn">.section-light</span></td><td><span class="tag tag-section">BG</span></td><td>Hellgrauer Hintergrund (#f5f5f5). Für Alternierung.</td></tr>
+          <tr><td><span class="cn">.section-dark</span></td><td><span class="tag tag-section">BG</span></td><td>Dunkler Hintergrund (#333). h2 → weiß, p → #ccc.</td></tr>
+          <tr><td><span class="cn">.section-teal</span></td><td><span class="tag tag-section">BG</span></td><td>Teal-Hintergrund (#ccecef). Für Testimonial-Bereiche.</td></tr>
+          <tr><td><span class="cn">.section-rose</span></td><td><span class="tag tag-section">BG</span></td><td>Rosa Hintergrund (#f5e1eb).</td></tr>
+          <tr><td><span class="cn">.section-cream</span></td><td><span class="tag tag-section">BG</span></td><td>Crème-Hintergrund (#fef6d2). Hero-Standard.</td></tr>
+          <tr><td><span class="cn">.label</span></td><td><span class="tag tag-util">Text</span></td><td>Eyebrow-Label über Überschriften. 0.6875rem, uppercase, letter-spacing .14em, Farbe <code>--red</code>.</td></tr>
+          <tr><td><span class="cn">.hero</span></td><td><span class="tag tag-section">Section</span></td><td>Hero-Abschnitt. Hintergrund <code>--bg-cream</code>, section-pad.</td></tr>
+          <tr><td><span class="cn">.hero-inner</span></td><td><span class="tag tag-section">Section</span></td><td>Grid-Container im Hero. 1 Spalte (mobil) → 2 Spalten ≥1024px. Gap 2.5rem.</td></tr>
+          <tr><td><span class="cn">.cta-section</span></td><td><span class="tag tag-section">Section</span></td><td>CTA-Abschnitt. text-align:center. Mit <code>.section-dark</code> kombinieren.</td></tr>
+          <tr><td><span class="cn">.cta-form-wrap</span></td><td><span class="tag tag-section">Section</span></td><td>Formular-Wrapper im CTA. Weiß, Border-Radius 8px, max-width 30rem, zentriert.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-layout">
+      <h2 class="ds-section-title">CSS-Klassen: Layout</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.container</span></td><td><span class="tag tag-layout">Layout</span></td><td>Max-Width-Wrapper. <code>max-width:1200px; margin:0 auto</code>. Padding: 1.25rem → 1.5rem → 2rem nach Viewport.</td></tr>
+          <tr><td><span class="cn">.split</span></td><td><span class="tag tag-layout">Layout</span></td><td>2-spaltiges Grid ab ≥1024px. Gap 3rem, align-items center.</td></tr>
+          <tr><td><span class="cn">.split-reverse</span></td><td><span class="tag tag-layout">Modifier</span></td><td>Auf <code>.split</code> anwenden: erste Spalte → rechts, zweite → links (via order).</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-listen">
+      <h2 class="ds-section-title">CSS-Klassen: Listen</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.hero-checks</span></td><td><span class="tag tag-comp">Liste</span></td><td>Checkmark-Liste im Hero. Flex-Spalte, Gap .625rem. <code>&lt;li&gt;</code> mit SVG-Checkmark.</td></tr>
+          <tr><td><span class="cn">.check-list</span></td><td><span class="tag tag-comp">Liste</span></td><td>Allgemeine Checkmark-Liste. Flex-Spalte, Gap .75rem. SVG links, Text rechts.</td></tr>
+          <tr><td><span class="cn">.deliver-list</span></td><td><span class="tag tag-comp">Liste</span></td><td>Nummerierte Lieferliste. Flex-Spalte, Gap .875rem.</td></tr>
+          <tr><td><span class="cn">.deliver-item</span></td><td><span class="tag tag-comp">Kind</span></td><td>Einzelner Listenpunkt. Flex-Zeile, Gap .875rem.</td></tr>
+          <tr><td><span class="cn">.deliver-num</span></td><td><span class="tag tag-comp">Kind</span></td><td>Nummerierter Kreis. 1.75rem, Maroon, weiße Zahl, Border-Radius 50%.</td></tr>
+          <tr><td><span class="cn">.deliver-text</span></td><td><span class="tag tag-comp">Kind</span></td><td>Text neben dem Kreis. 0.9375rem, #555.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-tabellen">
+      <h2 class="ds-section-title">CSS-Klassen: Tabellen</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.affected-wrap</span></td><td><span class="tag tag-comp">Tabelle</span></td><td>Wrapper um die Tabelle. Border-Radius 8px, 1px Border, overflow:hidden.</td></tr>
+          <tr><td><span class="cn">.affected-table</span></td><td><span class="tag tag-comp">Tabelle</span></td><td>Vollbreite Tabelle. Dunkel-Header (#333), weiße Zeilen, Hover: #fafafa.</td></tr>
+          <tr><td><span class="cn">.dot</span></td><td><span class="tag tag-util">Util</span></td><td>Status-Indikator-Punkt. 8px Kreis, inline-block.</td></tr>
+          <tr><td><span class="cn">.dot-red</span></td><td><span class="tag tag-util">Util</span></td><td>Roter Punkt. Hintergrund: <code>--red</code>.</td></tr>
+          <tr><td><span class="cn">.dot-grey</span></td><td><span class="tag tag-util">Util</span></td><td>Grauer Punkt. Hintergrund: #aaa.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-reviews">
+      <h2 class="ds-section-title">CSS-Klassen: Bewertungen</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.review-box</span></td><td><span class="tag tag-comp">Review</span></td><td>Zentrierter Testimonial-Container. max-width 640px, text-align center.</td></tr>
+          <tr><td><span class="cn">.review-stars</span></td><td><span class="tag tag-comp">Review</span></td><td>Sterne-Bewertungszeile. Flex, zentriert, Gap .375rem. Mit <code>aria-label</code> beschriften.</td></tr>
+          <tr><td><span class="cn">.star</span></td><td><span class="tag tag-comp">Review</span></td><td>Einzelner Stern. Farbe #f59e0b (Amber), font-size 1.25rem.</td></tr>
+          <tr><td><span class="cn">.review-score</span></td><td><span class="tag tag-comp">Review</span></td><td>Zahlenwert neben Sternen. 1.125rem, weight 700, Maroon.</td></tr>
+          <tr><td><span class="cn">.review-quote</span></td><td><span class="tag tag-comp">Review</span></td><td>Zitat-Text. 1.125rem, kursiv, max-width 50ch. Pseudo-Elemente für Anführungszeichen.</td></tr>
+          <tr><td><span class="cn">.review-author</span></td><td><span class="tag tag-comp">Review</span></td><td>Autor-Angabe. 0.875rem, muted.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-faq">
+      <h2 class="ds-section-title">CSS-Klassen: FAQ / Accordion</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.faq-list</span></td><td><span class="tag tag-comp">FAQ</span></td><td>FAQ-Wrapper. Flex-Spalte, Gap .375rem, margin-top 2rem.</td></tr>
+          <tr><td><span class="cn">.faq-item</span></td><td><span class="tag tag-comp">FAQ</span></td><td>Einzelne FAQ als <code>&lt;details&gt;</code>. Border 1px, Border-Radius 8px. Open-State: Maroon-Border.</td></tr>
+          <tr><td><span class="cn">.faq-item summary</span></td><td><span class="tag tag-comp">FAQ</span></td><td>Klickbare Überschrift. Flex, zwischen Content und Chevron. Kein nativer Marker.</td></tr>
+          <tr><td><span class="cn">.faq-item[open] summary</span></td><td><span class="tag tag-comp">State</span></td><td>Geöffneter Zustand: Frage in Maroon.</td></tr>
+          <tr><td><span class="cn">.faq-chevron</span></td><td><span class="tag tag-comp">FAQ</span></td><td>Pfeil-Icon. Dreht sich 180° wenn geöffnet via CSS-Transition.</td></tr>
+          <tr><td><span class="cn">.faq-answer</span></td><td><span class="tag tag-comp">FAQ</span></td><td>Antwort-Container. padding 0 1.5rem 1rem, 0.9375rem, #555.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-footer">
+      <h2 class="ds-section-title">CSS-Klassen: Footer</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.site-footer</span></td><td><span class="tag tag-comp">Footer</span></td><td>Footer-Wrapper. Hintergrund <code>--bg-light</code>, Border-Top 1px.</td></tr>
+          <tr><td><span class="cn">.footer-inner</span></td><td><span class="tag tag-comp">Footer</span></td><td>Padding 3rem 0 2rem.</td></tr>
+          <tr><td><span class="cn">.footer-grid</span></td><td><span class="tag tag-layout">Grid</span></td><td>4-spaltiges Grid ab ≥1024px (2 ab ≥640px). Gap 2rem.</td></tr>
+          <tr><td><span class="cn">.footer-col-title</span></td><td><span class="tag tag-comp">Footer</span></td><td>Spalten-Überschrift. 0.9375rem, weight 700, dark. margin-bottom 1rem.</td></tr>
+          <tr><td><span class="cn">.footer-col-links</span></td><td><span class="tag tag-comp">Footer</span></td><td>Link-Liste in Spalte. Flex-Spalte, Gap .5rem.</td></tr>
+          <tr><td><span class="cn">.footer-col-links a</span></td><td><span class="tag tag-comp">Footer</span></td><td>Footer-Link. 0.875rem, #555, keine Unterstreichung. Hover: Maroon.</td></tr>
+          <tr><td><span class="cn">.footer-sub</span></td><td><span class="tag tag-comp">Footer</span></td><td>Sub-Footer-Zeile. Flex, zwischen Copyright und Legal-Links. Trennlinie oben.</td></tr>
+          <tr><td><span class="cn">.footer-legal</span></td><td><span class="tag tag-comp">Footer</span></td><td>Legal-Links-Gruppe. Flex, Wrap, Gap .5rem 1.25rem.</td></tr>
+          <tr><td><span class="cn">.footer-legal a</span></td><td><span class="tag tag-comp">Footer</span></td><td>Legal-Link. 0.8125rem, #777.</td></tr>
+          <tr><td><span class="cn">.footer-brand</span></td><td><span class="tag tag-comp">Footer</span></td><td>Markenname im Footer. 1rem, weight 800, dark. <code>span</code>-Kind: <code>--red</code>.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="ds-section" id="klassen-utilities">
+      <h2 class="ds-section-title">CSS-Klassen: Utilities &amp; Sonstiges</h2>
+      <table class="class-table">
+        <thead><tr><th>Klasse</th><th>Typ</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td><span class="cn">.skip-link</span></td><td><span class="tag tag-util">A11y</span></td><td>Barrierefreiheits-Sprunglink. Versteckt außerhalb Viewport, sichtbar bei Focus. Maroon.</td></tr>
+          <tr><td><span class="cn">:focus-visible</span></td><td><span class="tag tag-util">A11y</span></td><td>Globale Focus-Ring-Klasse. 3px solid <code>--red</code>, offset 2px, Border-Radius 2px.</td></tr>
+          <tr><td><span class="cn">.sticky-cta</span></td><td><span class="tag tag-comp">Fixed</span></td><td>Fixierter CTA am unteren Rand. Nur mobil (≤639px). Standardmäßig hidden, mit <code>.visible</code> aktivieren.</td></tr>
+          <tr><td><span class="cn">.sticky-cta.visible</span></td><td><span class="tag tag-comp">State</span></td><td>Sticky CTA sichtbar. Per JS über IntersectionObserver steuern.</td></tr>
+          <tr><td><span class="cn">.img-placeholder</span></td><td><span class="tag tag-util">Util</span></td><td>Bild-Platzhalter-Box. Hellgrau, gestrichelter Border, Flex-Zentriertes SVG + Text.</td></tr>
+          <tr><td><span class="cn">.about-photo</span></td><td><span class="tag tag-comp">Team</span></td><td>Quadratischer Foto-Platzhalter. 15rem × 15rem, Border-Radius 8px.</td></tr>
+          <tr><td><span class="cn">.urgency-grid</span></td><td><span class="tag tag-layout">Grid</span></td><td>3-spaltiges Grid ab ≥640px für Urgency-Tiles.</td></tr>
+          <tr><td><span class="cn">.urgency-tile</span></td><td><span class="tag tag-comp">Tile</span></td><td>Tile-Variante für dunkle Hintergründe. Halbdurchsichtiger Hintergrund, weiße Border.</td></tr>
+          <tr><td><span class="cn">.urgency-note</span></td><td><span class="tag tag-util">Text</span></td><td>Hinweistext unter Urgency-Grid. 0.9375rem, #bbb, max-width 52ch.</td></tr>
+          <tr><td><span class="cn">.spinner</span></td><td><span class="tag tag-comp">Anim</span></td><td>Animierter Ladekreis. 1.125rem, weiße Border mit Segment, 0.7s linear.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
