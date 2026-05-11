@@ -564,10 +564,13 @@ h4 { font-size: 1rem; font-weight: 700; }
 
 /* ── Über uns ── */
 .about-photo {
-  width: 15rem; height: 15rem; border-radius: 12px;
+  width: 100%; max-width: 380px;
+  aspect-ratio: 3/4;
+  border-radius: 16px;
   object-fit: cover; object-position: center top;
   display: block; margin: 0 auto;
-  box-shadow: 0 4px 24px rgba(0,0,0,.10);
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  border: none;
 }
 @media (min-width: 1024px) { .about-photo { margin: 0; } }
 .check-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .75rem; }
@@ -684,7 +687,7 @@ h4 { font-size: 1rem; font-weight: 700; }
 #scroll-top {
   position: fixed;
   bottom: 2rem; right: 2rem;
-  z-index: 400;
+  z-index: 600;
   width: 44px; height: 44px;
   border-radius: 999px;
   background: var(--maroon);
