@@ -54,7 +54,13 @@
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height-mobile);
+}
+@media (min-width: 1152px) {
+  html { scroll-padding-top: var(--nav-height-desktop); }
+}
 body {
   font-family: var(--font);
   font-size: 1rem;
@@ -94,9 +100,6 @@ ul, ol { list-style: none; }
 
 .section-pad { padding: var(--space-section) 0; }
 
-/* ── Scroll offset: compensate for sticky nav ── */
-[id] { scroll-margin-top: var(--nav-height-mobile); }
-@media (min-width: 1152px) { [id] { scroll-margin-top: var(--nav-height-desktop); } }
 
 /* ── Typografie ── */
 h1, h2, h3, h4 {
