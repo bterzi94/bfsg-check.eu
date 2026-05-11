@@ -682,3 +682,30 @@ h4 { font-size: 1rem; font-weight: 700; }
   background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
   animation: btn-shimmer 1.1s ease-in-out infinite;
 }
+
+/* ── Scroll-to-top button ── */
+#scroll-top {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  z-index: 400;
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  background: var(--maroon);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(142,0,56,.35);
+  opacity: 0; visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity .2s, visibility .2s, transform .2s, background .15s;
+}
+#scroll-top.visible {
+  opacity: 1; visibility: visible;
+  transform: translateY(0);
+}
+#scroll-top:hover { background: var(--maroon-dark); }
+#scroll-top:active { transform: translateY(2px); }
+@media (max-width: 767px) {
+  #scroll-top { bottom: 5.5rem; right: 1rem; }
+}
