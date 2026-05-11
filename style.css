@@ -565,14 +565,16 @@ h4 { font-size: 1rem; font-weight: 700; }
 /* ── Über uns ── */
 .about-photo {
   width: 100%; max-width: 380px;
-  aspect-ratio: 3/4;
+  aspect-ratio: 4/3;
   border-radius: 16px;
   object-fit: cover; object-position: center top;
   display: block; margin: 0 auto;
   box-shadow: 0 8px 32px rgba(0,0,0,.12);
   border: none;
 }
-@media (min-width: 1024px) { .about-photo { margin: 0; } }
+@media (min-width: 1024px) {
+  .about-photo { aspect-ratio: 3/4; margin: 0; }
+}
 .check-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .75rem; }
 .check-list li { display: flex; align-items: flex-start; gap: .625rem; font-size: .9375rem; color: #555; }
 .check-list svg { color: var(--maroon); flex-shrink: 0; margin-top: .2rem; }
@@ -712,13 +714,16 @@ h4 { font-size: 1rem; font-weight: 700; }
 
 /* ── Modal ── */
 .modal-backdrop {
+  display: none;
   position: fixed; inset: 0; z-index: 800;
   background: rgba(0,0,0,.55);
-  display: flex; align-items: center; justify-content: center;
+  align-items: center; justify-content: center;
   padding: 1rem;
+}
+.modal-backdrop.is-open {
+  display: flex;
   animation: modal-fade-in .2s ease;
 }
-.modal-backdrop[hidden] { display: none; }
 @keyframes modal-fade-in { from { opacity: 0; } to { opacity: 1; } }
 
 .modal {

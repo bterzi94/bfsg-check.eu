@@ -137,12 +137,11 @@ handleForm('form-final', 'final-success', 'final-error', 'final-submit');
   if (!modal) return;
 
   function openModal() {
-    modal.hidden = false;
+    modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
-    closeBtn.focus();
   }
   function closeModal() {
-    modal.hidden = true;
+    modal.classList.remove('is-open');
     document.body.style.overflow = '';
     resetModal();
   }
@@ -157,10 +156,10 @@ handleForm('form-final', 'final-success', 'final-error', 'final-submit');
     document.getElementById('uz-error').classList.remove('visible');
   }
 
-  openBtn?.addEventListener('click', openModal);
-  closeBtn.addEventListener('click', closeModal);
+  if (openBtn) openBtn.addEventListener('click', openModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
 
   /* Enable next when option selected */
   document.querySelectorAll('input[name="website-type"]').forEach(radio => {
