@@ -239,8 +239,20 @@ h4 { font-size: 1rem; font-weight: 700; }
 .btn-primary {
   background: var(--maroon); color: #fff;
   border-color: var(--maroon);
+  position: relative; overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute; inset: 0;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent);
+  transform: translateX(-150%);
+  transition: transform 0s;
 }
 .btn-primary:hover { background: var(--maroon-dark); border-color: var(--maroon-dark); }
+.btn-primary:hover::after {
+  animation: btn-shimmer .7s ease-in-out;
+}
 
 .btn-outline {
   background: transparent; color: var(--maroon);
