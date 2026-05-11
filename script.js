@@ -123,3 +123,105 @@ handleForm('form-final', 'final-success', 'final-error', 'final-submit');
   }, { passive: true });
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 })();
+
+/* ── Umsetzung Modal ── */
+(function () {
+  const modal    = document.getElementById('umsetzung-modal');
+  const openBtn  = document.getElementById('open-umsetzung-modal');
+  const closeBtn = document.getElementById('modal-close');
+  const nextBtn  = document.getElementById('modal-next');
+  const step1    = document.getElementById('modal-step-1');
+  const step2    = document.getElementById('modal-step-2');
+  const dots     = document.querySelectorAll('.modal-step');
+  const typeInput = document.getElementById('umsetzung-type');
+  if (!modal) return;
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    resetModal();
+  }
+  function resetModal() {
+    step1.hidden = false; step2.hidden = true;
+    dots[0].classList.add('active'); dots[0].classList.remove('done');
+    dots[1].classList.remove('active');
+    document.querySelectorAll('input[name="website-type"]').forEach(r => r.checked = false);
+    nextBtn.disabled = true;
+    document.getElementById('form-umsetzung').hidden = false;
+    document.getElementById('uz-success').classList.remove('visible');
+    document.getElementById('uz-error').classList.remove('visible');
+  }
+
+  openBtn?.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+
+  /* Enable next when option selected */
+  document.querySelectorAll('input[name="website-type"]').forEach(radio => {
+    radio.addEventListener('change', () => { nextBtn.disabled = false; });
+  });
+
+  /* Step 1 → 2 */
+  nextBtn.addEventListener('click', () => {
+    const selected = document.querySelector('input[name="website-type"]:checked');
+    if (!selected) return;
+    typeInput.value = selected.value;
+    step1.hidden = true; step2.hidden = false;
+    dots[0].classList.remove('active'); dots[0].classList.add('done');
+    dots[1].classList.add('active');
+    document.getElementById('uz-url').focus();
+  });
+
+  /* Form submit */
+  const form     = document.getElementById('form-umsetzung');
+  const uzSubmit = document.getElementById('uz-submit');
+  const uzSuccess = document.getElementById('uz-success');
+  const uzError   = document.getElementById('uz-error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('[required]').forEach(field => {
+      if (field.value.trim() === '') {
+        valid = false; field.setAttribute('aria-invalid', 'true');
+        const err = field.closest('.field')?.querySelector('.field-error');
+        if (err) err.textContent = 'Pflichtfeld.';
+      } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
+        valid = false; field.setAttribute('aria-invalid', 'true');
+        const err = field.closest('.field')?.querySelector('.field-error');
+        if (err) err.textContent = 'Bitte gib eine gültige E-Mail-Adresse ein.';
+      } else {
+        field.removeAttribute('aria-invalid');
+        const err = field.closest('.field')?.querySelector('.field-error');
+        if (err) err.textContent = '';
+      }
+    });
+    if (!valid) return;
+
+    const btnText = uzSubmit.querySelector('.btn-text');
+    uzSubmit.disabled = true;
+    uzSubmit.classList.add('btn-loading');
+    if (btnText) btnText.textContent = 'Wird gesendet…';
+
+    try {
+      await fetch(form.action, {
+        method: 'POST', mode: 'no-cors',
+        body: new URLSearchParams(new FormData(form)),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      });
+      form.hidden = true;
+      uzSuccess.classList.add('visible');
+    } catch {
+      uzError.classList.add('visible');
+      uzSubmit.disabled = false;
+      uzSubmit.classList.remove('btn-loading');
+      if (btnText) btnText.textContent = 'Unverbindliches Angebot anfordern';
+    }
+  });
+})();

@@ -555,8 +555,7 @@
       <h2 id="service-cta-heading">Du weißt schon, dass deine Seite nicht konform ist?</h2>
       <p style="margin-top:1rem;color:#555;font-size:1.0625rem;line-height:1.7">Wenn dir klar ist, dass du Handlungsbedarf hast und du direkt eine Lösung suchst — ich übernehme die komplette BFSG-konforme Überarbeitung deiner Website. Festpreis, klare Timeline.</p>
       <div style="margin-top:2rem">
-        <!-- PLACEHOLDER: Calendly-Link einsetzen -->
-        <a href="https://calendly.com/YOUR_CALENDLY_LINK" class="btn btn-primary btn-lg" rel="noopener">BFSG-Umsetzung anfragen</a>
+        <button class="btn btn-primary btn-lg" id="open-umsetzung-modal">Unverbindliches Angebot anfordern</button>
       </div>
     </div>
   </section>
@@ -894,6 +893,97 @@
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta" id="sticky-cta" role="complementary" aria-label="Zum Check-Formular">
   <a href="#hero-form" class="btn btn-primary btn-full">Kostenlosen Bericht anfordern</a>
+</div>
+
+<!-- ═══════════════════════ UMSETZUNG MODAL ═══════════════════════ -->
+<div id="umsetzung-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+  <div class="modal">
+
+    <button class="modal-close" id="modal-close" aria-label="Schließen">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="20" height="20" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Step indicator -->
+    <div class="modal-steps" aria-hidden="true">
+      <div class="modal-step active" data-step="1">1</div>
+      <div class="modal-step-line"></div>
+      <div class="modal-step" data-step="2">2</div>
+    </div>
+
+    <!-- Step 1 -->
+    <div id="modal-step-1" class="modal-pane">
+      <span class="label">Schritt 1 von 2</span>
+      <h2 id="modal-title" class="modal-title">Was für eine Website hast du?</h2>
+      <p class="modal-desc">Damit wir dir ein passendes Angebot machen können.</p>
+      <div class="modal-options" role="group" aria-label="Art der Website">
+        <label class="modal-option">
+          <input type="radio" name="website-type" value="Onlineshop" hidden>
+          <div class="modal-option-card">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="28" height="28" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+            <span>Onlineshop</span>
+          </div>
+        </label>
+        <label class="modal-option">
+          <input type="radio" name="website-type" value="Firmenwebsite" hidden>
+          <div class="modal-option-card">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="28" height="28" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+            <span>Firmenwebsite</span>
+          </div>
+        </label>
+        <label class="modal-option">
+          <input type="radio" name="website-type" value="Blog / Magazin" hidden>
+          <div class="modal-option-card">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="28" height="28" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"/></svg>
+            <span>Blog / Magazin</span>
+          </div>
+        </label>
+        <label class="modal-option">
+          <input type="radio" name="website-type" value="Sonstiges" hidden>
+          <div class="modal-option-card">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="28" height="28" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/></svg>
+            <span>Sonstiges</span>
+          </div>
+        </label>
+      </div>
+      <button class="btn btn-primary btn-full" id="modal-next" disabled>Weiter</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="modal-step-2" class="modal-pane" hidden>
+      <span class="label">Schritt 2 von 2</span>
+      <h2 class="modal-title">Deine Kontaktdaten</h2>
+      <p class="modal-desc">Nach Prüfung deiner Angaben melden wir uns mit einem konkreten, unverbindlichen Angebot bei dir.</p>
+      <form id="form-umsetzung" action="https://hook.eu2.make.com/cc1fht4pweimrn0orkf4q4kqy87haxgg" method="POST" novalidate>
+        <input type="hidden" name="_type" value="umsetzung">
+        <input type="hidden" id="umsetzung-type" name="website_type" value="">
+        <div class="field">
+          <label for="uz-url">Deine Website-URL</label>
+          <input type="text" id="uz-url" name="url" placeholder="z. B. meine-website.de" required autocomplete="url">
+          <span class="field-error" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="uz-email">E-Mail-Adresse</label>
+          <input type="email" id="uz-email" name="email" placeholder="du@beispiel.de" required autocomplete="email">
+          <span class="field-error" role="alert"></span>
+        </div>
+        <div class="field">
+          <label for="uz-phone">Telefonnummer <span style="font-weight:400;color:var(--muted)">(optional, für Rückrufe)</span></label>
+          <input type="tel" id="uz-phone" name="phone" placeholder="z. B. 0151 12345678" autocomplete="tel">
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="uz-submit">
+          <span class="btn-text">Unverbindliches Angebot anfordern</span>
+        </button>
+      </form>
+      <div class="form-success" id="uz-success" role="alert" style="margin-top:1.5rem">
+        <strong>Anfrage eingegangen!</strong><br>
+        Wir melden uns innerhalb von 1–2 Werktagen mit deinem Angebot.
+      </div>
+      <div class="form-error" id="uz-error" role="alert">Etwas ist schiefgelaufen. Schreib uns direkt an <a href="mailto:info@bfsg-check.eu">info@bfsg-check.eu</a>.</div>
+    </div>
+
+  </div>
 </div>
 
 <button id="scroll-top" aria-label="Zurück nach oben" title="Zurück nach oben">
