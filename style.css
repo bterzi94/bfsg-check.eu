@@ -94,6 +94,10 @@ ul, ol { list-style: none; }
 
 .section-pad { padding: var(--space-section) 0; }
 
+/* ── Scroll offset: compensate for sticky nav ── */
+[id] { scroll-margin-top: var(--nav-height-mobile); }
+@media (min-width: 1152px) { [id] { scroll-margin-top: var(--nav-height-desktop); } }
+
 /* ── Typografie ── */
 h1, h2, h3, h4 {
   font-family: var(--font);
