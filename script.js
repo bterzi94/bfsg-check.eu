@@ -70,10 +70,9 @@ function handleForm(formId, successId, errorId, submitId) {
     error.classList.remove('visible');
 
     const btnText = submit.querySelector('.btn-text');
-    const spinner = submit.querySelector('.spinner');
     submit.disabled = true;
+    submit.classList.add('btn-loading');
     if (btnText) btnText.textContent = 'Wird gesendet…';
-    if (spinner) spinner.hidden = false;
 
     try {
       await fetch(form.action, {
@@ -87,8 +86,8 @@ function handleForm(formId, successId, errorId, submitId) {
     } catch {
       error.classList.add('visible');
       submit.disabled = false;
+      submit.classList.remove('btn-loading');
       if (btnText) btnText.textContent = 'Kostenlos anfragen';
-      if (spinner) spinner.hidden = true;
     }
   });
 }
