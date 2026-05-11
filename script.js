@@ -137,11 +137,13 @@ handleForm('form-final', 'final-success', 'final-error', 'final-submit');
   if (!modal) return;
 
   function openModal() {
+    modal.hidden = false;
     modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
   }
   function closeModal() {
     modal.classList.remove('is-open');
+    modal.hidden = true;
     document.body.style.overflow = '';
     resetModal();
   }
