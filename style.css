@@ -382,7 +382,8 @@ h4 { font-size: 1rem; font-weight: 700; }
 }
 .field input[type="url"],
 .field input[type="email"],
-.field input[type="text"] {
+.field input[type="text"],
+.field input[type="tel"] {
   width: 100%; padding: .75rem 1rem;
   border: 1.5px solid var(--border);
   border-radius: 4px;
