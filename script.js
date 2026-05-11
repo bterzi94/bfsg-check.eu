@@ -152,6 +152,12 @@ handleForm('form-final', 'final-success', 'final-error', 'final-submit');
     dots[0].classList.add('active'); dots[0].classList.remove('done');
     dots[1].classList.remove('active');
     document.querySelectorAll('input[name="website-type"]').forEach(r => r.checked = false);
+    const privacyCb = document.getElementById('uz-privacy');
+    if (privacyCb) { privacyCb.checked = false; privacyCb.removeAttribute('aria-invalid'); }
+    const privacyLabel = form.querySelector('label[for="uz-privacy"]');
+    if (privacyLabel) privacyLabel.classList.remove('label-invalid');
+    const privacyErr = document.getElementById('uz-privacy-err');
+    if (privacyErr) privacyErr.textContent = '';
     nextBtn.disabled = true;
     document.getElementById('form-umsetzung').hidden = false;
     document.getElementById('uz-success').classList.remove('visible');
@@ -189,6 +195,21 @@ handleForm('form-final', 'final-success', 'final-error', 'final-submit');
     e.preventDefault();
     let valid = true;
     form.querySelectorAll('[required]').forEach(field => {
+      if (field.type === 'checkbox') {
+        const err = field.closest('.field')?.querySelector('.field-error');
+        if (!field.checked) {
+          valid = false; field.setAttribute('aria-invalid', 'true');
+          const label = form.querySelector(`label[for="${field.id}"]`);
+          if (label) label.classList.add('label-invalid');
+          if (err) err.textContent = 'Bitte stimme der Datenschutzerklärung zu.';
+        } else {
+          field.removeAttribute('aria-invalid');
+          const label = form.querySelector(`label[for="${field.id}"]`);
+          if (label) label.classList.remove('label-invalid');
+          if (err) err.textContent = '';
+        }
+        return;
+      }
       if (field.value.trim() === '') {
         valid = false; field.setAttribute('aria-invalid', 'true');
         const err = field.closest('.field')?.querySelector('.field-error');

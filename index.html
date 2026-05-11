@@ -973,6 +973,12 @@
           <input type="tel" id="uz-phone" name="phone" placeholder="z. B. 0151 12345678" required autocomplete="tel">
           <span class="field-error" role="alert"></span>
         </div>
+        <p style="font-size:.8125rem;color:var(--muted);line-height:1.6;margin-bottom:1rem">Deine Daten werden ausschließlich zur Erstellung deines Angebots verwendet und nicht an Dritte weitergegeben.</p>
+        <div class="field field-checkbox">
+          <input type="checkbox" id="uz-privacy" name="privacy" required>
+          <label for="uz-privacy">Ich habe die <a href="/datenschutz.html" target="_blank" style="color:var(--maroon)">Datenschutzerklärung</a> gelesen und stimme zu.</label>
+          <span class="field-error" role="alert" id="uz-privacy-err"></span>
+        </div>
         <button type="submit" class="btn btn-primary btn-full" id="uz-submit">
           <span class="btn-text">Unverbindliches Angebot anfordern</span>
         </button>
